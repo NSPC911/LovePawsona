@@ -21,7 +21,7 @@
             width: 375px;
             height: 667px;
             margin: 0 auto;
-            background: #fff;
+            background: rgb(22, 22, 22);
             border-radius: 36px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             position: relative;
@@ -76,8 +76,8 @@
         }
         .choices {
             padding: 10px;
-            border-top: 1px solid #ccc;
-            background-color: #fff;
+            /*border-top: 1px solid #ccc;
+            background-color: #fff;*/
             position: relative;
         }
         .choice-button {
@@ -150,11 +150,20 @@
             color: #999;
             display: none;
         }
+        footer {
+            text-align: center;
+        }
+  
+        footer a {
+        font-size: 10px; 
+        color: var(--6-color);
+        }
+        
     </style>
 </head>
 <body>
-    <div class="phone-screen">
-        <div class="header" style="color:var(--6-color)">That person</div>
+    <div class="phone-screen" id = "phone-screen">
+        <div class="header" id="header" style="color:var(--6-color); background-color: rgb(22, 22, 22);"></div>
         <div id="chatbox" class="chatbox"></div>
         <div id="choices" class="choices"></div>
         <div id="result-overlay" class="result-overlay">
@@ -162,49 +171,67 @@
             <img id="result-image" class="result-image" src="" alt="Result Image">
             <p id="result-text" class="result-text"></p>
         </div>
+        
     </div>
+    <footer>
+        <a href="https://www.instagram.com/izonfalzo/?hl=en" target="_blank" style="font-size: 10px; text-decoration: none;">&copy; 2025 I-see Warisa Jaidee</a>
+    </footer>
 
     <script>
         let currentMessageIndex = 0;
         const scores = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
     
         const dialogue = [
+            // 0
             {
                 speaker: 'bot',
-                text: 'Hey there! How would you describe yourself?',
+                text: ['*New notification from Unknown*'],
                 choices: [
-                    { text: 'Energetic and outgoing', type: 'E', next: 1 },
-                    { text: 'I hate you', type: 'I', next: 1 },
+                    { text: '*Open*', type: 'E',next: 1 },
+                    { text: '*Ignore it*', type: 'I',next: 1 },
+                    { text: '*Great, another scam...*', type: 'I',next: 1 }
                 ]
             },
+            // 1
             {
                 speaker: 'bot',
-                text: 'What’s your favorite way to spend the weekend?',
+                text: ['Happy Valentine Day!', 'What are you up to?','I am you from the future'],
                 choices: [
-                    { text: 'Hanging out with friends', type: 'S', next: 2 },
-                    { text: 'Reading a good book', type: 'N', next: 2 },
+                    { text: 'Urgh, long story, let\'s meet', type: 'E', next: 3 },
+                    { text: 'Great! just thinking about you :)', type: 'I', next: 2 },
+                    { text: 'gud hbu?', type: 'E', next: 1 }
                 ]
             },
+            // 2
             {
                 speaker: 'bot',
-                text: 'Me too',
+                text: ['What’s your favorite way to spend the weekend?', 'heyhey'],
                 choices: [
-                    { text: 'At a lively party', type: 'T', next: 3 },
-                    { text: 'On a quiet beach', type: 'F', next: 3 },
+                    { text: 'Hanging out with friends', type: 'S', next: 3 },
+                    { text: 'Reading a good book', type: 'N', next: 3 },
                 ]
             },
+            // 3
             {
                 speaker: 'bot',
-                text: 'Me too',
+                text: ['Me too'],
                 choices: [
-                    { text: 'At a lively party', type: 'J', next: 4 },
-                    { text: 'On a quiet beach', type: 'P', next: 4 },
+                    { text: 'At a lively party', type: 'T', next: 4 },
+                    { text: 'On a quiet beach', type: 'F', next: 4 },
                 ]
             },
-            // Add more choices...
+            // 4
+            {
+                speaker: 'bot',
+                text: ['Me too'],
+                choices: [
+                    { text: 'At a lively party', type: 'J', next: 5 },
+                    { text: 'On a quiet beach', type: 'P', next: 5 },
+                ]
+            },
         ];
 
-        function addMessage(speaker, text, isLink = false) {
+        function addMessage(speaker, text, isLink = false, opt=false) {
             const messageElement = document.createElement('div');
             messageElement.classList.add('message', speaker);
             if (isLink) {
@@ -212,7 +239,15 @@
                 link.innerText = text;
                 link.onclick = displayResult;
                 messageElement.appendChild(link);
-            } else {
+            } 
+            else if (opt) {
+                const link = document.createElement('a');
+                link.innerText = text;
+                link.href = "https://www.instagram.com/izonfalzo/?hl=en"; 
+                link.target = "_blank"; 
+                messageElement.appendChild(link);
+            } 
+            else {
                 messageElement.textContent = text;
             }
             document.getElementById('chatbox').appendChild(messageElement);
@@ -299,9 +334,9 @@
             } else if (type === 'exit') {
             addMessage('bot', 'Okay, maybe next time :3');
             setTimeout(() => {
-            addMessage('bot', 'Happy Valentines');
+            addMessage('bot', 'Thanks for stopping by...');
             setTimeout(() => {
-                addMessage('bot', 'This quiz is made by @IzonFalzo');
+                addMessage('bot', 'Made with love @IzonFalzo',false, true);
                 setTimeout(() => {
                 }, 1000); 
             }, 1000); 
@@ -310,7 +345,6 @@
             document.getElementById('choices').innerHTML = '';  // No further options
             }
             else{
-            
             const chosenOption = dialogue[currentMessageIndex].choices.find(choice => choice.type === type);
             scores[type]++;
             currentMessageIndex = nextIndex;
@@ -320,15 +354,36 @@
             showTypingDots();
             setTimeout(() => {
                 stopTypingDots();
+                if (currentMessageIndex === 1) {
+                const header = document.getElementById("header");
+                header.textContent = 'Unknown'; 
+                header.style.backgroundColor = 'var(--2-color)';
+                const phoneScreen = document.getElementById("phone-screen"); 
+                phoneScreen.style.backgroundColor = '#fff';  
+            }
 
                 if (currentMessageIndex < dialogue.length) {
-                    addMessage('bot', dialogue[currentMessageIndex].text);
-                    showChoices(dialogue[currentMessageIndex].choices);
+                    
+                    /*addMessage('bot', dialogue[currentMessageIndex].text);
+                    showChoices(dialogue[currentMessageIndex].choices);*/
+
+                    const currentDialogue = dialogue[currentMessageIndex];
+                    currentDialogue.text.forEach((text, index) => {
+                    setTimeout(() => {
+                        addMessage(currentDialogue.speaker, text);
+                    }, index * 1000);
+                    });
+
+                    setTimeout(() => {
+                        showChoices(currentDialogue.choices);
+                    }, currentDialogue.text.length * 1000);  // Wait for all dialogue lines to finish before showing choices
+
                 } else {
                     setTimeout(() => addMessage('bot', 'View attachment', true), 500);
                 }
              }, 1500);
             }
+
     }
 
         function restartQuiz() {
@@ -336,17 +391,27 @@
             scores.E = scores.I = scores.S = scores.N = scores.T = scores.F = scores.J = scores.P = 0;
             document.getElementById('chatbox').innerHTML = '';
             document.getElementById('choices').innerHTML = '';
+            const header = document.getElementById("header");
+            header.textContent = ''; 
+            header.style.backgroundColor = 'rgb(22, 22, 22)';
+            const phoneScreen = document.getElementById("phone-screen"); 
+            phoneScreen.style.backgroundColor = 'rgb(22, 22, 22)';  
             startConversation();
         }
 
 
         function startConversation() {
-            addMessage('bot', dialogue[0].text);
-            showChoices(dialogue[0].choices);
-        }
-
+    addMessage('bot', dialogue[0].text);
+    showChoices(dialogue[0].choices);
+    
+}
         startConversation();
     </script>
+
+    
 </body>
+
+
+
 </html>
 
