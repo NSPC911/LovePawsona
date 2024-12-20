@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Visual Novel Quiz</title>
+    <style>
+        :root {
+            --1-color: #fff2d8; 
+            --2-color: #fccdd3;
+            --3-color: #fca2cf;
+            --4-color: 	#d8f4f6;
+            --5-color: 	#ade1eb;
+            --6-color: 	#2a3031;
+        }
+        body{
+            background-color: var(--1-color);
+            font-family: 'Andale Mono', monospace;
+        }
+        .phone-screen {
+            width: 375px;
+            height: 667px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 36px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+            font-family: 'Andale Mono', monospace;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            height: 50px;
+            background-color: var(--2-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: bold;
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+        }
+        .chatbox {
+            padding: 20px;
+            height: calc(100% - 170px);
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+        .message {
+            background-color: #f1f1f1;
+            border-radius: 100px;
+            padding: 15px;
+            margin: 5px 0;
+            max-width: 80%;
+        }
+        .message.user {
+            background-color: var(--5-color);
+            color: rgb(49, 49, 56);
+            align-self: flex-end;
+            border-radius: 100px;
+        }
+        .message.bot {
+            background-color: #e2e2e2;
+            color: black;
+            align-self: flex-start;
+            border-radius: 100px;
+        }
+        .message.bot a {
+            color: #843b62;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        .choices {
+            padding: 10px;
+            border-top: 1px solid #ccc;
+            background-color: #fff;
+            position: relative;
+        }
+        .choice-button {
+            font-family: 'Andale Mono', monospace;
+            background-color: var(--2-color);
+            color: var(--6-color);
+            border: none;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 100px;
+            cursor: pointer;
+            font-size: 14px;
+            width: 100%;
+        }
+        .choice-button:hover {
+            background-color: var(--3-color);
+        }
+        .result-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            display: none;
+        }
+        .result-image {
+            width: 80%;
+            max-width: 300px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .result-text {
+            font-family: 'Andale Mono', monospace;
+            text-align: center;
+            padding: 20px;
+        }
+        .close-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: transparent;
+            font-family: 'Andale Mono', monospace;
+            color: white;
+            font-size: 24px;
+            border: none;
+            cursor: pointer;
+        }
+        .restart-button {
+            background-color: var(--4-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        .restart-button:hover {
+            background-color: var(--4-color);
+        }
+        .typing-indicator {
+            font-style: italic;
+            color: #999;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="phone-screen">
+        <div class="header" style="color:var(--6-color)">That person</div>
+        <div id="chatbox" class="chatbox"></div>
+        <div id="choices" class="choices"></div>
+        <div id="result-overlay" class="result-overlay">
+            <button class="close-button" onclick="closeResult()">×</button>
+            <img id="result-image" class="result-image" src="" alt="Result Image">
+            <p id="result-text" class="result-text"></p>
+        </div>
+    </div>
+
+    <script>
+        let currentMessageIndex = 0;
+        const scores = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
+    
+        const dialogue = [
+            {
+                speaker: 'bot',
+                text: 'Hey there! How would you describe yourself?',
+                choices: [
+                    { text: 'Energetic and outgoing', type: 'E', next: 1 },
+                    { text: 'I hate you', type: 'I', next: 1 },
+                ]
+            },
+            {
+                speaker: 'bot',
+                text: 'What’s your favorite way to spend the weekend?',
+                choices: [
+                    { text: 'Hanging out with friends', type: 'S', next: 2 },
+                    { text: 'Reading a good book', type: 'N', next: 2 },
+                ]
+            },
+            {
+                speaker: 'bot',
+                text: 'Me too',
+                choices: [
+                    { text: 'At a lively party', type: 'T', next: 3 },
+                    { text: 'On a quiet beach', type: 'F', next: 3 },
+                ]
+            },
+            {
+                speaker: 'bot',
+                text: 'Me too',
+                choices: [
+                    { text: 'At a lively party', type: 'J', next: 4 },
+                    { text: 'On a quiet beach', type: 'P', next: 4 },
+                ]
+            },
+            // Add more choices...
+        ];
+
+        function addMessage(speaker, text, isLink = false) {
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('message', speaker);
+            if (isLink) {
+                const link = document.createElement('a');
+                link.innerText = text;
+                link.onclick = displayResult;
+                messageElement.appendChild(link);
+            } else {
+                messageElement.textContent = text;
+            }
+            document.getElementById('chatbox').appendChild(messageElement);
+            document.getElementById('chatbox').scrollTop = document.getElementById('chatbox').scrollHeight;
+        }
+
+        function showChoices(choices) {
+            const choicesContainer = document.getElementById('choices');
+            choicesContainer.innerHTML = '';
+
+            choices.forEach(choice => {
+                const choiceButton = document.createElement('button');
+                choiceButton.classList.add('choice-button');
+                choiceButton.textContent = choice.text;
+                choiceButton.onclick = () => handleChoice(choice.type, choice.next);
+                choicesContainer.appendChild(choiceButton);
+            });
+        }
+
+        let typingInterval;
+        let typingDots = 0;
+
+        function showTypingDots() {
+            const typingIndicator = document.createElement('div');
+            typingIndicator.classList.add('typing-indicator');
+            typingIndicator.textContent = 'typing...';
+            document.getElementById('chatbox').appendChild(typingIndicator);
+            typingIndicator.style.display = 'inline';
+
+            typingDots = 0;
+
+            typingInterval = setInterval(() => {
+                typingIndicator.textContent = '.'.repeat(typingDots % 5);
+                typingDots++;
+            }, 400);
+        }
+
+        function stopTypingDots() {
+            clearInterval(typingInterval);
+            const typingIndicator = document.querySelector('.typing-indicator');
+            if (typingIndicator) {
+                typingIndicator.remove();
+            }
+        }
+
+        function displayResult() {
+            let resultType = '';
+            resultType += scores.E >= scores.I ? 'E' : 'I';
+            resultType += scores.S >= scores.N ? 'S' : 'N';
+            resultType += scores.T >= scores.F ? 'T' : 'F';
+            resultType += scores.J >= scores.P ? 'J' : 'P';
+
+            const resultsText = {
+                ESTJ: 'You are efficient, organized, and goal-oriented!',
+                ISFP: 'You are creative, spontaneous, and gentle!',
+                // Add more combinations...
+            };
+
+            const resultImages = {
+                ESTJ: 'test.png',
+                ISFP: 'https://example.com/resultISFP.png',
+                // Add more images...
+            };
+
+            document.getElementById('result-text').textContent = resultsText[resultType];
+            document.getElementById('result-image').src = resultImages[resultType];
+            document.getElementById('result-overlay').style.display = 'flex';
+        }
+
+        function closeResult() {
+            document.getElementById('result-overlay').style.display = 'none';
+            setTimeout(() => {
+                addMessage('bot', 'Would you like to play again?');
+                showChoices([
+                    { text: 'Yes, let’s go!', type: 'restart' },
+                    { text: 'No, thanks.', type: 'exit' }
+                ]);
+            }, 500);
+        }
+
+        function handleChoice(type, nextIndex) {
+            if (type === 'restart') {
+            restartQuiz();
+            } else if (type === 'exit') {
+            addMessage('bot', 'Okay, maybe next time :3');
+            setTimeout(() => {
+            addMessage('bot', 'Happy Valentines');
+            setTimeout(() => {
+                addMessage('bot', 'This quiz is made by @IzonFalzo');
+                setTimeout(() => {
+                }, 1000); 
+            }, 1000); 
+        }, 1000); 
+
+            document.getElementById('choices').innerHTML = '';  // No further options
+            }
+            else{
+            
+            const chosenOption = dialogue[currentMessageIndex].choices.find(choice => choice.type === type);
+            scores[type]++;
+            currentMessageIndex = nextIndex;
+            document.getElementById('choices').innerHTML = '';
+            addMessage('user', chosenOption.text, false);
+
+            showTypingDots();
+            setTimeout(() => {
+                stopTypingDots();
+
+                if (currentMessageIndex < dialogue.length) {
+                    addMessage('bot', dialogue[currentMessageIndex].text);
+                    showChoices(dialogue[currentMessageIndex].choices);
+                } else {
+                    setTimeout(() => addMessage('bot', 'View attachment', true), 500);
+                }
+             }, 1500);
+            }
+    }
+
+        function restartQuiz() {
+            currentMessageIndex = 0;
+            scores.E = scores.I = scores.S = scores.N = scores.T = scores.F = scores.J = scores.P = 0;
+            document.getElementById('chatbox').innerHTML = '';
+            document.getElementById('choices').innerHTML = '';
+            startConversation();
+        }
+
+
+        function startConversation() {
+            addMessage('bot', dialogue[0].text);
+            showChoices(dialogue[0].choices);
+        }
+
+        startConversation();
+    </script>
+</body>
+</html>
+
