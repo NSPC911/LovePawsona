@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Visual Novel Quiz</title>
+    <title>Heart Dialogue</title>
+    <link rel="icon" type="image/x-icon" href="icon.png">
     <style>
         :root {
             --1-color: #fff2d8; 
@@ -159,10 +160,88 @@
         color: var(--6-color);
         }
         
-    </style>
+
+.start-page {
+    width: 400px;
+    height: 667px;
+    margin: 0 auto;
+    background: var(--1-color);
+    color: var(--6-color);
+    border-radius: 36px;
+    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);*/
+    position: relative;
+    overflow: hidden;
+    font-family: 'Andale Mono', monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px; 
+    box-sizing: border-box; 
+    text-align: center; 
+}
+
+.top-image {
+    width: 100%;
+    height: auto;
+    max-height: 200px; 
+    object-fit: cover;
+    margin-bottom: 10px; 
+}
+
+.start-button {
+    font-family: 'Andale Mono', monospace;
+    background-color: #fccdd3;
+    color: rgb(22, 22, 22);
+    border: none;
+    padding: 10px 20px;
+    margin: 10px 5px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.start-button:hover {
+    background-color: #fca2cf;
+}
+
+.start-page p,
+.start-page p1 {
+    font-size: 16px; 
+    margin: 5px 0; 
+    line-height: 1.5; 
+}
+
+.start-page a {
+    text-decoration: none; 
+}
+
+.start-page .button-group {
+    display: flex;
+    gap: 10px; 
+    justify-content: center; 
+}
+
+</style>
 </head>
 <body>
-    <div class="phone-screen" id = "phone-screen">
+    <div class="start-page" id="start-page">
+        <h1>Hearty Dialogue</h1>
+        <p>Enter a journey across space and time and find out your Persona!</p>
+        <img src="test.png" class="top-image" alt="Top Image">
+        <div class="button-group">
+            <button id="start-button" class="start-button">Play</button>
+            <a href="Info/" target="_blank" rel="noopener noreferrer">
+                <button class="start-button">?</button>
+            </a>
+        </div>
+        <p1>A fun personality quiz inspired by MBTI types, Innate Personality Traits, Cake resume, etc.</p1>
+        <p1>
+            Disclaimer: This quiz is all in good fun! It's just for entertainment, so please take your results with a pinch of humor.
+        </p1>
+    </div>
+    <div class="phone-screen" id = "phone-screen" style="display: none;">
         <div class="header" id="header" style="color:var(--6-color); background-color: rgb(22, 22, 22);"></div>
         <div id="chatbox" class="chatbox"></div>
         <div id="choices" class="choices"></div>
@@ -173,6 +252,7 @@
         </div>
         
     </div>
+
     <!--debug-->
     <div id="debug-box" style="position: absolute; top: 10px; right: 10px; background-color: rgba(0, 0, 0, 0.7); color: white; padding: 10px; border-radius: 5px; font-size: 12px; z-index: 999;">
         <strong>Debug Scores:</strong>
@@ -181,52 +261,66 @@
     <footer>
         <a href="https://www.instagram.com/izonfalzo/?hl=en" target="_blank" style="font-size: 10px; text-decoration: none;">&copy; 2025 I-see Warisa Jaidee</a>
     </footer>
+    <audio id="notifSound" src="vibe.mp3"></audio>
+    <audio id="dingSound" src="ding.mp3"></audio>
+    <audio id="popSound" src="pop.mp3"></audio>
 
     <script>
         
+        document.getElementById('start-button').addEventListener('click', function() {
+        const notifSound = document.getElementById('notifSound');
+        notifSound.play(); 
+    document.getElementById('start-page').style.display = 'none';
+    document.getElementById('phone-screen').style.display = 'flex';
+});
+
         let currentMessageIndex = 0;
-        const scores = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
+        //const scores = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
+        const scores = { M: 0, T: 0, I: 0, R: 0, P: 0, H: 0, A: 0};
     
         const dialogue = [
-            // 0
+            // 0 (0)
             {
                 speaker: 'bot',
                 text: ['*New notification from Unknown*'],
                 choices: [
-                    { text: '*Open*', type: 'E',next: 1 },
-                    { text: '*Ignore it*', type: 'I',next: 1 },
-                    { text: '*Great, another scam...*', type: 'A',next: 1 }
+                    { id:1, text: '*Open*', type: 'M',next: 1, followUpText: []},
+                    { id:2, text: '*Ignore it*', type: 'T',next: 1, followUpText: [] },
+                    { id:3, text: '*baaa*', type: 'T',next: 1, followUpText: [] }
                 ]
             },
-            // 1
-                        {
+            // 1 (1_1)
+            {
                 speaker: 'bot',
-                text: ['*New notification from Unknown*'],
+                text: ['HOT SALE: HEARTSONA charms for your V day! Type <3 to learn more!'],
                 choices: [
-                    { text: '*Open*', type: 'S',next: 2 },
-                    { text: '*Ignore it*', type: 'N',next: 1 },
-                    { text: '*Great, another scam...*', type: 'F',next: 1 }
+                    { id:1, text: '<3', type: 'I',next: 2, followUpText: [] },
+                    { id:2, text: 'who r u?', type: 'R',next: 2 , followUpText: []},
+                    { id:3, text: '*scam? again?*', type: 'P',next: 1, followUpText: []}
                 ]
             },
-            // 2
+            // 2 (1_2)
             {
                 speaker: 'bot',
                 text: ['Omg hey! Happy Valentine Day!', 'What are you up to?'],
                 choices: [
-                    { text: 'Who are you?!!', type: 'T', next: 3 },
-                    { text: 'Nothing much, just another day...', type: 'I', next: 2 },
-                    { text: 'It\'s Valentine\'s* 🙄', type: 'E', next: 1 }
+                    { id:1, text: 'Who are you?!!', type: 'H', next: 3 , followUpText: []},
+                    { id:2, text: 'Nothing much, just another day...', type: 'A', next: 3 , followUpText: []},
+                    { id:3, text: 'gggggg', type: 'H', next: 3 , followUpText: []},
+                    { id:4, text: 'A2', type: 'A', next: 3 , followUpText: []}
                 ]
             },
-            // 3
+            // 3 (1_3)
             {
                 speaker: 'bot',
-                text: ['What’s your favorite way to spend the weekend?', 'heyhey'],
+                text: ['*New notification from Unknown*'],
                 choices: [
-                    { text: 'Hanging out with friends', type: 'J', next: 4 },
-                    { text: 'Reading a good book', type: 'N', next: 3 },
+                    { id:1, text: '*Open*', type: 'I',next: 4, followUpText: ['This is getting weird...', 'aaaaaa plz work'] },
+                    { id:2, text: '*Ignore it*', type: 'R',next: 4 , followUpText: []},
+                    { id:3, text: '*Great, another scam...*', type: 'P',next: 4, followUpText: []}
                 ]
-            }
+            },
+            // 4
 
         ];
         
@@ -262,7 +356,7 @@
                 const choiceButton = document.createElement('button');
                 choiceButton.classList.add('choice-button');
                 choiceButton.textContent = choice.text;
-                choiceButton.onclick = () => handleChoice(choice.type, choice.next);
+                choiceButton.onclick = () => handleChoice(choice.type, choice.id, choice.next);
                 choicesContainer.appendChild(choiceButton);
             });
         }
@@ -295,19 +389,36 @@
 
         function displayResult() {
             let resultType = '';
-            resultType += scores.E >= scores.I ? 'E' : 'I';
-            resultType += scores.S >= scores.N ? 'S' : 'N';
-            resultType += scores.T >= scores.F ? 'T' : 'F';
-            resultType += scores.J >= scores.P ? 'J' : 'P';
+
+            // M or T
+            let topMT = [];
+            if (scores.M >= scores.T) topMT.push('M');
+            if (scores.T >= scores.M) topMT.push('T');
+            resultType += topMT[Math.floor(Math.random() * topMT.length)];
+
+            // I, R, or P 
+            let topIRP = [];
+            if (scores.I >= scores.R && scores.I >= scores.P) topIRP.push('I');
+            if (scores.R >= scores.I && scores.R >= scores.P) topIRP.push('R');
+            if (scores.P >= scores.I && scores.P >= scores.R) topIRP.push('P');
+            resultType += topIRP[Math.floor(Math.random() * topIRP.length)];
+
+            // H or A 
+            let topHA = [];
+            if (scores.H >= scores.A) topHA.push('H');
+            if (scores.A >= scores.H) topHA.push('A');
+            resultType += topHA[Math.floor(Math.random() * topHA.length)];
+            
+
 
             const resultsText = {
-                ESTJ: 'You are efficient, organized, and goal-oriented!',
-                ISFP: 'You are creative, spontaneous, and gentle!',
+                MIH: 'You are efficient, organized, and goal-oriented!',
+                TIA: 'You are creative, spontaneous, and gentle!',
             };
 
             const resultImages = {
-                ESTJ: 'test.png',
-                ISFP: 'https://example.com/resultISFP.png',
+                MIH: 'test.png',
+                TIA: 'TIA.png',
             };
 
             document.getElementById('result-text').textContent = resultType+resultsText[resultType];
@@ -326,53 +437,60 @@
             }, 500);
         }
 
-        function handleChoice(type, nextIndex) {
-            if (type === 'restart') {
-            restartQuiz();
-            } else if (type === 'exit') {
-            addMessage('bot', 'Okay, maybe next time :3');
-            setTimeout(() => {
+    function handleChoice(type, id, nextIndex) {
+        const dingSound = document.getElementById('dingSound');
+        dingSound.play(); 
+    if (type === 'restart') {
+        restartQuiz();
+    } else if (type === 'exit') {
+        addMessage('bot', 'Okay, maybe next time :3');
+        setTimeout(() => {
             addMessage('bot', 'Thanks for stopping by...');
             setTimeout(() => {
-                addMessage('bot', 'Made with love @IzonFalzo',false, true);
-                setTimeout(() => {
-                }, 1000); 
+                addMessage('bot', 'Made with love @IzonFalzo', false, true);
+                setTimeout(() => {}, 1000); 
             }, 1000); 
         }, 1000); 
 
-            document.getElementById('choices').innerHTML = ''; 
-            }
-            else{
-            const chosenOption = dialogue[currentMessageIndex].choices.find(choice => choice.type === type);
-            scores[type]++;
-            updateDebugScores();
-            currentMessageIndex = nextIndex;
-            document.getElementById('choices').innerHTML = '';
-            addMessage('user', chosenOption.text, false);
+        document.getElementById('choices').innerHTML = ''; 
+    } else {
+        const chosenOption = dialogue[currentMessageIndex].choices.find(choice => choice.type === type && choice.id === id);
+        scores[type]++;
+        updateDebugScores();
+        currentMessageIndex = nextIndex;
+        document.getElementById('choices').innerHTML = '';
+        addMessage('user', chosenOption.text, false);
 
-            showTypingDots();
+        if (chosenOption.followUpText && chosenOption.followUpText.length > 0) {
+            chosenOption.followUpText.forEach((followUp, index) => {
+                setTimeout(() => {
+                    addMessage('user', followUp);
+                }, (index+1) * 1000);
+            });
+        }
+        
+        setTimeout(() => {
+            showTypingDots(); 
+
             setTimeout(() => {
-                stopTypingDots();
+                stopTypingDots(); 
+                const popSound = document.getElementById('popSound');
+                popSound.play(); 
                 if (currentMessageIndex >= 1) {
-                const header = document.getElementById("header");
-                header.textContent = 'Unknown'; 
-                header.style.backgroundColor = 'var(--2-color)';
-                const phoneScreen = document.getElementById("phone-screen"); 
-                phoneScreen.style.backgroundColor = '#fff';  
-            }
-
+                    const header = document.getElementById("header");
+                    header.textContent = 'Unknown'; 
+                    header.style.backgroundColor = 'var(--2-color)';
+                    const phoneScreen = document.getElementById("phone-screen"); 
+                    phoneScreen.style.backgroundColor = '#fff';  
+                }
+              
                 if (currentMessageIndex < dialogue.length) {
-                    
-                    /*addMessage('bot', dialogue[currentMessageIndex].text);
-                    showChoices(dialogue[currentMessageIndex].choices);*/
-
                     const currentDialogue = dialogue[currentMessageIndex];
                     currentDialogue.text.forEach((text, index) => {
-                    setTimeout(() => {
-                        addMessage(currentDialogue.speaker, text);
-                    }, index * 1000);
+                        setTimeout(() => {
+                            addMessage(currentDialogue.speaker, text);
+                        }, index * 1000);
                     });
-
                     setTimeout(() => {
                         showChoices(currentDialogue.choices);
                     }, currentDialogue.text.length * 1000); 
@@ -380,14 +498,17 @@
                 } else {
                     setTimeout(() => addMessage('bot', 'View attachment', true), 500);
                 }
-             }, 1500);
-            }
 
+            }, 1500); 
+        }, (chosenOption.followUpText.length * 1000) + 500); 
     }
+}
+
 
         function restartQuiz() {
             currentMessageIndex = 0;
-            scores.E = scores.I = scores.S = scores.N = scores.T = scores.F = scores.J = scores.P = 0;
+            // scores.E = scores.I = scores.S = scores.N = scores.T = scores.F = scores.J = scores.P = 0;
+            scores.M = scores.T = scores.I = scores.R = scores.P = scores.H = scores.A = 0;
             document.getElementById('chatbox').innerHTML = '';
             document.getElementById('choices').innerHTML = '';
             const header = document.getElementById("header");
@@ -409,10 +530,9 @@ function updateDebugScores() {
             const debugScoresElement = document.getElementById('debug-scores');
             const formattedScores = `
             ${currentMessageIndex}
-E: ${scores.E}, I: ${scores.I},
-S: ${scores.S}, N: ${scores.N},
-T: ${scores.T}, F: ${scores.F},
-J: ${scores.J}, P: ${scores.P}`;
+M: ${scores.M}, T: ${scores.T},
+I: ${scores.I}, R: ${scores.R}, P: ${scores.P}, 
+H: ${scores.H}, A: ${scores.A}`;
             debugScoresElement.textContent = formattedScores.trim();
         }
         startConversation();
