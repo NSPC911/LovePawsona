@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Heart Dialogue</title>
+    <title>Love Pawsona</title>
     <link rel="icon" type="image/x-icon" href="icon.png">
     <style>
         :root {
@@ -13,10 +13,16 @@
             --4-color: 	#d8f4f6;
             --5-color: 	#ade1eb;
             --6-color: 	#2a3031;
+
         }
         body{
             background-color: var(--1-color);
             font-family: 'Andale Mono', monospace;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: bold; 
         }
         .phone-screen {
             width: 375px;
@@ -96,7 +102,7 @@
         .choice-button:hover {
             background-color: var(--3-color);
         }
-        .result-overlay {
+        /*.result-overlay {
             position: absolute;
             top: 0;
             left: 0;
@@ -112,16 +118,16 @@
             display: none;
         }
         .result-image {
-            width: 80%;
+            width: 90%;
             max-width: 300px;
             border-radius: 10px;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
         .result-text {
             font-family: 'Andale Mono', monospace;
             text-align: center;
             padding: 20px;
-        }
+        }*/
         .close-button {
             position: absolute;
             top: 20px;
@@ -161,48 +167,59 @@
         }
         
 
-.start-page {
-    width: 400px;
-    height: 667px;
-    margin: 0 auto;
-    background: var(--1-color);
-    color: var(--6-color);
-    border-radius: 36px;
-    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);*/
-    position: relative;
-    overflow: hidden;
-    font-family: 'Andale Mono', monospace;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 10px; 
-    box-sizing: border-box; 
-    text-align: center; 
-}
+        .start-page {
+            width: 400px;
+            height: 667px;
+            margin: 0 auto;
+            background: var(--1-color);
+            color: var(--6-color);
+            border-radius: 36px;
+            /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);*/
+            position: relative;
+            overflow: hidden;
+            font-family: 'Andale Mono', monospace;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 10px; 
+            box-sizing: border-box; 
+            text-align: center; 
+        }
 
-.top-image {
-    width: 100%;
-    height: auto;
-    max-height: 200px; 
-    object-fit: cover;
-    margin-bottom: 10px; 
-}
+        a2 {
+            font-size: 9px;
+            color: #4b2d2d; 
+            }
 
-.start-button {
-    font-family: 'Andale Mono', monospace;
-    background-color: #fccdd3;
-    color: rgb(22, 22, 22);
-    border: none;
-    padding: 10px 20px;
-    margin: 10px 5px;
-    border-radius: 30px;
-    cursor: pointer;
-    font-size: 16px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
+        a2:hover {
+            color: #fca2cf; 
+            font-size: 11px;
+            cursor: pointer;
+            }
 
-.start-button:hover {
+        .top-image {
+            width: 100%;
+            height: auto;
+            max-height: 200px; 
+            object-fit: cover;
+            margin-bottom: 10px; 
+        }
+
+        .start-button,.restart-button {
+            font-family: 'Andale Mono', monospace;
+            background-color: #fccdd3;
+            color: rgb(22, 22, 22);
+            border: none;
+            padding: 10px 20px;
+            margin: 10px 5px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 16px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+.start-button:hover,.restart-button:hover {
     background-color: #fca2cf;
 }
 
@@ -223,35 +240,110 @@
     justify-content: center; 
 }
 
+p2{
+    font-size: 9.5px;
+    text-align: center;
+}
+p3{
+    font-size: 9.5px;
+    text-align: left;
+}
+
+@media screen and (max-width:500px) {
+    .phone-screen {
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0;
+        box-shadow: none;
+        margin: 0;
+    }
+    
+}
+
+.result-page {
+    width: 400px;
+    height: 667px;
+    margin: 0 auto;
+    background: var(--1-color);
+    color: var(--6-color);
+    /*border-radius: 36px;*/
+    position: relative;
+    font-family: 'Andale Mono', monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.result-image {
+    width: 80%;
+    max-width: 300px;
+    /*border-radius: 10px;*/
+    margin-bottom: 20px;
+}
+
+.result-text {
+    font-family: 'Andale Mono', monospace;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+
+
 </style>
 </head>
 <body>
     <div class="start-page" id="start-page">
-        <h1>Hearty Dialogue</h1>
-        <p>Enter a journey across space and time and find out your Persona!</p>
+        <h1>Love Pawsona <a2 href="https://www.instagram.com/izonfalzo" target="_blank">by @izonfalzo</a2></h1>
+        <p>Valentine's Animal Archetype </p>
         <img src="test.png" class="top-image" alt="Top Image">
         <div class="button-group">
             <button id="start-button" class="start-button">Play</button>
-            <a href="Info/" target="_blank" rel="noopener noreferrer">
+            <!--a href="Info/" target="_blank" rel="noopener noreferrer">
                 <button class="start-button">?</button>
-            </a>
+            </a-->
         </div>
-        <p1>A fun personality quiz inspired by MBTI types, Innate Personality Traits, Cake resume, etc.</p1>
-        <p1>
-            Disclaimer: This quiz is all in good fun! It's just for entertainment, so please take your results with a pinch of humor.
-        </p1>
+        <p1>Personality quiz inspired by MBTI types</p1>
+        <br>
+        <p2>
+            Disclaimer: This quiz is intended purely for entertainment purposes. I hope you enjoy playing it and take the result with a pinch of salt!
+            <br><br> </p2>
+        
+       <p3>
+        You can also think of it this way: <br><br>
+        if (result === 'very accurate!') { <br>
+            &nbsp;&nbsp;it describes you!; <br>
+        } else if (result === 'doesn't sound like me but I love it!!') { <br>
+            &nbsp;&nbsp;it describes your soulmate?!; <br>
+        } else {<br>
+            &nbsp;&nbsp;I'm sorry. I'll improve next time ;-;<br>
+        }
+    </p3>
     </div>
     <div class="phone-screen" id = "phone-screen" style="display: none;">
         <div class="header" id="header" style="color:var(--6-color); background-color: rgb(22, 22, 22);"></div>
         <div id="chatbox" class="chatbox"></div>
         <div id="choices" class="choices"></div>
-        <div id="result-overlay" class="result-overlay">
+
+        <!--div id="result-overlay" class="result-overlay">
             <button class="close-button" onclick="closeResult()">×</button>
             <img id="result-image" class="result-image" src="" alt="Result Image">
             <p id="result-text" class="result-text"></p>
-        </div>
-        
+        </div--> 
     </div>
+
+    <div class="result-page" id="result-page" style="display: none;">
+        <h1>Here is your Result</h1>
+        <img id="result-image" class="result-image" src="" alt="Result Image">
+        <p id="result-text" class="result-text"></p>
+        <div class="button-group">
+            <button class="restart-button" onclick="restartQuiz()">Restart</button>
+        </div>
+    </div>
+    
 
     <!--debug-->
     <div id="debug-box" style="position: absolute; top: 10px; right: 10px; background-color: rgba(0, 0, 0, 0.7); color: white; padding: 10px; border-radius: 5px; font-size: 12px; z-index: 999;">
@@ -264,284 +356,8 @@
     <audio id="notifSound" src="vibe.mp3"></audio>
     <audio id="dingSound" src="ding.mp3"></audio>
     <audio id="popSound" src="pop.mp3"></audio>
-
-    <script>
-        
-        document.getElementById('start-button').addEventListener('click', function() {
-        const notifSound = document.getElementById('notifSound');
-        notifSound.play(); 
-    document.getElementById('start-page').style.display = 'none';
-    document.getElementById('phone-screen').style.display = 'flex';
-});
-
-        let currentMessageIndex = 0;
-        //const scores = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
-        const scores = { M: 0, T: 0, I: 0, R: 0, P: 0, H: 0, A: 0};
-    
-        const dialogue = [
-            // 0 (0)
-            {
-                speaker: 'bot',
-                text: ['*New notification from Unknown*'],
-                choices: [
-                    { id:1, text: '*Open*', type: 'M',next: 1, followUpText: []},
-                    { id:2, text: '*Ignore it*', type: 'T',next: 1, followUpText: [] },
-                    { id:3, text: '*baaa*', type: 'T',next: 1, followUpText: [] }
-                ]
-            },
-            // 1 (1_1)
-            {
-                speaker: 'bot',
-                text: ['HOT SALE: HEARTSONA charms for your V day! Type <3 to learn more!'],
-                choices: [
-                    { id:1, text: '<3', type: 'I',next: 2, followUpText: [] },
-                    { id:2, text: 'who r u?', type: 'R',next: 2 , followUpText: []},
-                    { id:3, text: '*scam? again?*', type: 'P',next: 1, followUpText: []}
-                ]
-            },
-            // 2 (1_2)
-            {
-                speaker: 'bot',
-                text: ['Omg hey! Happy Valentine Day!', 'What are you up to?'],
-                choices: [
-                    { id:1, text: 'Who are you?!!', type: 'H', next: 3 , followUpText: []},
-                    { id:2, text: 'Nothing much, just another day...', type: 'A', next: 3 , followUpText: []},
-                    { id:3, text: 'gggggg', type: 'H', next: 3 , followUpText: []},
-                    { id:4, text: 'A2', type: 'A', next: 3 , followUpText: []}
-                ]
-            },
-            // 3 (1_3)
-            {
-                speaker: 'bot',
-                text: ['*New notification from Unknown*'],
-                choices: [
-                    { id:1, text: '*Open*', type: 'I',next: 4, followUpText: ['This is getting weird...', 'aaaaaa plz work'] },
-                    { id:2, text: '*Ignore it*', type: 'R',next: 4 , followUpText: []},
-                    { id:3, text: '*Great, another scam...*', type: 'P',next: 4, followUpText: []}
-                ]
-            },
-            // 4
-
-        ];
-        
-
-        function addMessage(speaker, text, isLink = false, opt=false) {
-            const messageElement = document.createElement('div');
-            messageElement.classList.add('message', speaker);
-            if (isLink) {
-                const link = document.createElement('a');
-                link.innerText = text;
-                link.onclick = displayResult;
-                messageElement.appendChild(link);
-            } 
-            else if (opt) {
-                const link = document.createElement('a');
-                link.innerText = text;
-                link.href = "https://www.instagram.com/izonfalzo/?hl=en"; 
-                link.target = "_blank"; 
-                messageElement.appendChild(link);
-            } 
-            else {
-                messageElement.textContent = text;
-            }
-            document.getElementById('chatbox').appendChild(messageElement);
-            document.getElementById('chatbox').scrollTop = document.getElementById('chatbox').scrollHeight;
-        }
-
-        function showChoices(choices) {
-            const choicesContainer = document.getElementById('choices');
-            choicesContainer.innerHTML = '';
-
-            choices.forEach(choice => {
-                const choiceButton = document.createElement('button');
-                choiceButton.classList.add('choice-button');
-                choiceButton.textContent = choice.text;
-                choiceButton.onclick = () => handleChoice(choice.type, choice.id, choice.next);
-                choicesContainer.appendChild(choiceButton);
-            });
-        }
-
-        let typingInterval;
-        let typingDots = 0;
-
-        function showTypingDots() {
-            const typingIndicator = document.createElement('div');
-            typingIndicator.classList.add('typing-indicator');
-            typingIndicator.textContent = 'typing...';
-            document.getElementById('chatbox').appendChild(typingIndicator);
-            typingIndicator.style.display = 'inline';
-
-            typingDots = 0;
-
-            typingInterval = setInterval(() => {
-                typingIndicator.textContent = '.'.repeat(typingDots % 5);
-                typingDots++;
-            }, 400);
-        }
-
-        function stopTypingDots() {
-            clearInterval(typingInterval);
-            const typingIndicator = document.querySelector('.typing-indicator');
-            if (typingIndicator) {
-                typingIndicator.remove();
-            }
-        }
-
-        function displayResult() {
-            let resultType = '';
-
-            // M or T
-            let topMT = [];
-            if (scores.M >= scores.T) topMT.push('M');
-            if (scores.T >= scores.M) topMT.push('T');
-            resultType += topMT[Math.floor(Math.random() * topMT.length)];
-
-            // I, R, or P 
-            let topIRP = [];
-            if (scores.I >= scores.R && scores.I >= scores.P) topIRP.push('I');
-            if (scores.R >= scores.I && scores.R >= scores.P) topIRP.push('R');
-            if (scores.P >= scores.I && scores.P >= scores.R) topIRP.push('P');
-            resultType += topIRP[Math.floor(Math.random() * topIRP.length)];
-
-            // H or A 
-            let topHA = [];
-            if (scores.H >= scores.A) topHA.push('H');
-            if (scores.A >= scores.H) topHA.push('A');
-            resultType += topHA[Math.floor(Math.random() * topHA.length)];
-            
-
-
-            const resultsText = {
-                MIH: 'You are efficient, organized, and goal-oriented!',
-                TIA: 'You are creative, spontaneous, and gentle!',
-            };
-
-            const resultImages = {
-                MIH: 'test.png',
-                TIA: 'TIA.png',
-            };
-
-            document.getElementById('result-text').textContent = resultType+resultsText[resultType];
-            document.getElementById('result-image').src = resultImages[resultType];
-            document.getElementById('result-overlay').style.display = 'flex';
-        }
-
-        function closeResult() {
-            document.getElementById('result-overlay').style.display = 'none';
-            setTimeout(() => {
-                addMessage('bot', 'Would you like to play again?');
-                showChoices([
-                    { text: 'Yes, let’s go!', type: 'restart' },
-                    { text: 'No, thanks.', type: 'exit' }
-                ]);
-            }, 500);
-        }
-
-    function handleChoice(type, id, nextIndex) {
-        const dingSound = document.getElementById('dingSound');
-        dingSound.play(); 
-    if (type === 'restart') {
-        restartQuiz();
-    } else if (type === 'exit') {
-        addMessage('bot', 'Okay, maybe next time :3');
-        setTimeout(() => {
-            addMessage('bot', 'Thanks for stopping by...');
-            setTimeout(() => {
-                addMessage('bot', 'Made with love @IzonFalzo', false, true);
-                setTimeout(() => {}, 1000); 
-            }, 1000); 
-        }, 1000); 
-
-        document.getElementById('choices').innerHTML = ''; 
-    } else {
-        const chosenOption = dialogue[currentMessageIndex].choices.find(choice => choice.type === type && choice.id === id);
-        scores[type]++;
-        updateDebugScores();
-        currentMessageIndex = nextIndex;
-        document.getElementById('choices').innerHTML = '';
-        addMessage('user', chosenOption.text, false);
-
-        if (chosenOption.followUpText && chosenOption.followUpText.length > 0) {
-            chosenOption.followUpText.forEach((followUp, index) => {
-                setTimeout(() => {
-                    addMessage('user', followUp);
-                }, (index+1) * 1000);
-            });
-        }
-        
-        setTimeout(() => {
-            showTypingDots(); 
-
-            setTimeout(() => {
-                stopTypingDots(); 
-                const popSound = document.getElementById('popSound');
-                popSound.play(); 
-                if (currentMessageIndex >= 1) {
-                    const header = document.getElementById("header");
-                    header.textContent = 'Unknown'; 
-                    header.style.backgroundColor = 'var(--2-color)';
-                    const phoneScreen = document.getElementById("phone-screen"); 
-                    phoneScreen.style.backgroundColor = '#fff';  
-                }
-              
-                if (currentMessageIndex < dialogue.length) {
-                    const currentDialogue = dialogue[currentMessageIndex];
-                    currentDialogue.text.forEach((text, index) => {
-                        setTimeout(() => {
-                            addMessage(currentDialogue.speaker, text);
-                        }, index * 1000);
-                    });
-                    setTimeout(() => {
-                        showChoices(currentDialogue.choices);
-                    }, currentDialogue.text.length * 1000); 
-
-                } else {
-                    setTimeout(() => addMessage('bot', 'View attachment', true), 500);
-                }
-
-            }, 1500); 
-        }, (chosenOption.followUpText.length * 1000) + 500); 
-    }
-}
-
-
-        function restartQuiz() {
-            currentMessageIndex = 0;
-            // scores.E = scores.I = scores.S = scores.N = scores.T = scores.F = scores.J = scores.P = 0;
-            scores.M = scores.T = scores.I = scores.R = scores.P = scores.H = scores.A = 0;
-            document.getElementById('chatbox').innerHTML = '';
-            document.getElementById('choices').innerHTML = '';
-            const header = document.getElementById("header");
-            header.textContent = ''; 
-            header.style.backgroundColor = 'rgb(22, 22, 22)';
-            const phoneScreen = document.getElementById("phone-screen"); 
-            phoneScreen.style.backgroundColor = 'rgb(22, 22, 22)';  
-            startConversation();
-        }
-
-
-        function startConversation() {
-    addMessage('bot', dialogue[0].text);
-    showChoices(dialogue[0].choices);
-    
-}
-
-function updateDebugScores() {
-            const debugScoresElement = document.getElementById('debug-scores');
-            const formattedScores = `
-            ${currentMessageIndex}
-M: ${scores.M}, T: ${scores.T},
-I: ${scores.I}, R: ${scores.R}, P: ${scores.P}, 
-H: ${scores.H}, A: ${scores.A}`;
-            debugScoresElement.textContent = formattedScores.trim();
-        }
-        startConversation();
-    </script>
-
+    <script src="script.js"></script>
     
 </body>
-
-
-
 </html>
 
