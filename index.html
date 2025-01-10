@@ -187,14 +187,14 @@
             text-align: center; 
         }
 
-        a2 {
-            font-size: 9px;
-            color: #4b2d2d; 
+        a,a2 {
+            /*font-size: 9px;*/
+            color: #d5428c; 
             }
 
-        a2:hover {
+        a:hover,a2:hover {
             color: #fca2cf; 
-            font-size: 11px;
+            font-size: 110%;
             cursor: pointer;
             }
 
@@ -262,7 +262,6 @@ p3{
 
 .result-page {
     width: 400px;
-    height: 667px;
     margin: 0 auto;
     background: var(--1-color);
     color: var(--6-color);
@@ -281,7 +280,6 @@ p3{
     width: 80%;
     max-width: 300px;
     /*border-radius: 10px;*/
-    margin-bottom: 20px;
 }
 
 .result-text {
@@ -297,7 +295,7 @@ p3{
 </head>
 <body>
     <div class="start-page" id="start-page">
-        <h1>Love Pawsona <a2 href="https://www.instagram.com/izonfalzo" target="_blank">by @izonfalzo</a2></h1>
+        <h1>Love Pawsona <!--a2 href="https://www.instagram.com/izonfalzo" target="_blank">by @izonfalzo</a2--></h1>
         <p>Valentine's Animal Archetype </p>
         <img src="test.png" class="top-image" alt="Top Image">
         <div class="button-group">
@@ -327,18 +325,13 @@ p3{
         <div class="header" id="header" style="color:var(--6-color); background-color: rgb(22, 22, 22);"></div>
         <div id="chatbox" class="chatbox"></div>
         <div id="choices" class="choices"></div>
-
-        <!--div id="result-overlay" class="result-overlay">
-            <button class="close-button" onclick="closeResult()">×</button>
-            <img id="result-image" class="result-image" src="" alt="Result Image">
-            <p id="result-text" class="result-text"></p>
-        </div--> 
     </div>
 
     <div class="result-page" id="result-page" style="display: none;">
-        <h1>Here is your Result</h1>
-        <img id="result-image" class="result-image" src="" alt="Result Image">
-        <p id="result-text" class="result-text"></p>
+        <p>Feel free to share your result! #LovePawsona</p>
+        <img id="result-image" class="result-image" src="" alt="">
+        <!--p id="result-text" class="result-text"></p-->
+        <p>Made by <a2 href="https://www.instagram.com/izonfalzo" target="_blank">@izonfalzo</a2> <br>Give Feedback <a2 href="https://forms.gle/fafFcTk8WS9WkJ1h6" target="_blank">Here</a2></p>
         <div class="button-group">
             <button class="restart-button" onclick="restartQuiz()">Restart</button>
         </div>

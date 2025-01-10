@@ -76,6 +76,15 @@ const dialogue = [
             { id:5, text: 'I step out before I could get hurt', type: 'W',weight: 1,next: 6, followUpText: ['so I guess I’ve never really had my heart broken']},
         ]
     },
+    // 6
+    {
+        speaker: 'bot',
+        text: ['Ready to see your result?'],
+        choices: [
+            { id:1, text: 'YES!', type: 'O',weight: 1,next: 7, followUpText: []},
+        ]
+    },
+
 ];
 
 
@@ -130,7 +139,7 @@ function showTypingDots() {
     typingInterval = setInterval(() => {
         typingIndicator.textContent = '.'.repeat(typingDots % 5);
         typingDots++;
-    }, 400);
+    }, 250);
 }
 
 function stopTypingDots() {
@@ -164,47 +173,25 @@ function displayResult() {
     if (scores.R >= scores.A) topAR.push('R');
     resultType += topAR[Math.floor(Math.random() * topAR.length)];
 
-
-    const resultsText = {
-'BCA': 'You are bold, calm, and active! Full of energy and strength.',
-'BPA': 'You are bold, playful, and active! Always ready for fun and action.',
-'BDA': 'You are bold, devoted, and active! You put your heart into everything you do.',
-'BCR': 'You are bold, calm, and relaxed! Strong yet serene, you know how to take it easy.',
-'BPR': 'You are bold, playful, and relaxed! You’re the perfect mix of energy and chill.',
-'BDR': 'You are bold, devoted, and relaxed! You’ve got a calm and steady approach to life.',
-'SCA': 'You are steady, calm, and active! You move forward with a peaceful energy.',
-'SPA': 'You are steady, playful, and active! A balanced person with a fun-loving attitude.',
-'SDA': 'You are steady, devoted, and active! Your commitment to goals keeps you going strong.',
-'SCR': 'You are steady, calm, and relaxed! You know how to stay grounded and composed.',
-'SPR': 'You are steady, playful, and relaxed! You balance work and relaxation perfectly.',
-'SDR': 'You are steady, devoted, and relaxed! You’re calm but still deeply dedicated to your passions.',
-'WCA': 'You are wary, calm, and active! You approach life with caution but keep the energy high.',
-'WPA': 'You are wary, playful, and active! You enjoy life’s fun but always keep your guard up.',
-'WDA': 'You are wary, devoted, and active! A cautious and dedicated soul who stays on track.',
-'WCR': 'You are wary, calm, and relaxed! You observe and analyze, finding peace in caution.',
-'WPR': 'You are wary, playful, and relaxed! A mix of playfulness with a careful, laid-back vibe.',
-'WDR': 'You are wary, devoted, and relaxed! Devoted, but you always take your time before jumping in.'
-};
-
 const resultImages = {
 'BCA': 'GD.png',
 'BPA': 'GD.png',
-'BDA': '3.png',
+'BDA': 'GD.png',
 'BCR': 'GD.png',
-'BPR': '5.png',
-'BDR': '6.png',
-'SCA': '7.png',
-'SPA': '8.png',
-'SDA': '9.png',
-'SCR': '10.png',
-'SPR': '11.png',
-'SDR': '12.png',
-'WCA': '13.png',
-'WPA': '14.png',
-'WDA': '15.png',
-'WCR': '16.png',
-'WPR': '17.png',
-'WDR': '18.png'
+'BPR': 'GD.png',
+'BDR': 'GD.png',
+'SCA': 'GD.png',
+'SPA': 'GD.png',
+'SDA': 'GD.png',
+'SCR': 'GD.png',
+'SPR': 'GD.png',
+'SDR': 'GD.png',
+'WCA': 'GD.png',
+'WPA': 'GD.png',
+'WDA': 'GD.png',
+'WCR': 'GD.png',
+'WPR': 'GD.png',
+'WDR': 'GD.png'
 };
     /*document.getElementById('result-text').textContent = resultType+resultsText[resultType];
     document.getElementById('result-image').src = resultImages[resultType];
@@ -212,7 +199,7 @@ const resultImages = {
     document.getElementById("phone-screen").style.display = "none";
     document.getElementById("result-page").style.display = "flex";
     document.getElementById("result-image").src = resultImages[resultType];
-    document.getElementById("result-text").innerText = resultType+resultsText[resultType];
+    document.getElementById("result-image").alt = resultType;
 }
 
 /*function closeResult() {
@@ -240,7 +227,6 @@ function handleChoice(type, weight, id, nextIndex) {
         setTimeout(() => {}, 1000); 
             }, 1000); 
         }, 1000); 
-
 document.getElementById('choices').innerHTML = ''; 
 } else {
 const chosenOption = dialogue[currentMessageIndex].choices.find(choice => choice.type === type && choice.id === id);
@@ -289,15 +275,28 @@ setTimeout(() => {
                 showChoices(currentDialogue.choices);
             }, currentDialogue.text.length * 1000); 
 
-        } else {
+        } /*else {
             setTimeout(() => {
                 addMessage('bot', 'Amazing! I think I got what I needed');
                 setTimeout(() => {
-                    addMessage('bot', 'View attachment', true);
+                    addMessage('bot', 'Click to view result', true);
                     setTimeout(() => {}, 1000); 
                 }, 1000); 
             }, 1000);
         }
+        else {
+            setTimeout(() => {
+                addMessage('bot', 'Amazing! I think I got what I needed');
+                setTimeout(() => {
+                    addMessage('bot', 'Let\'s see the result!', true);
+                    setTimeout(() => { displayResult();}, 1500); 
+                }, 1000); 
+            }, 1000);
+        }*/
+       else{
+        displayResult();
+       }
+
     }, 1500); 
 }, (chosenOption.followUpText.length * 1000) + 500); 
 }
@@ -335,3 +334,7 @@ A: ${scores.A}, R: ${scores.R}`;
     debugScoresElement.textContent = formattedScores.trim();
 }
 startConversation();
+
+
+
+
