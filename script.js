@@ -1,5 +1,8 @@
 
-        
+/*https://github.com/IseeJ
+Please don't use my code without permission!*/
+
+
 document.getElementById('start-button').addEventListener('click', function() {
 const notifSound = document.getElementById('notifSound');
 notifSound.play(); 
@@ -14,74 +17,123 @@ const dialogue = [
     // 0 (0)
     {
         speaker: 'bot',
-        text: ['*New notification from Unknown*'],
+        text: ["*New notification from Unknown*"],
         choices: [
-            { id:1, text: '*Open*', type: 'O', weight: 0, next: 1, followUpText: []},
-            { id:2, text: '*Ignore it*', type: 'O',weight: 0, next: 0, followUpText: [] },
-            { id:2, text: 'DEBUG', type: 'O',weight: 0, next: 6, followUpText: [] },
+            { id:1, text: '*Open*', type: 'A', weight: 1, next: 2, followUpText: []},
+            { id:2, text: '*Ignore it*', type: 'R',weight: 1, next: 1, followUpText: [] },
+            { id:2, text: 'DEBUG', type: 'O',weight: 1, next: 30, followUpText: [] },
         ]
     },
-    // 1 (1_1)
+    // 1
     {
         speaker: 'bot',
-        text: ['OMG hey there'],
+        text: ['*Are you sure? It could be important!*'],
         choices: [
-            { id:1, text: '<3', type: 'B',weight: 2, next: 2, followUpText: [] },
-            { id:2, text: 'who r u?', type: 'C', weight: 1, next: 2 , followUpText: []},
-            { id:3, text: '*a scam? again?*', type: 'W',weight: 1, next: 1, followUpText: []}
+            { id:1, text: 'FINE I\'ll open it', type: 'O', weight: 1, next: 2, followUpText: []},
         ]
     },
-    // 2 (1_2)
+    // 2 (2)
     {
         speaker: 'bot',
-        text: ['Omg hey! Happy Valentine Day!', 'What are you up to?'],
+        text: ['Hey hey hey! Happy Valentine\'s Day!'],
         choices: [
-            { id:1, text: 'Who are you?!!', type: 'R', weight: 1, next: 3 , followUpText: []},
-            { id:2, text: 'Nothing much, just another day...', type: 'A',weight: 5, next: 3 , followUpText: []},
-            { id:3, text: 'but im single tho...', type: 'R', weight: 1, next: 3 , followUpText: []},
-            { id:4, text: 'A2', type: 'A',weight: 1,next: 3, followUpText: []}
+            { id:1, text: 'I think you got the wrong number', type: 'B',weight: 1, next: 3, followUpText: [] },
+            { id:2, text: 'Thanks, but who r u?', type: 'S', weight: 1, next: 4 , followUpText: []},
+            { id:3, text: '*don\'t reply, it could be a scam!*', type: 'W',weight: 1, next: 5, followUpText: []},
         ]
     },
-    // 3 (1_3)
+
+    // 3 (2_1)
     {
         speaker: 'bot',
-        text: ['Me? I\'m your personal Cupid!', 'I just need to take a quick survey so that we can customize your love experience'],
+        text: ['Wrong number?! Pfftt that\'s not possible', 'You\'re the chosen one!', "Why else would you play this silly quiz on Valentine's Day? Hmm?"],
         choices: [
-            { id:1, text: '...', type: 'C',weight: 1,next: 4, followUpText: ['Seriously?'] },
-            { id:2, text: 'Oh wow, you\'re Cupid?', type: 'P',weight: 4,next: 6 , followUpText: []},
-            { id:3, text: '*Great, another scam...*', type: 'D',weight: 2,next: 4, followUpText: []}
+            { id:1, text: 'Chosen one?', type: 'C',weight: 1, next: 6, followUpText: [] },
+            { id:2, text: 'lol idk what ur talking abt', type: 'P', weight: 1, next: 6 , followUpText: []},
+            { id:3, text: 'Who are you?!', type: 'D',weight: 1, next: 6, followUpText: []}
         ]
     },
-    // 4
+    // 4 (2_2)
     {
         speaker: 'bot',
-        text: ['In a very unlikely case...','How do you deal with heartbreak?'],
+        text: ['Me? I\'m no stranger! You know me!', 'Which is why you are the chosen one!',"Why else would you play this silly quiz on Valentine's Day? Hmm?"],
         choices: [
-            { id:1, text: 'Improve myself!', type: 'B',weight: 1,next: 5, followUpText: ['New beginning awaits!', 'I will stay healthy and take care of myself!']},
-            { id:2, text: 'Drown in sad love songs', type: 'S',weight: 1,next: 5 , followUpText: ['And maybe binge watch some old romcoms, too', 'IT HELPS']},
-            { id:3, text: 'Seek comfort from friends/family', type: 'W',weight: 1,next: 5 , followUpText: ['they remind me the perks of being single', 'and offer shoulders to cry on ;;;']},
-            { id:4, text: '(try to) Move on', type: 'S',weight: 1,next: 5, followUpText: ['It gets better with time...']},
-            { id:5, text: 'I step out before I could get hurt', type: 'W',weight: 1,next: 5, followUpText: ['so I guess I’ve never really had my heart broken']},
+            { id:1, text: 'Chosen one?', type: 'C',weight: 1, next: 6, followUpText: [] },
+            { id:2, text: 'lol idk what ur talking abt', type: 'P', weight: 1, next: 6 , followUpText: []},
+            { id:3, text: 'No srly! Who are you?!', type: 'D',weight: 1, next: 6, followUpText: []}
         ]
     },
-    // 5
+    // 5 (2_3)
     {
         speaker: 'bot',
-        text: ['You got your cupid right here!','That won\'t happen, just curious!'],
+        text: ["Cat got your tongue?", "Don\'t be shy. You are the chosen one!", "Why else would you play this silly quiz on Valentine's Day? Hmm?"],
         choices: [
-            { id:1, text: 'Improve myself!', type: 'B',weight: 1,next: 6, followUpText: ['New beginning awaits!', 'I will stay healthy and take care of myself!']},
-            { id:2, text: 'Drown in sad love songs', type: 'S',weight: 1,next: 6 , followUpText: ['And maybe binge watch some old romcoms, too', 'IT HELPS']},
-            { id:3, text: 'Seek comfort from friends/family', type: 'W',weight: 1,next: 6 , followUpText: ['they remind me the perks of being single', 'and offer shoulders to cry on ;;;']},
-            { id:4, text: '(try to) Move on', type: 'S',weight: 1,next: 6, followUpText: ['It gets better with time...']},
-            { id:5, text: 'I step out before I could get hurt', type: 'W',weight: 1,next: 6, followUpText: ['so I guess I’ve never really had my heart broken']},
+            { id:1, text: 'Chosen one?', type: 'C',weight: 1, next: 6, followUpText: [] },
+            { id:2, text: 'lol idk what ur talking abt', type: 'P', weight: 1, next: 6 , followUpText: []},
+            { id:3, text: 'Who are you?!', type: 'D',weight: 1, next: 6, followUpText: []}
         ]
     },
-    // 6
+
+    // 6 (3)
+    {
+        speaker: 'bot',
+        text: ["Ok ok, I'll explain everything", "I'm your personal Cupid!", "Your love life is my job!!"],
+        choices: [
+            { id:1, text: "Oh really? Clearly you need to work harder", type: 'P',weight: 1,next: 7, followUpText: [] },
+            { id:2, text: "Ok Cupid, what do you want?", type: 'C',weight: 1,next: 8, followUpText: [] },
+            { id:3, text: "I thought this was just a personality quiz...", type: 'D',weight: 1,next: 8, followUpText: [] },
+            
+        ]
+    },
+
+    // 7 (4_1)
+    {
+        speaker: 'bot',
+        text: ["Ouch! I'm trying my best here!","Anyways, let's get down to business","I'm here to ask you a few questions","To get to know you better!"],
+        choices: [
+            { id:1, text: "Uh huh", type: 'R',weight: 1,next: 9, followUpText: [] }, 
+            { id:2, text: "Sounds fun, I'm down!", type: 'A',weight: 1,next: 9, followUpText: [] },
+        ]
+    },
+    // 8 (4_2, 4_3)
+    {
+        speaker: 'bot',
+        text: ["Straight to the point, I see","I'm here to ask you a few questions","To get to know you better!"],
+        choices: [
+            { id:1, text: "Uh huh", type: 'R',weight: 1,next: 9, followUpText: [] }, 
+            { id:2, text: "Sounds fun, I'm down!", type: 'A',weight: 1,next: 9, followUpText: [] },
+        ]
+    },
+
+    
+    // 9 (5)
+    {
+        speaker: 'bot',
+        text: ["There will be 12 questions!","Ready?"],
+        choices: [
+            { id:1, text: "Ok, ask away!", type: 'O',weight: 0,next: 10, followUpText: [] },
+            { id:2, text: "I was born ready!", type: 'O',weight: 0,next: 10, followUpText: [] },
+            { id:3, text: "Let's gooo", type: 'O',weight: 0,next: 10, followUpText: [] },
+        ]
+    },
+
+    // 10
+    {
+        speaker: 'bot',
+        text: ["There will be 12 questions!","Ready?"],
+        choices: [
+            { id:1, text: "Ok, ask away!", type: 'O',weight: 0,next: 11, followUpText: [] },
+            { id:2, text: "I was born ready!", type: 'O',weight: 0,next: 11, followUpText: [] },
+            { id:3, text: "Let's gooo", type: 'O',weight: 0,next: 11, followUpText: [] },
+        ]
+    },
+
+    // 10 last
     {
         speaker: 'bot',
         text: ['Ready to see your result?'],
         choices: [
-            { id:1, text: 'YES!', type: 'O',weight: 1,next: 7, followUpText: []},
+            { id:1, text: 'YES!', type: 'O',weight: 1,next: 30, followUpText: []},
         ]
     },
 
@@ -119,7 +171,7 @@ function showChoices(choices) {
         const choiceButton = document.createElement('button');
         choiceButton.classList.add('choice-button');
         choiceButton.textContent = choice.text;
-        choiceButton.onclick = () => handleChoice(choice.type, choice.weight, choice.id, choice.next);
+        choiceButton.onclick = () => handleChoice(choice.type, choice.type2, choice.type3, choice.weight, choice.id, choice.next);
         choicesContainer.appendChild(choiceButton);
     });
 }
@@ -153,6 +205,7 @@ function stopTypingDots() {
 function displayResult() {
     let resultType = '';
 
+
     // B, S, or W
     let topBSW = [];
     if (scores.B >= scores.S && scores.B >= scores.W) topBSW.push('B');
@@ -172,6 +225,27 @@ function displayResult() {
     if (scores.A >= scores.R) topAR.push('A');
     if (scores.R >= scores.A) topAR.push('R');
     resultType += topAR[Math.floor(Math.random() * topAR.length)];
+
+
+    const resultsText = {
+'BCA': 'Raccoon',
+'BPA': 'Golden Retriever',
+'BDA': 'Doberman',
+'BCR': 'Black Cat',
+'BPR': 'Chihuahua',
+'BDR': 'Lion',
+'SCA': 'Hamster',
+'SPA': 'Orange Cat',
+'SDA': 'Duck',
+'SCR': 'Capybara',
+'SPR': 'Red Fox',
+'SDR': 'Sheep',
+'WCA': 'Dove',
+'WPA': 'Hedgehog',
+'WDA': 'Snow Leopard',
+'WCR': 'Red Panda',
+'WPR': 'Bunny',
+'WDR': 'Calico Cat'}
 
 const resultImages = {
 'BCA': 'GD.png',
@@ -193,13 +267,13 @@ const resultImages = {
 'WPR': 'GD.png',
 'WDR': 'GD.png'
 };
-    /*document.getElementById('result-text').textContent = resultType+resultsText[resultType];
-    document.getElementById('result-image').src = resultImages[resultType];
+    document.getElementById('result-text').textContent = resultType+' '+resultsText[resultType];
+    /*document.getElementById('result-image').src = resultImages[resultType];
     document.getElementById('result-overlay').style.display = 'flex';*/
     document.getElementById("phone-screen").style.display = "none";
     document.getElementById("result-page").style.display = "flex";
     document.getElementById("result-image").src = resultImages[resultType];
-    document.getElementById("result-image").alt = resultType;
+    document.getElementById("result-image").alt = resultType+resultsText[resultType];
 }
 
 /*function closeResult() {
@@ -213,38 +287,30 @@ const resultImages = {
     }, 500);
 }*/
 
-function handleChoice(type, weight, id, nextIndex) {
+function handleChoice(type, type2, type3, weight, id, nextIndex) {
     const dingSound = document.getElementById('dingSound');
     dingSound.play(); 
-    if (type === 'restart') {
-        restartQuiz();
-    } else if (type === 'exit') {
-        addMessage('bot', 'Okay, maybe next time :3');
-        setTimeout(() => {
-        addMessage('bot', 'Thanks for playing!');
-        setTimeout(() => {
-        addMessage('bot', 'Feel free to give Feedback Here', false, true);
-        setTimeout(() => {}, 1000); 
-            }, 1000); 
-        }, 1000); 
-document.getElementById('choices').innerHTML = ''; 
-} else {
-const chosenOption = dialogue[currentMessageIndex].choices.find(choice => choice.type === type && choice.id === id);
-scores[type]+=weight;
-updateDebugScores();
-currentMessageIndex = nextIndex;
-document.getElementById('choices').innerHTML = '';
-addMessage('user', chosenOption.text, false);
+    const chosenOption = dialogue[currentMessageIndex].choices.find(choice => choice.type === type && choice.id === id);
+    scores[type]+=weight;
+    scores[type2]+=weight;
+    scores[type3]+=weight;
 
-if (chosenOption.followUpText && chosenOption.followUpText.length > 0) {
-    chosenOption.followUpText.forEach((followUp, index) => {
-        setTimeout(() => {
-            addMessage('user', followUp);
+
+
+    updateDebugScores();
+    currentMessageIndex = nextIndex;
+    document.getElementById('choices').innerHTML = '';
+    addMessage('user', chosenOption.text, false);
+
+    if (chosenOption.followUpText && chosenOption.followUpText.length > 0) {
+        chosenOption.followUpText.forEach((followUp, index) => {
+            setTimeout(() => {
+                addMessage('user', followUp);
         }, (index+1) * 1000);
-    });
-}
+        });
+    }
 
-setTimeout(() => {
+    setTimeout(() => {
     showTypingDots(); 
 
     setTimeout(() => {
@@ -254,14 +320,16 @@ setTimeout(() => {
         if (currentMessageIndex >= 1) {
             const header = document.getElementById("header");
             header.textContent = 'Unknown'; 
+            header.style.color = 'var(--6-color)';
             header.style.backgroundColor = 'var(--2-color)';
             const phoneScreen = document.getElementById("phone-screen"); 
             phoneScreen.style.backgroundColor = '#fff';  
         }
 
-        if (currentMessageIndex >= 3) {
+        if (currentMessageIndex >= 6) {
             const header = document.getElementById("header");
             header.textContent = 'Cupid'; 
+            header.style.color = 'var(--6-color)';
         }
       
         if (currentMessageIndex < dialogue.length) {
@@ -275,32 +343,16 @@ setTimeout(() => {
                 showChoices(currentDialogue.choices);
             }, currentDialogue.text.length * 1000); 
 
-        } /*else {
-            setTimeout(() => {
-                addMessage('bot', 'Amazing! I think I got what I needed');
-                setTimeout(() => {
-                    addMessage('bot', 'Click to view result', true);
-                    setTimeout(() => {}, 1000); 
-                }, 1000); 
-            }, 1000);
         }
-        else {
-            setTimeout(() => {
-                addMessage('bot', 'Amazing! I think I got what I needed');
-                setTimeout(() => {
-                    addMessage('bot', 'Let\'s see the result!', true);
-                    setTimeout(() => { displayResult();}, 1500); 
-                }, 1000); 
-            }, 1000);
-        }*/
        else{
+        triggerIconShower();
         displayResult();
        }
 
     }, 1500); 
 }, (chosenOption.followUpText.length * 1000) + 500); 
 }
-}
+//}
 
 
 function restartQuiz() {
@@ -311,7 +363,8 @@ function restartQuiz() {
     document.getElementById('chatbox').innerHTML = '';
     document.getElementById('choices').innerHTML = '';
     const header = document.getElementById("header");
-    header.textContent = ''; 
+    header.textContent = '02/14'; 
+    header.style.color = '#fff';
     header.style.backgroundColor = 'rgb(22, 22, 22)';
     const phoneScreen = document.getElementById("phone-screen"); 
     phoneScreen.style.backgroundColor = 'rgb(22, 22, 22)';  
@@ -333,6 +386,55 @@ C: ${scores.C}, P: ${scores.P}, D: ${scores.D},
 A: ${scores.A}, R: ${scores.R}`;
     debugScoresElement.textContent = formattedScores.trim();
 }
+
+
+
+
+function share() {
+    const link = window.location.href; 
+    navigator.clipboard.writeText(link) 
+      .then(() => {
+        alert('Link copied to clipboard!'); 
+      })
+      .catch(err => {
+        alert('Failed to copy the link: ' + err); 
+      });
+  }
+
+
+  function triggerIconShower(event) {
+    for (let i = 0; i < 15; i++) { 
+      const icon = document.createElement('div');
+      icon.classList.add('icon');
+    
+      const iconContent = Math.random() > 0.5 ? '♥': '★'; 
+      icon.textContent = iconContent;
+
+     
+      if (iconContent === '♥') {
+        icon.classList.add('heart');
+      }
+      else{
+        icon.classList.add('star');
+      }
+
+     
+      const x = Math.random() * window.innerWidth;
+      const y = Math.random() * window.innerHeight;
+
+      icon.style.left = `${x}px`;
+      icon.style.top = `${y}px`;
+
+     
+      document.body.appendChild(icon);
+
+      
+      setTimeout(() => {
+        icon.remove();
+      }, 3000); 
+    }
+  }
+
 startConversation();
 
 
