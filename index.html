@@ -27,7 +27,7 @@
         }
 
         h1 {
-            font-size: 28px;
+            font-size: 40px;
             font-weight: bold;
         }
 
@@ -190,12 +190,10 @@
 
         .start-page {
             width: 400px;
-            height: 667px;
             margin: 0 auto;
             background: var(--1-color);
             color: var(--6-color);
             border-radius: 36px;
-            /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);*/
             position: relative;
             overflow: hidden;
             font-family: 'Andale Mono', monospace;
@@ -225,10 +223,12 @@
 
         .top-image {
             width: 100%;
-            height: auto;
-            max-height: 200px;
+            /*height: auto;*/
+            object-fit: cover; 
+            /*min-height: 200px;*/
             object-fit: cover;
             margin-bottom: 10px;
+            transition: opacity 0.5s ease;
         }
 
         .start-button,
@@ -356,6 +356,12 @@
                 opacity: 0;
             }
         }
+
+        .top-image:hover {
+      content: url('front1.PNG');
+
+
+    }
     </style>
 </head>
 
@@ -367,7 +373,7 @@
         </h1>
 
         <p>Valentine's Animal Archetypes</p>
-        <img src="test.png" class="top-image" alt="Top Image">
+        <img src="front.gif" class="top-image" alt="Top Image" onclick="triggerIconShower(event)">
         <div class="button-group">
             <button id="start-button" class="start-button">Play</button>
             <!--a href="Info/" target="_blank" rel="noopener noreferrer">
@@ -377,9 +383,11 @@
         <p1>Personality quiz inspired by MBTI types</p1>
         <br>
         <p2>
-            Disclaimer: This quiz is intended purely for entertainment purposes. I hope you enjoy playing it and take
-            the result with a pinch of salt!
-            Feedbacks are appreciated!
+            Disclaimer: This quiz is purely for fun and entertainment. The scenarios and outcomes presented are entirely fictional. 
+            Please keep in mind that this is all for lighthearted enjoyment. <br>
+            Feedback is always welcome!
+
+
             <br><br>
         </p2>
     </div>
@@ -409,7 +417,7 @@
             } else if (result === 'doesn't sound like me but I love it!!') { <br>
             &nbsp;&nbsp;it probably describes your (future) partner; <br>
             } else {<br>
-            &nbsp;&nbsp; <br>
+            &nbsp;&nbsp; check <a href='about.html' >this</a> out, pick and choose! <br>
             }
         </p3>
     </div>

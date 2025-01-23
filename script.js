@@ -214,11 +214,12 @@ const dialogue = [
     // 18 (Q5)
     {
         speaker: 'bot',
-        text: ["Cuuuute, don't forget to invite me!","enough about 'hypothetical' love life of yours","Let's get to know you more!"],
+        text: ["Cuuuute, don't forget to invite me!","enough about 'hypothetical' love life of yours","Let's get to know you more!","What would you describe yourself in a friend group?"],
         choices: [
-            { id:1, text: "lol I haven't left home in months", type: 'R',weight: 2, next: 19, followUpText: [] },
-            { id:2, text: "I don't have anyone to go with!", type: 'A', weight: 2,next: 19, followUpText: [] },
-            { id:3, text: "Oh it WILL. Lemme hit them up right now", type: 'A', weight: 2,next: 19, followUpText: [] },
+            { id:1, text: "The lovey dovey couple", type: 'S',weight: 1, next: 19, followUpText: [] },
+            { id:2, text: "The matchmaker", type: 'S', weight: 2,next: 19, followUpText: [] },
+            { id:3, text: "The single friend everyone seeks love advices from", type: 'B', weight: 2,next: 19, followUpText: ["coaches don't play"] },
+            { id:4, text: "Bold of you to assume I have friend group", type: 'W', weight: 2,next: 19, followUpText: ["coaches don't play"] },
         ]
     },
     // 19 (Q6)
