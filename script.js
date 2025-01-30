@@ -19,9 +19,9 @@ const dialogue = [
         speaker: 'bot',
         text: ["*New notification from Unknown*"],
         choices: [
-            { id: 1, text: '*Open*', type: 'A', weight: 1, next: 2, followUpText: [] },
-            { id: 2, text: '*Ignore it*', type: 'R', weight: 1, next: 1, followUpText: [] },
-            { id: 2, text: 'DEBUG', type: 'O', weight: 1, next: 18, followUpText: [] },
+            { id: 1, text: '*Open*', type: 'A', weight: 2, next: 2, followUpText: [] },
+            { id: 2, text: '*Ignore it*', type: 'R', weight: 2, next: 1, followUpText: [] },
+            { id: 2, text: 'DEBUG', type: 'O', weight: 0, next: 100, followUpText: [] },
         ]
     },
     // 1
@@ -37,9 +37,9 @@ const dialogue = [
         speaker: 'bot',
         text: ['Hey hey hey! Happy Valentine\'s Day!'],
         choices: [
-            { id: 1, text: 'I think you got the wrong number', type: 'B', weight: 1, next: 3, followUpText: [] },
-            { id: 2, text: 'Thanks, but who r u?', type: 'S', weight: 1, next: 4, followUpText: [] },
-            { id: 3, text: '*don\'t reply, it could be a scam!*', type: 'W', weight: 1, next: 5, followUpText: [] },
+            { id: 1, text: 'I think you got the wrong number', type: 'B', weight: 2, next: 3, followUpText: [] },
+            { id: 2, text: 'Thanks, but who r u?', type: 'S', weight: 2, next: 4, followUpText: [] },
+            { id: 3, text: '*don\'t reply, it could be a scam!*', type: 'W', weight: 2, next: 5, followUpText: [] },
         ]
     },
 
@@ -109,7 +109,7 @@ const dialogue = [
     // 9 (6)
     {
         speaker: 'bot',
-        text: ["There will be 11 questions!", "Ready?"],
+        text: ["There will be 12 questions!", "Ready?"],
         choices: [
             { id: 1, text: "Alright, ask away!", type: 'O', weight: 0, next: 10, followUpText: [] },
             { id: 2, text: "I was born ready!", type: 'O', weight: 0, next: 10, followUpText: [] },
@@ -149,8 +149,8 @@ const dialogue = [
         choices: [
             { id: 1, text: "Tell them!", type: 'B', weight: 2, next: 14, followUpText: ["I'll just message/call them and talk it out","What's the worst that could happen?"] },
             { id: 2, text: "Let things develop naturally", type: 'S', weight: 2, next: 14, followUpText: ["Consistency is the key!"] },
-            { id: 3, text: "Do absolutely NOTHING", type: 'W', weight: 2, next: 13, followUpText: ["I will never ever let them know..."] },
-            { id: 4, text: "Avoid them", type: 'W', weight: 1, next: 13, followUpText: ["I will run if I have to"] },
+            { id: 3, text: "Do absolutely NOTHING", type: 'W', weight: 1, next: 13, followUpText: ["I will never ever let them know..."] },
+            { id: 4, text: "Avoid them", type: 'W', weight: 2, next: 13, followUpText: ["I will run if I have to"] },
             { id: 5, text: "Make subtle moves", type: 'B', type2: 'S', weight: 1, next: 14, followUpText: ["Just don't make it too obvious!"] },
         ]
     },
@@ -159,9 +159,9 @@ const dialogue = [
         speaker: 'bot',
         text: ["Playing it safe, huh?", "Seems like you'll have time to plan ahead", "4) What kind of dates excite you the most?"],
         choices: [
-            { id: 1, text: "Chill and relaxed, where we can ", type: 'G', weight: 2, next: 15, followUpText: [] },
-            { id: 2, text: "Fun and spontaneous, a lot of cute moments!", type: 'P', weight: 2, next: 16, followUpText: [] },
-            { id: 3, text: "Sweet and intimate, cherishing each other’s company", type: 'D', weight: 2, next: 17, followUpText: [] },
+            { id: 1, text: "Chill and relaxed, where we can simply be together", type: 'G', weight: 2, next: 15, followUpText: [] },
+            { id: 2, text: "Fun and spontaneous, loaded with beautiful memories", type: 'P', weight: 2, next: 16, followUpText: [] },
+            { id: 3, text: "Sweet and intimate, showering each other with affections", type: 'D', weight: 2, next: 17, followUpText: [] },
         ]
     },
     // 14 (Q4_1,2,5)
@@ -248,18 +248,27 @@ const dialogue = [
     // 21 (Q7)
     {
         speaker: "bot",
+        text: ["7) Like how...?"],
+        choices: [
+            { id: 1, text: "Showers with compliments until they're a puddle'", type: "B", weight: 2, next: 25, followUpText: [] },
+            { id: 2, text: "Assure them that I’ll always be by their side", type: "S", weight: 2, next: 25, followUpText: [] },
+            { id: 3, text: "Remind them how much I appreciate them", type: "W", weight: 2, next: 25, followUpText: [] },
+        ]
+    },
+    /*{
+        speaker: "bot",
         text: ["7) For example...?"],
         choices: [
             { id: 1, text: "Have I mentioned how amazing you are? Well, I’m saying it again", type: "B", weight: 2, next: 25, followUpText: [] },
             { id: 2, text: "I’ve got your back, always", type: "S", weight: 2, next: 25, followUpText: [] },
             { id: 3, text: "I'm lucky to have you. I trust you more than anyone", type: "W", weight: 2, next: 25, followUpText: [] },
         ]
-    },
+    },*/
 
     // 22 (Q7)
     {
         speaker: "bot",
-        text: ["7) For example...?"],
+        text: ["7) What kind of service?"],
         choices: [
             { id: 1, text: "Anything and everything for them, they don't even have to ask", type: "B", weight: 2, next: 25, followUpText: [] },
             { id: 2, text: "Taking care of small things, like chores, every day", type: "S", weight: 2, next: 25, followUpText: [] },
@@ -319,10 +328,10 @@ const dialogue = [
         text: ["Wise choice! Now, enough with your (hypothetical) love scenarios", "Let's get to know YOU more!", "10) Who are you in a friend group?"],
         choices: [
             { id: 1, text: "The taken one", type: "D", type2: "A", weight: 2, next: 28, followUpText: [] },
-            { id: 2, text: "The matchmaker", type: "G", type2: "R", weight: 2, next: 29, followUpText: [] },
+            { id: 2, text: "The quiet/mysterious one", type: "G", type2: "R", weight: 2, next: 29, followUpText: [] },
             { id: 3, text: "The one who plans all the hangouts", type: "P", type2: "A", weight: 2, next: 30, followUpText: [] },
             { id: 4, text: "The one spilling the tea", type: "P", type2: "R", weight: 2, next: 30, followUpText: [] },
-            { id: 5, text: "The single but love guru", type: "G", type2: "A", weight: 2, next: 29, followUpText: ["Coaches don’t play ;)"] },
+            { id: 5, text: "The single but love guru/matchmaker", type: "G", type2: "A", weight: 2, next: 29, followUpText: ["Coaches don’t play ;)"] },
             { id: 6, text: "Bold of you to assume I have friends", type: "D", type2: "R", weight: 2, next: 30, followUpText: [] },
         ]
     },
@@ -334,9 +343,9 @@ const dialogue = [
             { id: 1, text: "Never settle for less. You deserve to be loved", type: 'B', type2:'A',weight: 2, next: 31, followUpText: [] },
             { id: 2, text: "Follow your heart, you know what's best for yourself", type: 'B', type2:'R',weight: 2, next: 31, followUpText: [] },
             { id: 3, text: "Put in the effort, strive to make your loved one happy", type: 'W', type2:'R', weight: 2, next: 31, followUpText: [] },
-            { id: 4, text: "Be yourself. Let it happen, don’t rush it", type: 'S', type2:'R', weight: 2, next: 31, followUpText: [] },
-            { id: 5, text: "Think before you act, cherish what you have", type: 'W', type2:'A', weight: 2, next: 31, followUpText: [] },
-            { id: 6, text: "Make every day feel special, it’s worth it", type: 'S', type2:'R', weight: 2, next: 31, followUpText: [] },
+            { id: 4, text: "Be yourself. Let it happen naturally, don’t rush it", type: 'S', type2:'R', weight: 2, next: 31, followUpText: [] },
+            { id: 5, text: "Think before you act. Be grateful of those around you", type: 'W', type2:'A', weight: 2, next: 31, followUpText: [] },
+            { id: 6, text: "Make every day feel special", type: 'S', type2:'R', weight: 2, next: 31, followUpText: [] },
         ]
     },
 
@@ -348,34 +357,34 @@ const dialogue = [
             { id: 1, text: "Never settle for less. You deserve to be loved", type: 'B', type2:'A',weight: 2, next: 31, followUpText: [] },
             { id: 2, text: "Follow your heart, you know what's best for yourself", type: 'B', type2:'R',weight: 2, next: 31, followUpText: [] },
             { id: 3, text: "Put in the effort, strive to make your loved one happy", type: 'W', type2:'R', weight: 2, next: 31, followUpText: [] },
-            { id: 4, text: "Be yourself. Let it happen, don’t rush it", type: 'S', type2:'R', weight: 2, next: 31, followUpText: [] },
-            { id: 5, text: "Think before you act, cherish what you have", type: 'W', type2:'A', weight: 2, next: 31, followUpText: [] },
-            { id: 6, text: "Make every day feel special, it’s worth it", type: 'S', type2:'R', weight: 2, next: 31, followUpText: [] },
+            { id: 4, text: "Be yourself. Let it happen naturally, don’t rush it", type: 'S', type2:'R', weight: 2, next: 31, followUpText: [] },
+            { id: 5, text: "Think before you act. Be grateful of those around you", type: 'W', type2:'A', weight: 2, next: 31, followUpText: [] },
+            { id: 6, text: "Make every day feel special", type: 'S', type2:'R', weight: 2, next: 31, followUpText: [] },
         ]
     },
 
     // 30 (Q11_3,4)
     {
         speaker: 'bot',
-        text: ["huh? I think you'll like this next question,","Let's say one day you meet yourself from the past","What love advice would you give them?"],
+        text: ["huh? I think you'll like this next question,","Let's say one day you meet yourself from the past","11) What love advice would you give them?"],
         choices: [
             { id: 1, text: "Never settle for less. You deserve to be loved", type: 'B', type2:'A',weight: 2, next: 31, followUpText: [] },
             { id: 2, text: "Follow your heart, you know what's best for yourself", type: 'B', type2:'R',weight: 2, next: 31, followUpText: [] },
             { id: 3, text: "Put in the effort, strive to make your loved one happy", type: 'W', type2:'R', weight: 2, next: 31, followUpText: [] },
-            { id: 4, text: "Be yourself. Let it happen, don’t rush it", type: 'S', type2:'R', weight: 2, next: 31, followUpText: [] },
-            { id: 5, text: "Think before you act, cherish what you have", type: 'W', type2:'A', weight: 2, next: 31, followUpText: [] },
-            { id: 6, text: "Make every day feel special, it’s worth it", type: 'S', type2:'R', weight: 2, next: 31, followUpText: [] },
+            { id: 4, text: "Be yourself. Let it happen naturally, don’t rush it", type: 'S', type2:'R', weight: 2, next: 31, followUpText: [] },
+            { id: 5, text: "Think before you act. Be grateful of those around you", type: 'W', type2:'A', weight: 2, next: 31, followUpText: [] },
+            { id: 6, text: "Make every day feel special", type: 'S', type2:'R', weight: 2, next: 31, followUpText: [] },
         ]
     },
     // 31 (Q12)
     {
         speaker: 'bot',
-        text: ["Down to last question, then","Just curious, what's your plan today?","Apart from playing this silly quiz, of course"],
+        text: ["Down to the last question, then","12) Just curious, what's your plan today?","Apart from playing this silly quiz, of course"],
         choices: [
-            { id: 1, text: "Eat a lot of chocolate!!!", type: 'R',weight: 2, next: 32, followUpText: [] },
-            { id: 2, text: "I'm gonna go out!", type: 'A',weight: 2, next: 32, followUpText: [] },
-            { id: 3, text: "I need to work/study T^T", type: 'R',weight: 2, next: 32, followUpText: [] },
-            { id: 4, text: "Duh, I got a date to go to!", type: 'A',weight: 2, next: 32, followUpText: [] },
+            { id: 1, text: "Eat a lot of chocolate!!!", type: 'R',weight: 1, next: 32, followUpText: [] },
+            { id: 2, text: "I'm gonna go out!", type: 'A',weight: 1, next: 32, followUpText: [] },
+            { id: 3, text: "I need to work/study T^T", type: 'R',weight: 1, next: 32, followUpText: [] },
+            { id: 4, text: "Duh, I got a date to go to!", type: 'A',weight: 1, next: 32, followUpText: [] },
         ]
     },
 

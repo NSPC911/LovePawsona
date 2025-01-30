@@ -9,11 +9,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Love Pawsona</title>
-    <link rel="icon" type="image/x-icon" href="icon.png">
+    <link rel="icon" type="image/x-icon" href="IMG/icon.PNG">
 </head>
     <style>
         :root {
             --1-color: #fff2d8;
+            --7-color:#f2e9d4;
             --2-color: #fccdd3;
             --3-color: #fca2cf;
             --4-color: #d8f4f6;
@@ -178,15 +179,38 @@
             display: none;
         }
 
+
         footer {
             text-align: center;
         }
 
-        footer a {
+        footer a{
             font-size: 10px;
-            color: var(--6-color);
+            text-decoration: none;
+            color: var(--7-color); 
+            transition: color 0.3s;
         }
 
+        footer a:hover {
+            color: var(--3-color); 
+        }
+
+        a {
+            /*font-size: 9px;*/
+            text-decoration: none;
+            color: #d5428c;
+            transition: color 0.3s ease, font-size 0.3s ease;
+        }
+
+        .result-page a:hover {
+            color: #fca2cf;
+            font-size: 110%;
+            cursor: pointer;
+        }
+        .start-page a:hover {
+            color: #fca2cf;
+            cursor: pointer;
+        }
 
         .start-page {
             width: 400px;
@@ -205,21 +229,6 @@
             box-sizing: border-box;
             text-align: center;
         }
-
-        a {
-            /*font-size: 9px;*/
-            text-decoration: none;
-            color: #d5428c;
-            transition: color 0.3s ease, font-size 0.3s ease;
-        }
-
-        a:hover {
-            color: #fca2cf;
-            font-size: 110%;
-            cursor: pointer;
-        }
-
-
 
         .top-image {
             width: 100%;
@@ -257,9 +266,9 @@
             line-height: 1.5;
         }
 
-        .start-page a {
+        /*.start-page a {
             text-decoration: none;
-        }
+        }*/
 
         .start-page .button-group {
             display: flex;
@@ -358,10 +367,9 @@
         }
 
         .top-image:hover {
-      content: url('IMG/front2.gif');
+          content: url('IMG/front2.gif');
+        }
 
-
-    }
     </style>
 </head>
 
@@ -376,19 +384,16 @@
         <img src="IMG/front1.gif" class="top-image" alt="Top Image" onclick="triggerIconShower(event)">
         <div class="button-group">
             <button id="start-button" class="start-button">Play</button>
-            <a href="about.html" target="_blank" rel="noopener noreferrer">
-                <button class="start-button">?</button>
-            </a>
         </div>
         
-        <p1>Personality quiz inspired by MBTI types</p1>
+        <p1>Personality quiz inspired by <a href="https://www.16personalities.com/free-personality-test">MBTI</a>, <a href="https://typeofyou.alltheway.tw/en/">Innate Personality Traits</a>, <a href="https://www.cakeresume.com/campaigns/what-cake-r-u/en?locale=en">Cake Resume</a>.
+
+        </p1>
         <br>
         <p2>
             Disclaimer: This quiz is purely for fun and entertainment. The scenarios and outcomes presented are entirely fictional. 
             Please keep in mind that this is all for lighthearted enjoyment. <br>
             Feedback is always welcome!
-
-
             <br><br>
         </p2>
     </div>
@@ -411,15 +416,25 @@
         <div class="button-group">
             <button class="restart-button" onclick="share()">Share</button>
             <button class="restart-button" onclick="restartQuiz()">Restart</button>
+                <!--a href="about.html" target="_blank" rel="noopener noreferrer">
+                    <button class="start-button">?</button>
+                </a-->
         </div>
-        <p3> Thanks for playing!<br><br>
+        <p3>
+            Made with VS Code, Google Slides, and ibisPaintX <br><br>
+            Disclaimer: This quiz is purely for fun and entertainment. The scenarios and outcomes presented are entirely fictional. 
+            Please keep in mind that this is all for lighthearted enjoyment. <br>
+            Feedback is always welcome!
+            <br>
+            <br>
             if (result === 'very accurate!') { <br>
             &nbsp;&nbsp; Yayyy! It describes you!; <br>
             } else if (result === 'doesn't sound like me but I love it!!') { <br>
-            &nbsp;&nbsp;it probably describes your (future) partner; <br>
+            &nbsp;&nbsp;it probably describes your type/(future) partner; <br>
             } else {<br>
             &nbsp;&nbsp; check <a href='about.html' >this</a> out, pick and choose! <br>
-            }
+            }<br>
+            <br><br>With love, Izon Falzo
         </p3>
     </div>
 
@@ -430,16 +445,17 @@
         <strong>Scores:</strong>
         <pre id="debug-scores"></pre>
     </div>
-
-
     <footer>
-        <a href="https://iseej.github.io/Card/" target="_blank" style="font-size: 10px;">&copy; 2025 I-see Warisa Jaidee</a>
+            <a href="https://iseej.github.io/Card/" target="_blank" style="font-size: 10px; ">&copy; 2025 I-see Warisa Jaidee</a>
     </footer>
+
     <audio id="notifSound" src="vibe.mp3"></audio>
     <audio id="dingSound" src="ding.mp3"></audio>
     <audio id="popSound" src="pop.mp3"></audio>
     <script src="script.js"></script>
 
 </body>
+
+
 
 </html>
