@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
     <style>
+        :root {
+            --1-color: #fff2d8;
+            --7-color:#f2e9d4;
+            --2-color: #fccdd3;
+            --3-color: #fca2cf;
+            --4-color: #d8f4f6;
+            --5-color: #ade1eb;
+            --6-color: #2a3031;
+
+        }
+
         body {
             font-family: 'Andale Mono', monospace;
             background-color: #fff2d8;
@@ -88,10 +99,16 @@
         footer {
             text-align: center;
         }
-  
-        footer p {
-            font-size: 10px; 
-            color: #843b62;
+
+        footer a{
+            font-size: 10px;
+            text-decoration: none;
+            color: var(--7-color); 
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: var(--3-color); 
         }
         p1{
             color: black;
@@ -162,10 +179,6 @@
            Love Pawsona </div>
     </h1>
         <div class="start-page" id="start-page">
-                <p2>There are 18 love pawsonas in total. The criteria I used to make them? Well, That’s classified. Not accurate? Don't worry, I'm no love expert myself :3 Just a Cupid who's trying her best to <span style="text-decoration-line: line-through; text-decoration-style: double; color: #fff2d8">
-                    survive another year alone</span>
-                    bring joy upon y'all on this Valentine's Day!!</p2>
-                <p2>With love, Izon Falzo</p2>
                 <br>
             <div class="container">
                 <div class="image-gallery">
@@ -174,16 +187,12 @@
                     <img src="IMG/1.png" alt="Light Cone">
                     <br>
                     <br>
-                    <p1>NEBULA: Cloud of gas and dust in space, remnant materials from dying stars and birthplace of new stars.</p1>
                     <img src="../images/4nebula.png" alt="Nebula">
                     <br>
-                    <p1>COMET: Celestial body consisting of rocky debris and ice. When it orbits closer to the Sun, its surface is melted by the heat, forming a glowing tail.</p1>
                     <img src="../images/5comet.png" alt="Comet">
                     <br>
-                    <p1>SPACETIME: Concept that unifies 3-D space and 1-D time to form a 4-D continuum. One can think of this as a stretchy rubber sheet that can be curved by massive objects.</p1>
                     <img src="../images/6ST.png" alt="Spacetime">
                     <br>
-                    <p1>DARK MATTER: Hypothetical matter that doesn't emit light, essential for explaining the Universe's structure. (otherwise we'll be flying apart! the rotation curve, it's pretty cool.)</p1>
                     <img src="../images/7DM.png" alt="Dark Matter">
                     <br>
                     <p1>METEORITE: Rock from space, it can be fragment of a comet, asteroid, or meteoroid that survives its journey through the atmosphere and lands on Earth.</p1>

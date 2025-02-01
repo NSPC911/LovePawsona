@@ -328,9 +328,9 @@ const dialogue = [
         text: ["Wise choice! Now, enough with your (hypothetical) love scenarios", "Let's get to know YOU more!", "10) Who are you in a friend group?"],
         choices: [
             { id: 1, text: "The taken one", type: "D", type2: "A", weight: 2, next: 28, followUpText: [] },
-            { id: 2, text: "The quiet/mysterious one", type: "G", type2: "R", weight: 2, next: 29, followUpText: [] },
+            { id: 2, text: "The quiet/mysterious one", type: "G", type2: "R", weight: 2, next: 30, followUpText: [] },
             { id: 3, text: "The one who plans all the hangouts", type: "P", type2: "A", weight: 2, next: 30, followUpText: [] },
-            { id: 4, text: "The one spilling the tea", type: "P", type2: "R", weight: 2, next: 30, followUpText: [] },
+            { id: 4, text: "The shipper/matchmaker", type: "P", type2: "R", weight: 2, next: 29, followUpText: [] },
             { id: 5, text: "The single but love guru/matchmaker", type: "G", type2: "A", weight: 2, next: 29, followUpText: ["Coaches don’t play ;)"] },
             { id: 6, text: "Bold of you to assume I have friends", type: "D", type2: "R", weight: 2, next: 30, followUpText: [] },
         ]
@@ -366,7 +366,7 @@ const dialogue = [
     // 30 (Q11_3,4)
     {
         speaker: 'bot',
-        text: ["huh? I think you'll like this next question,","Let's say one day you meet yourself from the past","11) What love advice would you give them?"],
+        text: ["I can see that...","Now, let's say you meet yourself from the past","11) What love advice would you give them?"],
         choices: [
             { id: 1, text: "Never settle for less. You deserve to be loved", type: 'B', type2:'A',weight: 2, next: 31, followUpText: [] },
             { id: 2, text: "Follow your heart, you know what's best for yourself", type: 'B', type2:'R',weight: 2, next: 31, followUpText: [] },
@@ -391,7 +391,7 @@ const dialogue = [
     // 32 last
     {
         speaker: 'bot',
-        text: ["lol have fun with that!","Also, we're done!", "Ready to see your result?"],
+        text: ["lololl have fun with that!","Before you go","Ready to see your result?"],
         choices: [
             { id: 1, text: 'YES!', type: 'O', weight: 0, next: 100, followUpText: [] },
         ]
@@ -653,6 +653,7 @@ A: ${scores.A}, R: ${scores.R}`;
 
 function share() {
     const link = window.location.href;
+    
     navigator.clipboard.writeText(link)
         .then(() => {
             alert('Link copied to clipboard!');
@@ -660,7 +661,16 @@ function share() {
         .catch(err => {
             alert('Failed to copy the link: ' + err);
         });
+
+    html2canvas(document.body).then(canvas => {
+        const screenshot = canvas.toDataURL('image/png');
+        const downloadLink = document.createElement('a');
+        downloadLink.href = screenshot;
+        downloadLink.download = 'myresult.png';
+        downloadLink.click();
+    });
 }
+
 
 
 function triggerIconShower(event) {
