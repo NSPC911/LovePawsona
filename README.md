@@ -2,6 +2,9 @@
 
 Personality quiz inspired by [MBTI](https://www.16personalities.com/free-personality-test), [Innate Personality Traits](https://typeofyou.alltheway.tw/en/), and [Cake resume](https://www.cakeresume.com/campaigns/what-cake-r-u/en?locale=en).
 
+
+## Rules
+
 Copyright &copy; 2025 I-see Warisa Jaidee
 
 All Rights Reserved.
@@ -14,7 +17,10 @@ Thank you!
 
 
 
+### My corner
 
 Start: 12/15/24
 
 Finished: ...
+
+
