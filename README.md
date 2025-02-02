@@ -11,3 +11,10 @@ All Rights Reserved.
 3. Do not use my code, artworks without my permission.
 
 Thank you!
+
+
+
+
+Start: 12/15/24
+
+Finished: ...
