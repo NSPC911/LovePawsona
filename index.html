@@ -294,7 +294,7 @@
         text-align: left;
     }
 
-    @media screen and (max-width:500px) {
+    /*@media screen and (max-width:500px) {
         .phone-screen {
             width: 100vw;
             height: 100vh;
@@ -307,7 +307,7 @@
             border-top-left-radius: 0px;
             border-top-right-radius: 0px;
         }
-    }
+    }*/
 
 
     .result-page {
@@ -433,8 +433,8 @@
         <p1>Personality quiz inspired by <a href="https://www.16personalities.com/free-personality-test">MBTI</a>, <a
                 href="https://typeofyou.alltheway.tw/en/">Innate Personality Traits</a>, <a
                 href="https://www.cakeresume.com/campaigns/what-cake-r-u/en?locale=en">Cake Resume</a>.
-
         </p1>
+        <p2>This quiz is purely for entertainment. Hope you have fun.<br>Feedback is always welcome!</p2>
     </div>
     <div class="phone-screen" id="phone-screen" style="display: none;">
         <div class="header" id="header" style="color:fff; background-color: rgb(22, 22, 22);"
@@ -464,24 +464,26 @@
         </div>
         <p3>
             <br>
-            This quiz is purely for entertainment. I hope you have fun with it! Feedback is always welcome!
-            <br>
             <br>
             if (result === 'very accurate!') { <br>
             &nbsp;&nbsp; Yayyy! It describes you!; <br>
             } else if (result === 'doesn't sound like me but I love it!!') { <br>
             &nbsp;&nbsp;it probably describes your type/(future) partner; <br>
             } else {<br>
-            &nbsp;&nbsp; check <a href='about.html'>this</a> out, pick and choose! <br>
+            &nbsp;&nbsp; check <a href='about.html'>this</a> out, pick and choose! or commission me for a custom personality card hehe<br>
             }<br>
             <br><br>With love, Izon Falzo
+            <br>P.S. again, there are easter eggs! Cupid has the 
+            <div class="tooltip">hint
+                <span class="tooltiptext">where have you seen the word 'Cupid'?</span>
+            </div>, same rules, first to find it and bring it to me get a free art!
         </p3>
     </div>
 
 
     <!--debug-->
     <div id="debug-box"
-        style="position: absolute; top: 10px; right: 10px; background-color: rgba(0, 0, 0, 0.7); color: white; padding: 10px; border-radius: 5px; font-size: 12px; z-index: 999;">
+        style="display: none; position: absolute; top: 10px; right: 10px; background-color: rgba(0, 0, 0, 0.7); color: white; padding: 10px; border-radius: 5px; font-size: 12px; z-index: 999;">
         <strong>Scores:</strong>
         <pre id="debug-scores"></pre>
     </div>
