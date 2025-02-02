@@ -159,6 +159,8 @@ question-image {
 
 .result-text {
     flex-grow: 1; 
+    text-align:center;
+    font-size: 14px;
 }
 
 .result-image-container {
@@ -293,7 +295,6 @@ footer a:hover {
     border-radius: 50%; 
 }
 
-
         .header {
             height: 50px;
             background-color: var(--5-color);
@@ -307,19 +308,6 @@ footer a:hover {
             border-top-right-radius: 30px;
         }
 
-        @media screen and (max-width:500px) {
-            .phone-screen {
-                width: 100vw;
-                height: 100vh;
-                border-radius: 0;
-                box-shadow: none;
-                margin: 0;
-            }
-            .header {
-            border-top-left-radius: 0px;
-            border-top-right-radius: 0px;
-            }
-        }
 </style>
 <body class = "dark">
     <div class="dark-container">
@@ -328,7 +316,7 @@ footer a:hover {
                 <div class="header" id="header">Contact</div>
                 <br>
                 <br>
-                <img src="Heh/C0.PNG" alt="Profile Picture" class="profile-pic">
+                <img src="IMG/Heh/C0.PNG" alt="Profile Picture" class="profile-pic">
                 <h1>Cupid</h1>
                 <p1>mobile: ♥♥♥ ♥♥♥ ♥♥♥♥</p1>
                 <p1>Notes: Buuusy, donut en ter</p1>
@@ -342,19 +330,18 @@ footer a:hover {
             <div id="quiz">
             </div>
             <div id="result" style="display: none;">
-                <p>Congrats! You have found an Easter Egg! 1 down, 4? more to go! ^u^  Happy hunting!</p>
+                <p>You got....</p>
                 <div class="result-image">
                     <img id="result-image" src="" alt="Result Image">
                 </div>
                 <br>
                 <div class="result-content">
-                    <div class="result-text">
-                    </div>
+                    <div class="result-text"></div>
                 </div>
             </div>
-                <!--debug-->
+    <!--debug-->
     <div id="debug-box"
-        style="position: absolute; top: 10px; right: 10px; background-color: rgba(0, 0, 0, 0.7); color: white; padding: 10px; border-radius: 5px; font-size: 12px; z-index: 999;">
+        style="display: none; position: absolute; top: 10px; right: 10px; background-color: rgba(0, 0, 0, 0.7); color: white; padding: 10px; border-radius: 5px; font-size: 12px; z-index: 999;">
         <strong>Scores:</strong>
         <pre id="debug-scores"></pre>
     </div>
@@ -371,7 +358,7 @@ footer a:hover {
                 image: "IMG/Heh/C1.gif",
                 answers: {
                     A: {
-                        text: "Oh... sorry",
+                        text: "Oh...sorry",
                         scores: { A: +1, B: 0, C: 0 },
                     },
                     B: {
@@ -379,7 +366,7 @@ footer a:hover {
                         scores: { A: 0, B: +1, C: 0 },
                     },
                     C: {
-                        text: "?!! Cupid?!!!",
+                        text: "...?",
                         scores: { A: 0, B: 0, C: +1 },
                     },
                 },
@@ -389,7 +376,7 @@ footer a:hover {
                 image: "images/B2.gif",
                 answers: {
                     C: {
-                        text: "you're not working, you're eating the chocolate!",
+                        text: "oh calm down! I'm lost, ok?",
                         scores: { A: 0, B: 0, C: +1 },
                     },
                     B: {
@@ -397,17 +384,17 @@ footer a:hover {
                         scores: { A: 0, B: +1, C: 0 },
                     },
                     A: {
-                        text: "Speaking of signs...",
+                        text: "you're not working, you're eating chocolate!",
                         scores: { A: +1, B: 0, C: 0 },
                     },
                 },
             },
             {
-                question: "'Oh? So you're trying to blackmail me now?' the Cupid frowns and point at the back of the room",
+                question: "'ok ok, how about we both calm down' the Cupid slowly steps closer 'what do you want, human?'",
                 image: "images/B3.gif",
                 answers: {
                     A: {
-                        text: "where did you get it from",
+                        text: "Where did you get the chocolate from?",
                         scores: { A: +1, B: 0, C: 0 },
                     },
                     B: {
@@ -415,7 +402,7 @@ footer a:hover {
                         scores:  { A: 0, B: +1, C: 0 },
                     },
                     C: {
-                        text: "Wait a minute, are those supposed to be MY Valentine's chocolate?!",
+                        text: "I don't know, you tell me, what were YOU doing?",
                         scores:  { A: 0, B: 0, C: +1 },
                     },
                 },
@@ -425,34 +412,34 @@ footer a:hover {
                 image: "images/B4.gif",
                 answers: {
                     C: {
-                        text: "Lost and Fround?",
-                        scores: { U: 0, C: +1 },
+                        text: "Sounds like stealing to me!",
+                        scores: { A: 0, B: 0, C: +1 },
                     },
-                    U: {
+                    B: {
                         text: "So it did belong to someone huh?",
-                        scores: { U: +1, C: 0 },
+                        scores: { A: 0, B: +1, C: 0 },
                     },
-                    U: {
-                        text: "Are there more in there? I kinda want some",
-                        scores: { U: +1, C: 0 },
+                    A: {
+                        text: "Are there more? I kinda want some",
+                        scores: { A: +1, B: 0, C: 0 },
                     },
                 },
             },
             {
-                question: "'Well, in that box there are plenty of things, you know, unspoken feelings, one-sided crush, a bunch of expired chocolates...things you humans throw away on Valentine's day'",
+                question: "'Urghh ok, come look' the Cupid opens the box 'there are plenty of things in here, you know, unspoken feelings, tears-soaked letters, a bunch of expired chocolates...things you humans throw away on Valentine's day'",
                 image: "images/B5.gif",
                 answers: {
-                    U: {
-                        text: "Great, I might find my stuffs in there!",
-                        scores: { U: +1, C: 0 },
-                    },
-                    C: {
-                        text: "That's sickkk, I want one!",
-                        scores: { U: 0, C: +1 },
-                    },
-                    C: {
+                    A: {
                         text: "Sounds interesting...Can I take something?",
-                        scores: { U: 0, C: +1 },
+                        scores: { A: +1, B: 0, C: 0 },
+                    },
+                    B: {
+                        text: "That's sickkk, I want one!",
+                        scores: { A: 0, B: +1, C: 0 },
+                    },
+                    C: {
+                        text: "Oh no, are there MY stuffs in there?",
+                        scores: { A: 0, B: 0, C: +1 },
                     },
                 },
             },
@@ -460,17 +447,17 @@ footer a:hover {
                 question: "'No! Humans are not supposed to be here, leave alone taking stuffs from the box!'",
                 image: "images/B5.gif",
                 answers: {
-                    U: {
+                    C: {
                         text: "I'll tell your boss you eat chocolate during work",
-                        scores: { U: +1, C: 0 },
+                        scores:  { A: 0, B: 0, C: +1 },
                     },
-                    C: {
+                    B: {
                         text: "I'm already here, what are you gonna do about it?",
-                        scores: { U: 0, C: +1 },
+                        scores:  { A: 0, B: +1, C: 0 },
                     },
-                    C: {
+                    A: {
                         text: "Pleaseeee it's Valentine's Day! Isn't it your job to make me happy?",
-                        scores: { U: 0, C: +1 },
+                        scores:  { A: +1, B: 0, C: 0 },
                     },
                 },
             },
@@ -478,9 +465,27 @@ footer a:hover {
                 question: "'Urghhh fine, just...keep this a secret between us, alright?' the Cupid sighs 'And some ground rules, I get to choose what you can take, deal?'",
                 image: "images/B5.gif",
                 answers: {
-                    U: {
+                    C: {
                         text: "Deal!",
-                        scores: { U: +1, C: 0 },
+                        scores: { A: 0, B: 0, C: +1 },
+                    },
+                    B: {
+                        text: "Why? that's unfair! I wanna choose",
+                        scores: { A: 0, B: +1, C: 0 },
+                    },
+                    A: {
+                        text: "oh of course you just want to hog all the chocolates!",
+                        scores: { A: +1, B: 0, C: 0 },
+                    }
+                },
+            },
+            {
+                question: "Before the Cupid says anything, one of the items jump out of the box and straight into your hand. The Cupid scoffs 'Hey, would you look that that, it choose you!'",
+                image: "images/B5.gif",
+                answers: {
+                    U: {
+                        text: "What is this thing...",
+                        scores: { A: 0, B: 0, C: 0 },
                     }
                 },
             },
@@ -488,19 +493,40 @@ footer a:hover {
         
         const resultOptions = {
             "A": {
+                text:`<p style="font-size:20px;">A Box of Assorted Chocolates<p><br>
+                A mix of sweet, rich, and surprising flavors, just like love itself. Some are delightful, some might be... well, questionable. But hey! that’s half the fun. 
+                <br><br>Instructions:<br>
+                a) Just take a bite and see what happens<br>
+                b) Gained some superpower? Realizing your crush actually likes you back? Or just taste sour? If it’s the last one, well… that probably just means it expired. Just like some feelings that start to fade... ok sorry I'll stop
+                `,
                 image: "BA.PNG",
             },
             "B": {
+                text: `<p style="font-size:20px;">A Heart Squishy Toy<p><br>
+                A soft, squeezable heart—perfect for stress relief, dramatic hand gestures, or pretending you physically feel your emotions.
+                Whether you’re in love, frustrated, or just need something to squeeze while contemplating life, this little heart’s got you covered.
+                Look, this face says it all... "I got you, bro"
+                <br><br>Instructions:<br>
+                a) Squeeze it when you’re frustrated, in love, or just bored out of your mind<br>
+                b) Throw.. I mean give it to your crush cuz why not`,
                 image: "BB.PNG"
             },
             "C": {
+                text:`<p style="font-size:20px;">A Jar of Feelings<p><br>
+                A tiny glass jar filled with notes of everything you’ve been too shy (or too stubborn) to say.
+                Confessions, compliments, maybe even a few jokes you didn't get to crack. 
+                Each slip of paper is a little piece of what’s been left unsaid, waiting to be discovered. 
+                <br><br>Instructions:<br>
+                a) Add one when you feel like it, whenever a thought goes unspoken, a feeling lingers, or you just want to leave a future surprise for yourself (or someone else)<br>
+                b) Open one when you need a reminder of how much you're loved (or when you just want a good laugh at your past self)
+                `,
                 image: "BC.PNG"
             },
         };
         
         let currentQuestion = 0;
         const scores = { A: 0, B: 0, C: 0 };
-        let userAnswers = {}; // Make sure to initialize userAnswers
+        let userAnswers = {}; 
         
         function updateDebugScores() {
             const debugScoresElement = document.getElementById('debug-scores');
@@ -529,7 +555,7 @@ footer a:hover {
             document.getElementById('start-page').style.display = 'none';
             document.getElementById('quiz-page').style.display = 'block';
             currentQuestion = 0;
-            userAnswers = {}; // Reset userAnswers when the quiz starts
+            userAnswers = {}; 
             displayQuestion();
         });
         
@@ -546,11 +572,11 @@ footer a:hover {
             const question = questions[currentQuestion];
             const answer = question.answers[answerKey];
             
-            // Update the scores
+            
             for (const dimension in answer.scores) {
                 scores[dimension] = (scores[dimension] || 0) + answer.scores[dimension];
             }
-            updateDebugScores(); // Call to update debug scores
+            updateDebugScores(); 
         
             if (currentQuestion < questions.length - 1) {
                 currentQuestion++;
@@ -574,7 +600,7 @@ footer a:hover {
         
             const personalityData = resultOptions[result];
             if (personalityData) {
-                resultTextContainer.innerHTML = ``;
+                resultTextContainer.innerHTML = `${personalityData.text}`;
                 resultImage.src = "images/" + personalityData.image;
                 resultImage.alt = `${personalityData.image} Image`;
             }
