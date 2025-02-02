@@ -145,7 +145,7 @@ const dialogue = [
     // 12 (Q3)
     {
         speaker: 'bot',
-        text: ["Hmm is that so?", "3) Waht if you have a crush right now, what's next?"],
+        text: ["Hmm is that so?", "3) What if you have a crush right now, what's next?"],
         choices: [
             { id: 1, text: "Tell them!", type: 'B', weight: 2, next: 14, followUpText: ["I'll just message/call them and talk it out","What's the worst that could happen?"] },
             { id: 2, text: "Let things develop naturally", type: 'S', weight: 2, next: 14, followUpText: ["Consistency is the key!"] },
@@ -169,7 +169,7 @@ const dialogue = [
         speaker: 'bot',
         text: ["Aww, I love the spirit!!", "And I'm sure that just secure you a date!", "4) What kind of dates excite you the most?"],
         choices: [
-            { id: 1, text: "Chill and relaxed, where we can just be ourselves", type: 'G', weight: 2, next: 15, followUpText: [] },
+            { id: 1, text: "Chill and relaxed, where we can simply be together", type: 'G', weight: 2, next: 15, followUpText: [] },
             { id: 2, text: "Fun and spontaneous, a lot of cute moments together!", type: 'P', weight: 2, next: 16, followUpText: [] },
             { id: 3, text: "Sweet and intimate, cherishing each other’s company", type: 'D', weight: 2, next: 17, followUpText: [] },
         ]
@@ -299,7 +299,7 @@ const dialogue = [
     // 25 (Q8)
     {
         speaker: "bot",
-        text: ["Is that so? I'm learning a lot about you already!","Let me think what else...", "Ah! 8) What is your to-go outfit for a date?"],
+        text: ["Is that so? I'm learning a lot about you already!","Let me think what else...", "Ah! 8) What is your go-to outfit for a date?"],
         choices: [
             { id: 1, text: "Classy and timeless", type: "D", weight: 2, next: 26, followUpText: ["I'd put a lot of effort to look nice in front of them"] },
             { id: 2, text: "Stylish and cool", type: "P", weight: 2, next: 26, followUpText: ["How else can they find me in the crowd?! :)"] },
