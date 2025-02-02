@@ -331,7 +331,7 @@ footer a:hover {
                 <img src="Heh/C0.PNG" alt="Profile Picture" class="profile-pic">
                 <h1>Cupid</h1>
                 <p1>mobile: ♥♥♥ ♥♥♥ ♥♥♥♥</p1>
-                <p1>Notes: Buuusy, donot en ter</p1>
+                <p1>Notes: Buuusy, donut en ter</p1>
                 <button id="start-button" class="start-button">Enter</button>
             <br>
             </div>
@@ -352,183 +352,250 @@ footer a:hover {
                     </div>
                 </div>
             </div>
+                <!--debug-->
+    <div id="debug-box"
+        style="position: absolute; top: 10px; right: 10px; background-color: rgba(0, 0, 0, 0.7); color: white; padding: 10px; border-radius: 5px; font-size: 12px; z-index: 999;">
+        <strong>Scores:</strong>
+        <pre id="debug-scores"></pre>
+    </div>
             <footer>
                 <a href="https://iseej.github.io/Card/" target="_blank" style="font-size: 10px;">&copy; 2025 I-see Warisa Jaidee</a>
             </footer>
         </div>
     </div>
 
-<script>
-const questions = [
-    {
-        question: "...?!",
-        image: "Heh/C1.gif",
-        answers: {
-            C: {
-                text: "Oh... sorry",
-                scores: { U: 0, C: +1 },
+    <script>
+        const questions = [
+            {
+                question: "...?!",
+                image: "IMG/Heh/C1.gif",
+                answers: {
+                    A: {
+                        text: "Oh... sorry",
+                        scores: { A: +1, B: 0, C: 0 },
+                    },
+                    B: {
+                        text: "?!! Cupid?!!!",
+                        scores: { A: 0, B: +1, C: 0 },
+                    },
+                    C: {
+                        text: "?!! Cupid?!!!",
+                        scores: { A: 0, B: 0, C: +1 },
+                    },
+                },
             },
-            U: {
-                text: "?!! Cupid?!!!",
-                scores: { U: +1, C: 0 },
+            {
+                question: "'Another one? Great, did you not read the sign?!'",
+                image: "images/B2.gif",
+                answers: {
+                    C: {
+                        text: "you're not working, you're eating the chocolate!",
+                        scores: { A: 0, B: 0, C: +1 },
+                    },
+                    B: {
+                        text: "Speaking of signs...",
+                        scores: { A: 0, B: +1, C: 0 },
+                    },
+                    A: {
+                        text: "Speaking of signs...",
+                        scores: { A: +1, B: 0, C: 0 },
+                    },
+                },
             },
-        },
-    },
-    {
-        question: "'Another one? Great, did you not read the sign?!'",
-        image: "images/B2.gif",
-        answers: {
-            C: {
-                text: "This place is cool! Is this where you work? Is this how the quiz was created?!",
-                scores: { U: 0, C: +1 },
+            {
+                question: "'Oh? So you're trying to blackmail me now?' the Cupid frowns and point at the back of the room",
+                image: "images/B3.gif",
+                answers: {
+                    A: {
+                        text: "where did you get it from",
+                        scores: { A: +1, B: 0, C: 0 },
+                    },
+                    B: {
+                        text: "Wait a minute, are those supposed to be MY Valentine's chocolate?!",
+                        scores:  { A: 0, B: +1, C: 0 },
+                    },
+                    C: {
+                        text: "Wait a minute, are those supposed to be MY Valentine's chocolate?!",
+                        scores:  { A: 0, B: 0, C: +1 },
+                    },
+                },
             },
-            U: {
-                text: "I was told by the creator to find an easter egg, any ideas?",
-                scores: { U: +1, C: 0 },
+            {
+                question: "'Ok ok I'll explain myself, I got these from the Lost and Found box! I didn't steal it, I swear!'",
+                image: "images/B4.gif",
+                answers: {
+                    C: {
+                        text: "Lost and Fround?",
+                        scores: { U: 0, C: +1 },
+                    },
+                    U: {
+                        text: "So it did belong to someone huh?",
+                        scores: { U: +1, C: 0 },
+                    },
+                    U: {
+                        text: "Are there more in there? I kinda want some",
+                        scores: { U: +1, C: 0 },
+                    },
+                },
             },
-        },
-    },
-    {
-        question: "'An easter egg?! Wow, my boss really need to touch some grass with all these free time in her hands...'",
-        image: "images/B3.gif",
-        answers: {
-            U: {
-                text: "Hey...It's not a crime being a homebody.",
-                scores: { U: +1, C: 0 },
+            {
+                question: "'Well, in that box there are plenty of things, you know, unspoken feelings, one-sided crush, a bunch of expired chocolates...things you humans throw away on Valentine's day'",
+                image: "images/B5.gif",
+                answers: {
+                    U: {
+                        text: "Great, I might find my stuffs in there!",
+                        scores: { U: +1, C: 0 },
+                    },
+                    C: {
+                        text: "That's sickkk, I want one!",
+                        scores: { U: 0, C: +1 },
+                    },
+                    C: {
+                        text: "Sounds interesting...Can I take something?",
+                        scores: { U: 0, C: +1 },
+                    },
+                },
             },
-            C: {
-                text: "lol I know right, she must be really bored..",
-                scores: { U: 0, C: +1 },
+            {
+                question: "'No! Humans are not supposed to be here, leave alone taking stuffs from the box!'",
+                image: "images/B5.gif",
+                answers: {
+                    U: {
+                        text: "I'll tell your boss you eat chocolate during work",
+                        scores: { U: +1, C: 0 },
+                    },
+                    C: {
+                        text: "I'm already here, what are you gonna do about it?",
+                        scores: { U: 0, C: +1 },
+                    },
+                    C: {
+                        text: "Pleaseeee it's Valentine's Day! Isn't it your job to make me happy?",
+                        scores: { U: 0, C: +1 },
+                    },
+                },
             },
-        },
-    },
-    {
-        question: "'To be honest, I have no idea. Where do people normally keep eggs?'",
-        image: "images/B4.gif",
-        answers: {
-            C: {
-                text: "Maybe I should crack you open and see if you're hiding it in there?",
-                scores: { U: 0, C: +1 },
+            {
+                question: "'Urghhh fine, just...keep this a secret between us, alright?' the Cupid sighs 'And some ground rules, I get to choose what you can take, deal?'",
+                image: "images/B5.gif",
+                answers: {
+                    U: {
+                        text: "Deal!",
+                        scores: { U: +1, C: 0 },
+                    }
+                },
             },
-            U: {
-                text: "You know you're a bad liar, right?",
-                scores: { U: +1, C: 0 },
+        ];
+        
+        const resultOptions = {
+            "A": {
+                image: "BA.PNG",
             },
-        },
-    },
-    {
-        question: "'Fine! Fine! She asked me to keep the secret! There... one of those boxes! Gosh, I don't get paid enough for this...'",
-        image: "images/B5.gif",
-        answers: {
-            U: {
-                text: "Open 'Trash with potential' box",
-                scores: { U: +1, C: 0 },
+            "B": {
+                image: "BB.PNG"
             },
-            C: {
-                text: "Open 'I forgot I made these' box",
-                scores: { U: 0, C: +1 },
+            "C": {
+                image: "BC.PNG"
             },
-        },
-    },
-];
-
-const resultOptions = {
-    "U": {
-        image: "BA.PNG",
-    },
-    "C": {
-        image: "BT.PNG"
-    },
-};
-
-let currentQuestion = 0;
-
-
-function displayQuestion() {
-    const quizElement = document.getElementById('quiz');
-    const question = questions[currentQuestion];
-    if (question) {
-        let html = `<p>${question.question}</p>`;
-        if (question.image) {
-            html += `<img src="${question.image}" alt="Question ${currentQuestion + 1}">`;
+        };
+        
+        let currentQuestion = 0;
+        const scores = { A: 0, B: 0, C: 0 };
+        let userAnswers = {}; // Make sure to initialize userAnswers
+        
+        function updateDebugScores() {
+            const debugScoresElement = document.getElementById('debug-scores');
+            const formattedScores = `
+        A: ${scores.A}, B: ${scores.B}, C: ${scores.C}`;
+            debugScoresElement.textContent = formattedScores.trim();
         }
-        for (const option in question.answers) {
-            html += `<button class="large-rectangular" value="${option}" id="${option}">${question.answers[option].text}</button>`;
+        
+        function displayQuestion() {
+            const quizElement = document.getElementById('quiz');
+            const question = questions[currentQuestion];
+            if (question) {
+                let html = `<p>${question.question}</p>`;
+                if (question.image) {
+                    html += `<img src="${question.image}" alt="Question ${currentQuestion + 1}">`;
+                }
+                for (const option in question.answers) {
+                    html += `<button class="large-rectangular" value="${option}" id="${option}">${question.answers[option].text}</button>`;
+                }
+                quizElement.innerHTML = html;
+                attachButtonClickHandlers();
+            }
         }
-        quizElement.innerHTML = html;
-        attachButtonClickHandlers();
-    } else {
-    
-    }
-}
-
-
-document.getElementById('start-button').addEventListener('click', function() {
-    document.getElementById('start-page').style.display = 'none';
-    document.getElementById('quiz-page').style.display = 'block';
-    currentQuestion = 0;
-    userAnswers = {};
-    displayQuestion(); 
-});
-
-function attachButtonClickHandlers() {
-    const choiceButtons = document.querySelectorAll('.large-rectangular');
-    choiceButtons.forEach((button) => {
-        button.addEventListener('click', handleAnswer);
-    });
-}
-
-
-function handleAnswer(event) {
-    const selectedOption = event.target;
-    const answerKey = selectedOption.value;
-    const question = questions[currentQuestion];
-    const answer = question.answers[answerKey];
-
-    for (const dimension in answer.scores) {
-        userAnswers[dimension] = (userAnswers[dimension] || 0) + answer.scores[dimension];
-    }
-
-    if (currentQuestion < questions.length - 1) {
-        currentQuestion++;
+        
+        document.getElementById('start-button').addEventListener('click', function() {
+            document.getElementById('start-page').style.display = 'none';
+            document.getElementById('quiz-page').style.display = 'block';
+            currentQuestion = 0;
+            userAnswers = {}; // Reset userAnswers when the quiz starts
+            displayQuestion();
+        });
+        
+        function attachButtonClickHandlers() {
+            const choiceButtons = document.querySelectorAll('.large-rectangular');
+            choiceButtons.forEach((button) => {
+                button.addEventListener('click', handleAnswer);
+            });
+        }
+        
+        function handleAnswer(event) {
+            const selectedOption = event.target;
+            const answerKey = selectedOption.value;
+            const question = questions[currentQuestion];
+            const answer = question.answers[answerKey];
+            
+            // Update the scores
+            for (const dimension in answer.scores) {
+                scores[dimension] = (scores[dimension] || 0) + answer.scores[dimension];
+            }
+            updateDebugScores(); // Call to update debug scores
+        
+            if (currentQuestion < questions.length - 1) {
+                currentQuestion++;
+                displayQuestion();
+            } else {
+                showResult();
+            }
+        }
+        
+        function showResult() {
+            const resultElement = document.getElementById('result');
+            const resultTextContainer = document.querySelector('.result-text');
+            const resultImage = document.getElementById('result-image');
+        
+            let result = '';
+            let topscore = [];
+            if (scores.A >= scores.B && scores.A >= scores.C) topscore.push('A');
+            if (scores.B >= scores.A && scores.B >= scores.C) topscore.push('B');
+            if (scores.C >= scores.A && scores.C >= scores.B) topscore.push('C');
+            result = topscore[Math.floor(Math.random() * topscore.length)];
+        
+            const personalityData = resultOptions[result];
+            if (personalityData) {
+                resultTextContainer.innerHTML = ``;
+                resultImage.src = "images/" + personalityData.image;
+                resultImage.alt = `${personalityData.image} Image`;
+            }
+        
+            document.getElementById('quiz').style.display = 'none';
+            resultElement.style.display = 'block';
+        }
+        
+        function restartQuiz() {
+            currentQuestion = 0;
+            userAnswers = {};
+            document.getElementById('result').style.display = 'none';
+            document.getElementById('quiz').style.display = 'block';
+            displayQuestion();
+        }
+        
+        document.getElementById('restart-button').addEventListener('click', restartQuiz);
+        
         displayQuestion();
-    } else {
-        showResult();
-    }
-}
-
-function showResult() {
-    const resultElement = document.getElementById('result');
-    const resultTextContainer = document.querySelector('.result-text');
-    const resultImage = document.getElementById('result-image');
-    const result = (userAnswers['U'] || 0) > (userAnswers['C'] || 0) ? 'U' : 'C';
-
-    const personalityData = resultOptions[result];
-    if (personalityData) {
-        resultTextContainer.innerHTML = ``;
-        resultImage.src = "images/" + personalityData.image;
-        resultImage.alt = `${personalityData.image} Image`;
-    } else {
-    }
-
-    
-    document.getElementById('quiz').style.display = 'none';
-    resultElement.style.display = 'block';
-}
-
-
-function restartQuiz() {
-    currentQuestion = 0;
-    userAnswers = {};
-    document.getElementById('result').style.display = 'none';
-    document.getElementById('quiz').style.display = 'block';
-    displayQuestion(); 
-}
-
-document.getElementById('restart-button').addEventListener('click', restartQuiz);
-
-displayQuestion();
-</script>
+        </script>
+        
 
 </body>
 </html>

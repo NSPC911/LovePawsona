@@ -19,8 +19,8 @@ const dialogue = [
         speaker: 'bot',
         text: ["*New notification from Unknown*"],
         choices: [
-            { id: 1, text: '*Open*', type: 'A', weight: 2, next: 2, followUpText: [] },
-            { id: 2, text: '*Ignore it*', type: 'R', weight: 2, next: 1, followUpText: [] },
+            { id: 1, text: '*Open*', type: 'A', weight: 1, next: 2, followUpText: [] },
+            { id: 2, text: '*Ignore it*', type: 'R', weight: 1, next: 1, followUpText: [] },
             { id: 2, text: 'DEBUG', type: 'O', weight: 0, next: 100, followUpText: [] },
         ]
     },
@@ -145,7 +145,7 @@ const dialogue = [
     // 12 (Q3)
     {
         speaker: 'bot',
-        text: ["Hmm, that makes senses...", "3) Say you have a crush right now, what's next?"],
+        text: ["Hmm is that so?", "3) Waht if you have a crush right now, what's next?"],
         choices: [
             { id: 1, text: "Tell them!", type: 'B', weight: 2, next: 14, followUpText: ["I'll just message/call them and talk it out","What's the worst that could happen?"] },
             { id: 2, text: "Let things develop naturally", type: 'S', weight: 2, next: 14, followUpText: ["Consistency is the key!"] },
@@ -157,7 +157,7 @@ const dialogue = [
     // 13 (Q4_3,4)
     {
         speaker: 'bot',
-        text: ["Playing it safe, huh?", "Seems like you'll have time to plan ahead", "4) What kind of dates excite you the most?"],
+        text: ["lol I'd do that, too!", "Seems like you'll have time to plan ahead", "4) What kind of dates excite you the most?"],
         choices: [
             { id: 1, text: "Chill and relaxed, where we can simply be together", type: 'G', weight: 2, next: 15, followUpText: [] },
             { id: 2, text: "Fun and spontaneous, loaded with beautiful memories", type: 'P', weight: 2, next: 16, followUpText: [] },
@@ -382,9 +382,9 @@ const dialogue = [
         text: ["Down to the last question, then","12) Just curious, what's your plan today?","Apart from playing this silly quiz, of course"],
         choices: [
             { id: 1, text: "Eat a lot of chocolate!!!", type: 'R',weight: 1, next: 32, followUpText: [] },
-            { id: 2, text: "I'm gonna go out!", type: 'A',weight: 1, next: 32, followUpText: [] },
+            { id: 2, text: "I'm gonna go out and have funn!", type: 'A',weight: 1, next: 32, followUpText: [] },
             { id: 3, text: "I need to work/study T^T", type: 'R',weight: 1, next: 32, followUpText: [] },
-            { id: 4, text: "Duh, I got a date to go to!", type: 'A',weight: 1, next: 32, followUpText: [] },
+            { id: 4, text: "Duh, I have a date!", type: 'A',weight: 1, next: 32, followUpText: [] },
         ]
     },
 
@@ -464,8 +464,6 @@ function stopTypingDots() {
 
 function displayResult() {
     let resultType = '';
-
-
     // B, S, or W
     let topBSW = [];
     if (scores.B >= scores.S && scores.B >= scores.W) topBSW.push('B');
@@ -528,7 +526,7 @@ function displayResult() {
         'WPA': '17.png',
         'WPR': '18.png',
     };
-    document.getElementById('result-text').textContent = resultType + ' ' + resultsText[resultType];
+    //document.getElementById('result-text').textContent = resultType + ' ' + resultsText[resultType];
     /*document.getElementById('result-image').src = resultImages[resultType];
     document.getElementById('result-overlay').style.display = 'flex';*/
     document.getElementById("phone-screen").style.display = "none";
