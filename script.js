@@ -331,7 +331,7 @@ const dialogue = [
             { id: 2, text: "The quiet/mysterious one", type: "G", type2: "R", weight: 2, next: 30, followUpText: [] },
             { id: 3, text: "The one who plans all the hangouts", type: "P", type2: "A", weight: 2, next: 30, followUpText: [] },
             { id: 4, text: "The shipper/matchmaker", type: "P", type2: "R", weight: 2, next: 29, followUpText: [] },
-            { id: 5, text: "The single but love guru/matchmaker", type: "G", type2: "A", weight: 2, next: 29, followUpText: ["Coaches don’t play ;)"] },
+            { id: 5, text: "The single but love guru", type: "G", type2: "A", weight: 2, next: 29, followUpText: ["Coaches don’t play ;)"] },
             { id: 6, text: "Bold of you to assume I have friends", type: "D", type2: "R", weight: 2, next: 30, followUpText: [] },
         ]
     },
