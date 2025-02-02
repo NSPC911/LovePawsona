@@ -26,6 +26,7 @@ Start: 12/15/24
 
 Finished: 02/02/2025
 
+Made with: VS Code, Google Slides, ibisPaint
 
 
 
