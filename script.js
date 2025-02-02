@@ -89,7 +89,7 @@ const dialogue = [
     // 7 (5_1)
     {
         speaker: 'bot',
-        text: ["Ouch! I'm trying my best here!", "Anyways, let's get down to business", "I'm here to ask you a few questions", "To get to know you better!"],
+        text: ["Ouch! I'm trying my best here!", "Anyways, let's get down to business", "I'm here to ask you a few questions"],
         choices: [
             { id: 1, text: "Fine, I'll do it", type: 'R', weight: 1, next: 9, followUpText: [] },
             { id: 2, text: "Sounds fun, I'm down!", type: 'A', weight: 1, next: 9, followUpText: ["Hopefully this helps improve your Cupid performance!"] },
@@ -98,7 +98,7 @@ const dialogue = [
     // 8 (5_2, 5_3)
     {
         speaker: 'bot',
-        text: ["Straight to the point, I see", "I'm here to ask you a few questions", "For research purposes, ofc"],
+        text: ["Straight to the point, I see", "I'm here to ask you a few questions"],
         choices: [
             { id: 1, text: "Ok", type: 'R', weight: 1, next: 9, followUpText: [] },
             { id: 2, text: "Sounds fun, I'm down!", type: 'A', weight: 1, next: 9, followUpText: [] },
@@ -131,7 +131,7 @@ const dialogue = [
     // 11 (Q2)
     {
         speaker: 'bot',
-        text: ["Is that so? I bet you're quite romantic!", "Now you've got me curious about your past love experiences", "2) What kind of people do you usually crush on?"],
+        text: ["Is that so? I bet you're quite romantic!", "Now you've got me curious about your past love experiences", "2) Who do you usually have a crush on?"],
         choices: [
             { id: 1, text: "coworker / classmate", type: 'W', weight: 1, next: 12, followUpText: ["I mean, I see them everyday!"] },
             { id: 2, text: "hard to say, it's often love at first sight", type: 'B', weight: 2, next: 12, followUpText: [] },
