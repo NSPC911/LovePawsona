@@ -269,7 +269,7 @@ const dialogue = [
     // 22 (Q7)
     {
         speaker: "bot",
-        text: ["7) What would you do?"],
+        text: ["7) What act? What service?!"],
         choices: [
             { id: 1, text: "Anything and everything for them, they don't even have to ask", type: "B", weight: 2, next: 25, followUpText: [] },
             { id: 2, text: "Taking care of small things, like chores, every day", type: "S", weight: 2, next: 25, followUpText: [] },
