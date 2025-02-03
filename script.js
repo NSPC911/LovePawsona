@@ -89,7 +89,7 @@ const dialogue = [
     // 7 (5_1)
     {
         speaker: 'bot',
-        text: ["Ouch! I'm trying my best here!", "Anyways, I'm here to ask you a few questions", "This will help me analyze your Valentine's Animal Archetypes!"],
+        text: ["Ouch! I'm trying my best here!", "Anyways, I'm here to ask you 12 questions", "This will help me analyze your Valentine's Animal Archetypes!"],
         choices: [
             { id: 1, text: "Fine, I'll do it", type: 'R', weight: 1, next: 10, followUpText: [] },
             { id: 2, text: "Sounds fun, I'm down!", type: 'A', weight: 1, next: 10, followUpText: ["Hopefully this helps improve your Cupid performance!"] },
@@ -98,7 +98,7 @@ const dialogue = [
     // 8 (5_2, 5_3)
     {
         speaker: 'bot',
-        text: ["Straight to the point, I see", "Right, I'm here to ask you a few questions", "Cupid's duty! We do this once a year!"],
+        text: ["Straight to the point, I see", "Right, I'm here to ask you 12 questions", "Cupid's duty! We do this once a year!"],
         choices: [
             { id: 1, text: "Ok", type: 'R', weight: 1, next: 10, followUpText: [] },
             { id: 2, text: "Sounds fun, I'm down!", type: 'A', weight: 1, next: 10, followUpText: [] },
