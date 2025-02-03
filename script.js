@@ -22,7 +22,7 @@ const dialogue = [
         choices: [
             { id: 1, text: '*Open*', type: 'A', weight: 1, next: 2, followUpText: [] },
             { id: 2, text: '*Ignore it*', type: 'R', weight: 1, next: 1, followUpText: [] },
-            //{ id: 2, text: 'DEBUG', type: 'O', weight: 0, next: 100, followUpText: [] },
+            { id: 2, text: 'DEBUG', type: 'O', weight: 0, next: 100, followUpText: [] },
         ]
     },
     // 1
@@ -57,7 +57,7 @@ const dialogue = [
     // 4 (3_2)
     {
         speaker: 'bot',
-        text: ['Me? How could you forget me?', 'You summoned me just now!', "Why else would you play this silly quiz on Valentine's Day? Hmm?"],
+        text: ['Me? How could you ask that!', 'You summoned me just now!', "Why else would you play this silly quiz on Valentine's Day? Hmm?"],
         choices: [
             { id: 1, text: 'Summoned you?', type: 'G', weight: 1, next: 6, followUpText: [] },
             { id: 2, text: 'lol idk what ur talking abt', type: 'P', weight: 1, next: 6, followUpText: [] },
@@ -90,7 +90,7 @@ const dialogue = [
     // 7 (5_1)
     {
         speaker: 'bot',
-        text: ["Ouch! I'm trying my best here!", "Anyways, I'm here to ask you 12 questions", "This will help me analyze your Valentine's Animal Archetypes!"],
+        text: ["Ouch! I'm trying my best here!", "Anyways, I'm here to ask you 12 questions", "Cupid's duty! We do this once a year!"],
         choices: [
             { id: 1, text: "Fine, I'll do it", type: 'R', weight: 1, next: 10, followUpText: [] },
             { id: 2, text: "Sounds fun, I'm down!", type: 'A', weight: 1, next: 10, followUpText: ["Hopefully this helps improve your Cupid performance!"] },
@@ -121,7 +121,7 @@ const dialogue = [
     // 10 (Q1)
     {
         speaker: 'bot',
-        text: ["Let's start with the basics", "1) How do you define 'love'?"],
+        text: ["Let's start with the basics", "1) What is 'love' to you?"],
         choices: [
             { id: 1, text: "a safe space, to be ourselves and to simply be together", type: 'G', weight: 2, next: 11, followUpText: [] },
             { id: 2, text: "an adventure, filled with fun and unforgettable memories", type: 'P', weight: 2, next: 11, followUpText: [] },
@@ -132,7 +132,7 @@ const dialogue = [
     // 11 (Q2)
     {
         speaker: 'bot',
-        text: ["That's very cute!", "So, 2) Who do you usually have a crush on?"],
+        text: ["cuuuute", "Next, 2) Who do you usually have a crush on?"],
         choices: [
             { id: 1, text: "coworker / classmate", type: 'W', weight: 1, next: 12, followUpText: ["I mean, I see them everyday!"] },
             { id: 2, text: "hard to say, it's often love at first sight", type: 'B', weight: 2, next: 12, followUpText: [] },
@@ -160,7 +160,7 @@ const dialogue = [
         speaker: 'bot',
         text: ["lol I'd do that, too!", "Seems like you'll have time to plan ahead", "4) What kind of dates excite you the most?"],
         choices: [
-            { id: 1, text: "Chill and relaxed, where we can simply be together", type: 'G', weight: 2, next: 15, followUpText: [] },
+            { id: 1, text: "Chill and relaxed, where we can sepnd time together", type: 'G', weight: 2, next: 15, followUpText: [] },
             { id: 2, text: "Fun and spontaneous, loaded with beautiful memories", type: 'P', weight: 2, next: 16, followUpText: [] },
             { id: 3, text: "Sweet and intimate, showering each other with affections", type: 'D', weight: 2, next: 17, followUpText: [] },
         ]
@@ -170,7 +170,7 @@ const dialogue = [
         speaker: 'bot',
         text: ["Aww, I love the spirit!!", "And I'm sure that just secure you a date!", "4) What kind of dates excite you the most?"],
         choices: [
-            { id: 1, text: "Chill and relaxed, where we can simply be together", type: 'G', weight: 2, next: 15, followUpText: [] },
+            { id: 1, text: "Chill and relaxed, where we can sepnd time together", type: 'G', weight: 2, next: 15, followUpText: [] },
             { id: 2, text: "Fun and spontaneous, a lot of cute moments together!", type: 'P', weight: 2, next: 16, followUpText: [] },
             { id: 3, text: "Sweet and intimate, cherishing each other’s company", type: 'D', weight: 2, next: 17, followUpText: [] },
         ]
@@ -388,6 +388,7 @@ const dialogue = [
             { id: 4, text: "Duh, I have a date!", type: 'A',weight: 1, next: 32, followUpText: [] },
         ]
     },
+    
 
     // 32 last
     {
