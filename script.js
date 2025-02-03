@@ -145,7 +145,7 @@ const dialogue = [
     // 12 (Q3)
     {
         speaker: 'bot',
-        text: ["Hmm is that so?", "3) What if you have a crush right now, what's next?"],
+        text: ["That's interesting!", "3) What if you have a crush right now, what's next?"],
         choices: [
             { id: 1, text: "Tell them!", type: 'B', weight: 2, next: 14, followUpText: ["I'll just message/call them and talk it out","What's the worst that could happen?"] },
             { id: 2, text: "Let things develop naturally", type: 'S', weight: 2, next: 14, followUpText: ["Consistency is the key!"] },
@@ -281,7 +281,7 @@ const dialogue = [
         text: ["7) What kind of gifts would you give?"],
         choices: [
             { id: 1, text: "Unique and extravagant", type: "B", weight: 2, next: 25, followUpText: ["I’ll get them anything they want—it’s theirs once they set their eyes on it"] },
-            { id: 2, text: "Practical and meaningful", type: "S", weight: 2, next: 25, followUpText: ["I pay close attention to what they actually need","It'd be soemthing that reminds me of them"] },
+            { id: 2, text: "Practical and meaningful", type: "S", weight: 2, next: 25, followUpText: ["I pay close attention to what they actually need","It'd be something that reminds me of them"] },
             { id: 3, text: "Personalized and thoughtful", type: "W", weight: 2, next: 25, followUpText: ["Something custom-made—like a one-of-a-kind gift, just for them"] },
         ]
     },
