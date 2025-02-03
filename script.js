@@ -3,6 +3,7 @@
 Please don't use my code without permission!*/
 
 
+
 document.getElementById('start-button').addEventListener('click', function () {
     const notifSound = document.getElementById('notifSound');
     notifSound.play();
@@ -56,7 +57,7 @@ const dialogue = [
     // 4 (3_2)
     {
         speaker: 'bot',
-        text: ['Me? You know me!', 'You summoned me just now!', "Why else would you play this silly quiz on Valentine's Day? Hmm?"],
+        text: ['Me? How could you forget me?', 'You summoned me just now!', "Why else would you play this silly quiz on Valentine's Day? Hmm?"],
         choices: [
             { id: 1, text: 'Summoned you?', type: 'G', weight: 1, next: 6, followUpText: [] },
             { id: 2, text: 'lol idk what ur talking abt', type: 'P', weight: 1, next: 6, followUpText: [] },
@@ -66,7 +67,7 @@ const dialogue = [
     // 5 (3_3)
     {
         speaker: 'bot',
-        text: ["Cat got your tongue?", "Please don't ignore me T^T, You summoned me just now!", "Why else would you play this silly quiz on Valentine's Day? Hmm?"],
+        text: ["Please don't ignore me T^T", "You summoned me just now!", "Why else would you play this silly quiz on Valentine's Day? Hmm?"],
         choices: [
             { id: 1, text: 'Summoned you?', type: 'G', weight: 1, next: 6, followUpText: [] },
             { id: 2, text: 'lol idk what ur talking abt', type: 'P', weight: 1, next: 6, followUpText: [] },
@@ -248,7 +249,7 @@ const dialogue = [
     // 21 (Q7)
     {
         speaker: "bot",
-        text: ["7) Like how...?"],
+        text: ["7) For example...?"],
         choices: [
             { id: 1, text: "Showers with compliments until they're a puddle", type: "B", weight: 2, next: 25, followUpText: [] },
             { id: 2, text: "Assure them that I’ll always be by their side", type: "S", weight: 2, next: 25, followUpText: [] },
@@ -268,7 +269,7 @@ const dialogue = [
     // 22 (Q7)
     {
         speaker: "bot",
-        text: ["7) What kind of service?"],
+        text: ["7) What would you do?"],
         choices: [
             { id: 1, text: "Anything and everything for them, they don't even have to ask", type: "B", weight: 2, next: 25, followUpText: [] },
             { id: 2, text: "Taking care of small things, like chores, every day", type: "S", weight: 2, next: 25, followUpText: [] },

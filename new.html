@@ -199,6 +199,29 @@ question-image {
 }
 
 
+
+.start-button2 {
+    font-family: 'Andale Mono', monospace;
+    display: block;
+    width: 80%;
+    font-size: 20px;
+    max-width: 400px;
+    padding: 10px 20px;
+    margin: 10px auto;
+    background-color: var(--2-color);
+    color: var(--6-color);
+    border: none;
+    border-radius:40px;
+    cursor: pointer;
+}
+
+.start-button2:hover {
+    background-color: #fff; 
+    color: #090808;
+}
+
+
+
 .top-image {
     width: 100%;
     object-fit: cover; 
@@ -338,6 +361,8 @@ footer a:hover {
                 <div class="result-content">
                     <div class="result-text"></div>
                 </div>
+                <p>You made friend with the Cupid, keep in touch!</p>
+                <button id="start-button" class="start-button2" onclick="window.location.href='index2.html';">Open your phone</button>
             </div>
     <!--debug-->
     <div id="debug-box"
@@ -380,7 +405,7 @@ footer a:hover {
                         scores: { A: 0, B: 0, C: +1 },
                     },
                     B: {
-                        text: "Well I don;t have other options...",
+                        text: "Well I don't have other options...",
                         scores: { A: 0, B: +1, C: 0 },
                     },
                     A: {
@@ -621,7 +646,7 @@ footer a:hover {
         
         displayQuestion();
         </script>
-        
+        <script src="script.js"></script>
 
 </body>
 </html>
