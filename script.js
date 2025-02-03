@@ -46,9 +46,9 @@ const dialogue = [
     // 3 (3_1)
     {
         speaker: 'bot',
-        text: ['Wrong number?! Pfftt that\'s not possible', 'You\'re the chosen one!', "Why else would you play this silly quiz on Valentine's Day? Hmm?"],
+        text: ['Wrong number?! Pfftt that\'s not possible', 'You summoned me!', "Why else would you play this silly quiz on Valentine's Day? Hmm?"],
         choices: [
-            { id: 1, text: 'Chosen one?', type: 'G', weight: 1, next: 6, followUpText: [] },
+            { id: 1, text: 'Summoned you?', type: 'G', weight: 1, next: 6, followUpText: [] },
             { id: 2, text: 'lol idk what ur talking abt', type: 'P', weight: 1, next: 6, followUpText: [] },
             { id: 3, text: 'Who are you?!', type: 'D', weight: 1, next: 6, followUpText: [] }
         ]
@@ -56,9 +56,9 @@ const dialogue = [
     // 4 (3_2)
     {
         speaker: 'bot',
-        text: ['Me? I\'m no stranger! You know me!', 'Which is why you are the chosen one!', "Why else would you play this silly quiz on Valentine's Day? Hmm?"],
+        text: ['Me? You know me!', 'You summoned me just now!', "Why else would you play this silly quiz on Valentine's Day? Hmm?"],
         choices: [
-            { id: 1, text: 'Chosen one?', type: 'G', weight: 1, next: 6, followUpText: [] },
+            { id: 1, text: 'Summoned you?', type: 'G', weight: 1, next: 6, followUpText: [] },
             { id: 2, text: 'lol idk what ur talking abt', type: 'P', weight: 1, next: 6, followUpText: [] },
             { id: 3, text: 'No srly! Who are you?!', type: 'D', weight: 1, next: 6, followUpText: [] }
         ]
@@ -66,9 +66,9 @@ const dialogue = [
     // 5 (3_3)
     {
         speaker: 'bot',
-        text: ["Cat got your tongue?", "Don\'t be shy. You are the chosen one!", "Why else would you play this silly quiz on Valentine's Day? Hmm?"],
+        text: ["Cat got your tongue?", "Please don't ignore me T^T, You summoned me just now!", "Why else would you play this silly quiz on Valentine's Day? Hmm?"],
         choices: [
-            { id: 1, text: 'Chosen one?', type: 'G', weight: 1, next: 6, followUpText: [] },
+            { id: 1, text: 'Summoned you?', type: 'G', weight: 1, next: 6, followUpText: [] },
             { id: 2, text: 'lol idk what ur talking abt', type: 'P', weight: 1, next: 6, followUpText: [] },
             { id: 3, text: 'Who are you?!', type: 'D', weight: 1, next: 6, followUpText: [] }
         ]
@@ -89,19 +89,19 @@ const dialogue = [
     // 7 (5_1)
     {
         speaker: 'bot',
-        text: ["Ouch! I'm trying my best here!", "Anyways, let's get down to business", "I'm here to ask you a few questions"],
+        text: ["Ouch! I'm trying my best here!", "Anyways, I'm here to ask you a few questions", "This will help me analyze your Valentine's Animal Archetypes!"],
         choices: [
-            { id: 1, text: "Fine, I'll do it", type: 'R', weight: 1, next: 9, followUpText: [] },
-            { id: 2, text: "Sounds fun, I'm down!", type: 'A', weight: 1, next: 9, followUpText: ["Hopefully this helps improve your Cupid performance!"] },
+            { id: 1, text: "Fine, I'll do it", type: 'R', weight: 1, next: 10, followUpText: [] },
+            { id: 2, text: "Sounds fun, I'm down!", type: 'A', weight: 1, next: 10, followUpText: ["Hopefully this helps improve your Cupid performance!"] },
         ]
     },
     // 8 (5_2, 5_3)
     {
         speaker: 'bot',
-        text: ["Straight to the point, I see", "I'm here to ask you a few questions"],
+        text: ["Straight to the point, I see", "Right, I'm here to ask you a few questions", "Cupid's duty! We do this once a year!"],
         choices: [
-            { id: 1, text: "Ok", type: 'R', weight: 1, next: 9, followUpText: [] },
-            { id: 2, text: "Sounds fun, I'm down!", type: 'A', weight: 1, next: 9, followUpText: [] },
+            { id: 1, text: "Ok", type: 'R', weight: 1, next: 10, followUpText: [] },
+            { id: 2, text: "Sounds fun, I'm down!", type: 'A', weight: 1, next: 10, followUpText: [] },
         ]
     },
 
@@ -131,7 +131,7 @@ const dialogue = [
     // 11 (Q2)
     {
         speaker: 'bot',
-        text: ["Is that so? I bet you're quite romantic!", "Now you've got me curious about your past love experiences", "2) Who do you usually have a crush on?"],
+        text: ["That's very cute!", "So, 2) Who do you usually have a crush on?"],
         choices: [
             { id: 1, text: "coworker / classmate", type: 'W', weight: 1, next: 12, followUpText: ["I mean, I see them everyday!"] },
             { id: 2, text: "hard to say, it's often love at first sight", type: 'B', weight: 2, next: 12, followUpText: [] },
@@ -240,9 +240,9 @@ const dialogue = [
         speaker: "bot",
         text: ["7) For example...?"],
         choices: [
-            { id: 1, text: "Playful hugs and spontaneous kisses", type: "B", weight: 2, next: 25, followUpText: [] },
+            { id: 1, text: "Spontaneous hugs and kisses", type: "B", weight: 2, next: 25, followUpText: [] },
             { id: 2, text: "Cuddling and holding hands", type: "S", weight: 2, next: 25, followUpText: [] },
-            { id: 3, text: "Soft hand on the back and gentle head pats", type: "W", weight: 2, next: 25, followUpText: [] }
+            { id: 3, text: "Gentle head pats and eyes contacts", type: "W", weight: 2, next: 25, followUpText: [] }
         ]
     },
     // 21 (Q7)
@@ -250,7 +250,7 @@ const dialogue = [
         speaker: "bot",
         text: ["7) Like how...?"],
         choices: [
-            { id: 1, text: "Showers with compliments until they're a puddle'", type: "B", weight: 2, next: 25, followUpText: [] },
+            { id: 1, text: "Showers with compliments until they're a puddle", type: "B", weight: 2, next: 25, followUpText: [] },
             { id: 2, text: "Assure them that I’ll always be by their side", type: "S", weight: 2, next: 25, followUpText: [] },
             { id: 3, text: "Remind them how much I appreciate them", type: "W", weight: 2, next: 25, followUpText: [] },
         ]
@@ -290,9 +290,9 @@ const dialogue = [
         speaker: "bot",
         text: ["7) You just invented the 6th love langauge!", "Care to elaborate?"],
         choices: [
-            { id: 1, text: "I can’t resist, they’re too cute when they pout!", type: "B", weight: 2, next: 25, followUpText: [] },
+            { id: 1, text: "I just can’t resist, they’re too cute when they pout!", type: "B", weight: 2, next: 25, followUpText: [] },
             { id: 2, text: "I’m all for a little sass, as long as it’s fun for both of us", type: "S", weight: 2, next: 25, followUpText: [] },
-            { id: 3, text: "I’ll pull some pranks, but I always make sure they’re comfortable with it", type: "W", weight: 2, next: 25, followUpText: [] },
+            { id: 3, text: "I’m in for some fun pranks, but I always make sure they’re comfortable with it", type: "W", weight: 2, next: 25, followUpText: [] },
         ]
     },
 
@@ -391,7 +391,7 @@ const dialogue = [
     // 32 last
     {
         speaker: 'bot',
-        text: ["lololl have fun with that!","Before you go","Ready to see your result?"],
+        text: ["lololl have fun!","Before you go","Ready to see your result?"],
         choices: [
             { id: 1, text: 'YES!', type: 'O', weight: 0, next: 100, followUpText: [] },
         ]

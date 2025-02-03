@@ -372,15 +372,15 @@ footer a:hover {
                 },
             },
             {
-                question: "'Another one? Great, did you not read the notes?! I'm trying to work, you know?'",
+                question: "'H..hey! Did you not read the notes?! I'm trying to work, you know?'",
                 image: "IMG/Heh/C2.gif",
                 answers: {
                     C: {
-                        text: "oh calm down! I'm lost, ok?",
+                        text: "Speaking of notes.. you also...",
                         scores: { A: 0, B: 0, C: +1 },
                     },
                     B: {
-                        text: "Speaking of notes...",
+                        text: "Well I don;t have other options...",
                         scores: { A: 0, B: +1, C: 0 },
                     },
                     A: {
@@ -426,7 +426,7 @@ footer a:hover {
                 },
             },
             {
-                question: "'Urghh ok, come look' the Cupid opens the box 'there are plenty of things in here, you know, unspoken feelings, tears-soaked letters, a bunch of expired chocolates...things you humans throw away on Valentine's day'",
+                question: "'Urghh ok, come look' the Cupid opens the box 'there are plenty of things in here, withered bouquet, tears-soaked letters, a bunch of expired chocolates...things you humans throw away on Valentine's day'",
                 image: "IMG/Heh/C5.gif",
                 answers: {
                     A: {
@@ -445,7 +445,7 @@ footer a:hover {
             },
             {
                 question: "'No! Humans are not supposed to be here, leave alone taking stuffs from the box!'",
-                image: "images/B5.gif",
+                image: "IMG/Heh/C6.gif",
                 answers: {
                     C: {
                         text: "I'll tell your boss you eat chocolate during work",
@@ -462,8 +462,8 @@ footer a:hover {
                 },
             },
             {
-                question: "'Urghhh fine, just...keep this a secret between us, alright?' the Cupid sighs 'And some ground rules, I get to choose what you can take, deal?'",
-                image: "images/B5.gif",
+                question: "'Urghhh fine, just...keep this a secret between us, alright?' the Cupid sighs 'Andddd...I get to choose what you can take, deal?'",
+                image: "IMG/Heh/C7.gif",
                 answers: {
                     C: {
                         text: "Deal!",
@@ -481,7 +481,7 @@ footer a:hover {
             },
             {
                 question: "Before the Cupid says anything, one of the items jump out of the box and straight into your hand. The Cupid scoffs 'Hey, would you look that that, it choose you!'",
-                image: "images/B5.gif",
+                image: "IMG/Heh/C8.gif",
                 answers: {
                     U: {
                         text: "What is this thing...",
@@ -499,7 +499,7 @@ footer a:hover {
                 a) Just take a bite and see what happens<br>
                 b) Gained some superpower? Realizing your crush actually likes you back? Or just taste sour? If it’s the last one, well… that probably just means it expired. Just like some feelings that start to fade... ok sorry I'll stop
                 `,
-                image: "BA.PNG",
+                image: "BA.png",
             },
             "B": {
                 text: `<p style="font-size:20px;">A Heart Squishy Toy<p><br>
@@ -509,7 +509,7 @@ footer a:hover {
                 <br><br>Instructions:<br>
                 a) Squeeze it when you’re frustrated, in love, or just bored out of your mind<br>
                 b) Throw.. I mean give it to your crush cuz why not`,
-                image: "BB.PNG"
+                image: "BB.png"
             },
             "C": {
                 text:`<p style="font-size:20px;">A Jar of Feelings<p><br>
@@ -520,7 +520,7 @@ footer a:hover {
                 a) Add one when you feel like it, whenever a thought goes unspoken, a feeling lingers, or you just want to leave a future surprise for yourself (or someone else)<br>
                 b) Open one when you need a reminder of how much you're loved (or when you just want a good laugh at your past self)
                 `,
-                image: "BC.PNG"
+                image: "BC.png"
             },
         };
         
@@ -601,7 +601,7 @@ footer a:hover {
             const personalityData = resultOptions[result];
             if (personalityData) {
                 resultTextContainer.innerHTML = `${personalityData.text}`;
-                resultImage.src = "images/" + personalityData.image;
+                resultImage.src = "IMG/Heh/" + personalityData.image;
                 resultImage.alt = `${personalityData.image} Image`;
             }
         
