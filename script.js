@@ -47,7 +47,7 @@ const dialogue = [
     // 3 (3_1)
     {
         speaker: 'bot',
-        text: ['Wrong number?! Pfftt that\'s not possible', 'You summoned me!', "Why else would you play this silly quiz on Valentine's Day? Hmm?"],
+        text: ['Wrong number?! Pfftt that\'s not possible', "You summoned me afterall...","You're the one playing this silly quiz on Valentine's Day!"],
         choices: [
             { id: 1, text: 'Summoned you?', type: 'G', weight: 1, next: 6, followUpText: [] },
             { id: 2, text: 'lol idk what ur talking abt', type: 'P', weight: 1, next: 6, followUpText: [] },
@@ -57,7 +57,7 @@ const dialogue = [
     // 4 (3_2)
     {
         speaker: 'bot',
-        text: ['Me? How could you ask that!', 'You summoned me just now!', "Why else would you play this silly quiz on Valentine's Day? Hmm?"],
+        text: ['Me? You know me!', 'You summoned me just now.', "Wasn't it you who want to play this silly quiz on Valentine's Day?"],
         choices: [
             { id: 1, text: 'Summoned you?', type: 'G', weight: 1, next: 6, followUpText: [] },
             { id: 2, text: 'lol idk what ur talking abt', type: 'P', weight: 1, next: 6, followUpText: [] },
@@ -67,7 +67,7 @@ const dialogue = [
     // 5 (3_3)
     {
         speaker: 'bot',
-        text: ["Please don't ignore me T^T", "You summoned me just now!", "Why else would you play this silly quiz on Valentine's Day? Hmm?"],
+        text: ["Oh don't ignore me", "You the one who summoned me!", "Didn't you want to play this silly quiz on Valentine's Day?"],
         choices: [
             { id: 1, text: 'Summoned you?', type: 'G', weight: 1, next: 6, followUpText: [] },
             { id: 2, text: 'lol idk what ur talking abt', type: 'P', weight: 1, next: 6, followUpText: [] },
@@ -138,7 +138,7 @@ const dialogue = [
             { id: 2, text: "hard to say, it's often love at first sight", type: 'B', weight: 2, next: 12, followUpText: [] },
             { id: 3, text: "Someone I've been close to for a while, like a best friend", type: 'S', weight: 2, next: 12, followUpText: [] },
             { id: 4, text: "I've never really have a crush on anyone...", type: 'W', weight: 2, next: 12, followUpText: ["unless celebrity crushes count!"] },
-            { id: 5, text: "I don't have a type, I kinda know it when I feel it", type: 'B', type2: 'S', weight: 1, next: 12, followUpText: [] },
+            { id: 5, text: "I don't have a type. I just know swhen it feels right", type: 'B', type2: 'S', weight: 1, next: 12, followUpText: [] },
         ]
     },
 
