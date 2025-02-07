@@ -178,7 +178,7 @@ const dialogue = [
     // 14 (Q4_1,2,5)
     {
         speaker: 'bot',
-        text: ["Aww, I love the spirit!!", "And I'm sure that just secure you a date!", "4) What kind of dates excite you the most?"],
+        text: ["Aww, I love the spirit!!", "Being bold might just secure you a date!", "4) What kind of dates excite you the most?"],
         choices: [
             { id: 1, text: "Chill and relaxed, where we can sepnd time together", type: 'G', weight: 2, next: 15, followUpText: [] },
             { id: 2, text: "Fun and spontaneous, a lot of cute moments together!", type: 'P', weight: 2, next: 16, followUpText: [] },
@@ -189,7 +189,7 @@ const dialogue = [
     // 15 (Q5_1C)
     {
         speaker: 'bot',
-        text: ["Going for the comfortable vibes, I see", "5) Any idea what might that date be?"],
+        text: ["Going for the comfortable vibes, I see", "5) Any idea what might that be?"],
         choices: [
             { id: 1, text: "Bookstores - pick a book for each other!", type: 'R', weight: 2, next: 18, followUpText: [] },
             { id: 2, text: "Gym - friendly sports challenge to strengthen our bond", type: 'A', weight: 2, next: 18, followUpText: ["Loser gets a hug. win-win!"] },
@@ -201,7 +201,7 @@ const dialogue = [
     // 16 (Q5_2P)
     {
         speaker: 'bot',
-        text: ["Exciting! you're up for some surprises, I see", "5) Any idea what might that date be?"],
+        text: ["Exciting! you're up for some surprises, I see", "5) Any idea what might that be?"],
         choices: [
             { id: 1, text: "Aquarium - exploring sea lives while holding hands", type: 'R', weight: 2, next: 18, followUpText: [] },
             { id: 2, text: "Karaoke - singing our hearts out", type: 'A', weight: 2, next: 18, followUpText: ["My favorite tune is the sound of their heartbeat <3"] },
@@ -213,7 +213,7 @@ const dialogue = [
     // 17 (Q5_2D)
     {
         speaker: 'bot',
-        text: ["How romantic!", "5) Any idea what might that date be?"],
+        text: ["How romantic!", "5) Any idea what might that be?"],
         choices: [
             { id: 1, text: "Fancy Diner - candle lit and wine...perfect!", type: 'R', weight: 2, next: 18, followUpText: ["Nothing beats some good food"] },
             { id: 2, text: "Bowling alley - game on!", type: 'A', weight: 2, next: 18, followUpText: ["Loser gets a hug. win-win!"] },
@@ -226,7 +226,7 @@ const dialogue = [
     // 18 (Q6)
     {
         speaker: "bot",
-        text: ["Cuuuute, don't forget to invite me!", "On to the next question!", "6) Which love langauges match yours the most?"],
+        text: ["Cuuuute", "6) Which love langauges match yours the most?","These will come in handy for your date!"],
         choices: [
             { id: 1, text: "Quality time", type: 'G', weight: 2, next: 19, followUpText: [] },
             { id: 2, text: "Physical touch", type: 'P', weight: 2, next: 20, followUpText: [] },
@@ -310,7 +310,7 @@ const dialogue = [
     // 25 (Q8)
     {
         speaker: "bot",
-        text: ["Is that so? I'm learning a lot about you already!","Let me think what else...", "Ah! 8) What is your go-to outfit for a date?"],
+        text: ["Is that so? I'm learning a lot about you already!", "8) What is your go-to outfit for a date?"],
         choices: [
             { id: 1, text: "Classy and timeless", type: "D", weight: 2, next: 26, followUpText: ["I'd put a lot of effort to look nice in front of them"] },
             { id: 2, text: "Stylish and cool", type: "P", weight: 2, next: 26, followUpText: ["How else can they find me in the crowd?! :)"] },
@@ -390,21 +390,33 @@ const dialogue = [
     // 31 (Q12)
     {
         speaker: 'bot',
-        text: ["Down to the last question, then","12) Just curious, what's your plan today?","Apart from playing this silly quiz, of course"],
+        text: ["Down to the last question, then","12) Anything you'd like to wish for?"],
         choices: [
-            { id: 1, text: "Eat a lot of chocolate!!!", type: 'R',weight: 1, next: 32, followUpText: [] },
-            { id: 2, text: "gonna go out and have funn!", type: 'A',weight: 1, next: 32, followUpText: [] },
-            { id: 3, text: "I need to work/study T^T", type: 'R',weight: 1, next: 32, followUpText: [] },
-            { id: 4, text: "Duh, I have a date!", type: 'A',weight: 1, next: 32, followUpText: [] },
-            { id: 5, text: "No plans, just chilling", type: 'R',weight: 1, next: 32, followUpText: [] },
+            { id: 1, text: "A LOT OF Chocolate!!", type: 'P',weight: 2, next: 32, followUpText: [] },
+            { id: 2, text: "Send me some looove", type: 'G',weight: 2, next: 32, followUpText: [] },
+            { id: 3, text: "For my crush to like me back", type: 'D',weight: 2, next: 32, followUpText: [] },
+            { id: 4, text: "Moneyyy", type: 'P',weight: 2, next: 32, followUpText: [] },
+            { id: 5, text: "A restful weekend", type: 'D',type2:'G',weight: 2, next: 32, followUpText: [] },
+        ]
+    },
+    // 32
+    {
+        speaker: 'bot',
+        text: ["Noted, that shall be served","oh, Just curious, what's your plan today?","Apart from playing this silly quiz, of course"],
+        choices: [
+            { id: 1, text: "Eat a lot of chocolate!!!", type: 'R',weight: 1, next: 33, followUpText: [] },
+            { id: 2, text: "gonna go out and have funn!", type: 'A',weight: 1, next: 33, followUpText: [] },
+            { id: 3, text: "I need to work/study T^T", type: 'R',weight: 1, next: 33, followUpText: [] },
+            { id: 4, text: "Duh, I have a date!", type: 'A',weight: 1, next: 33, followUpText: [] },
+            { id: 5, text: "No plans, just chilling", type: 'R',weight: 1, next: 33, followUpText: [] },
         ]
     },
     
 
-    // 32 last
+    // 33 last
     {
         speaker: 'bot',
-        text: ["lololl have fun!","Before you go","Ready to see your result?"],
+        text: ["lololl have fun!","Ready to see your result?"],
         choices: [
             { id: 1, text: 'YES!', type: 'O', weight: 0, next: 100, followUpText: [] },
         ]
@@ -655,7 +667,7 @@ function startConversation() {
 function updateDebugScores() {
     const debugScoresElement = document.getElementById('debug-scores');
     const formattedScores = `
-    ${currentMessageIndex}
+    ${currentMessageIndex+1}
 B: ${scores.B}, S: ${scores.S}, W: ${scores.W},
 G: ${scores.G}, P: ${scores.P}, D: ${scores.D}, 
 A: ${scores.A}, R: ${scores.R}`;
