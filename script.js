@@ -4,10 +4,17 @@ Please don't use my code without permission!*/
 
 
 
+document.getElementById('start1-button').addEventListener('click', function () {
+    const popSound = document.getElementById('popSound');
+    popSound.play();
+    document.getElementById('start-page').style.display = 'none';
+    document.getElementById('interm').style.display = 'flex';
+});
+
 document.getElementById('start-button').addEventListener('click', function () {
     const notifSound = document.getElementById('notifSound');
     notifSound.play();
-    document.getElementById('start-page').style.display = 'none';
+    document.getElementById('interm').style.display = 'none';
     document.getElementById('phone-screen').style.display = 'flex';
 });
 
@@ -126,13 +133,16 @@ const dialogue = [
             { id: 1, text: "a safe space, to be ourselves and to simply be together", type: 'G', weight: 2, next: 11, followUpText: [] },
             { id: 2, text: "an adventure, filled with fun and unforgettable memories", type: 'P', weight: 2, next: 11, followUpText: [] },
             { id: 3, text: "a commitment, being there for each other no matter what", type: 'D', weight: 2, next: 11, followUpText: [] },
+            { id: 4, text: "a beautiful friendship, built on trust and understanding", type: 'G', weight: 2, next: 11, followUpText: [] },
+            { id: 5, text: "[insert that person's name]", type: 'D', weight: 2, next: 11, followUpText: [] },
+            { id: 6, text: "a complex neurobiological process involving hormones and brain activity", type: 'P', weight: 2, next: 11, followUpText: [] },
         ]
     },
 
     // 11 (Q2)
     {
         speaker: 'bot',
-        text: ["cuuuute", "Next, 2) Who do you usually have a crush on?"],
+        text: ["How...romantic", "Sooo, 2) Who do you usually have a crush on?"],
         choices: [
             { id: 1, text: "coworker / classmate", type: 'W', weight: 1, next: 12, followUpText: ["I mean, I see them everyday!"] },
             { id: 2, text: "hard to say, it's often love at first sight", type: 'B', weight: 2, next: 12, followUpText: [] },
@@ -146,19 +156,19 @@ const dialogue = [
     // 12 (Q3)
     {
         speaker: 'bot',
-        text: ["That's interesting!", "3) What if you have a crush right now, what's next?"],
+        text: ["3) What if you have a crush right now, what's next?"],
         choices: [
             { id: 1, text: "Tell them!", type: 'B', weight: 2, next: 14, followUpText: ["I'll just message/call them and talk it out","What's the worst that could happen?"] },
             { id: 2, text: "Let things develop naturally", type: 'S', weight: 2, next: 14, followUpText: ["Consistency is the key!"] },
             { id: 3, text: "Do absolutely NOTHING", type: 'W', weight: 1, next: 13, followUpText: ["I will never ever let them know..."] },
             { id: 4, text: "Avoid them", type: 'W', weight: 2, next: 13, followUpText: ["I will run if I have to"] },
-            { id: 5, text: "Make subtle moves", type: 'B', type2: 'S', weight: 1, next: 14, followUpText: ["Just don't make it too obvious!"] },
+            { id: 5, text: "Make subtle moves", type: 'B', type2: 'S', weight: 1, next: 14, followUpText: ["Drops small hints, just don't make it too obvious!"] },
         ]
     },
     // 13 (Q4_3,4)
     {
         speaker: 'bot',
-        text: ["lol I'd do that, too!", "Seems like you'll have time to plan ahead", "4) What kind of dates excite you the most?"],
+        text: ["lol I'd do that, too!", "While we're just sitting and waiting...", "4) What kind of dates excite you the most?"],
         choices: [
             { id: 1, text: "Chill and relaxed, where we can sepnd time together", type: 'G', weight: 2, next: 15, followUpText: [] },
             { id: 2, text: "Fun and spontaneous, loaded with beautiful memories", type: 'P', weight: 2, next: 16, followUpText: [] },
@@ -311,7 +321,7 @@ const dialogue = [
     // 26 (Q9)
     {
         speaker: "bot",
-        text: ["9) What else are you bringing with you to that date?"],
+        text: ["9) What else are you bringing to that date?"],
         choices: [
             { id: 1, text: "a flower bouquet", type: "B", weight: 2, next: 27, followUpText: [] },
             { id: 2, text: "my wallet", type: "S", weight: 2, next: 27, followUpText: [] },
@@ -383,9 +393,10 @@ const dialogue = [
         text: ["Down to the last question, then","12) Just curious, what's your plan today?","Apart from playing this silly quiz, of course"],
         choices: [
             { id: 1, text: "Eat a lot of chocolate!!!", type: 'R',weight: 1, next: 32, followUpText: [] },
-            { id: 2, text: "I'm gonna go out and have funn!", type: 'A',weight: 1, next: 32, followUpText: [] },
+            { id: 2, text: "gonna go out and have funn!", type: 'A',weight: 1, next: 32, followUpText: [] },
             { id: 3, text: "I need to work/study T^T", type: 'R',weight: 1, next: 32, followUpText: [] },
             { id: 4, text: "Duh, I have a date!", type: 'A',weight: 1, next: 32, followUpText: [] },
+            { id: 5, text: "No plans, just chilling", type: 'R',weight: 1, next: 32, followUpText: [] },
         ]
     },
     
@@ -402,10 +413,15 @@ const dialogue = [
 ];
 
 
-function addMessage(speaker, text, isLink = false, opt = false) {
+function addMessage(speaker, text) {
     const messageElement = document.createElement('div');
     messageElement.classList.add('message', speaker);
-    if (isLink) {
+    messageElement.textContent = text;
+    document.getElementById('chatbox').appendChild(messageElement);
+    document.getElementById('chatbox').scrollTop = document.getElementById('chatbox').scrollHeight;
+
+
+    /*if (isLink) {
         const link = document.createElement('a');
         link.innerText = text;
         link.onclick = displayResult;
@@ -417,12 +433,9 @@ function addMessage(speaker, text, isLink = false, opt = false) {
         link.href = "https://www.instagram.com/izonfalzo/?hl=en";
         link.target = "_blank";
         messageElement.appendChild(link);
-    }
-    else {
+    }else {
         messageElement.textContent = text;
-    }
-    document.getElementById('chatbox').appendChild(messageElement);
-    document.getElementById('chatbox').scrollTop = document.getElementById('chatbox').scrollHeight;
+    }*/
 }
 
 function showChoices(choices) {
@@ -578,7 +591,7 @@ function handleChoice(type, type2, type3, weight, id, nextIndex) {
             stopTypingDots();
             const popSound = document.getElementById('popSound');
             popSound.play();
-            if (currentMessageIndex >= 1) {
+            if (currentMessageIndex == 0 || currentMessageIndex == 2 || currentMessageIndex >=3 ) {
                 const header = document.getElementById("header");
                 header.textContent = 'Unknown';
                 header.style.color = 'var(--6-color)';
@@ -633,6 +646,7 @@ function restartQuiz() {
 }
 
 function startConversation() {
+
     addMessage('bot', dialogue[0].text);
     showChoices(dialogue[0].choices);
 

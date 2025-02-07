@@ -21,6 +21,7 @@
         --4-color: #d8f4f6;
         --5-color: #ade1eb;
         --6-color: #2a3031;
+        --8-color: #f3dada;
 
     }
 
@@ -178,6 +179,17 @@
 
     .restart-button:hover {
         background-color: var(--4-color);
+    }
+
+    .restart-button2 {
+        background-color: var(--1-color);
+        color: var(--1-color);
+        border: none;
+        padding: 1px 2px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 20px;
     }
 
     .typing-indicator {
@@ -414,6 +426,37 @@
         visibility: visible;
         opacity: 1;
     }
+    .icon-button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+}
+
+.app-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 20px; 
+    transition: transform 0.2s ease-in-out;
+}
+
+.icon-caption {
+    font-size: 14px;
+    color: var(--8-color);
+    margin-top: 5px; 
+    text-align: center;
+    font-family: 'Andale Mono', monospace;
+}
+
+.icon-button:hover .app-icon {
+    transform: scale(1.1); 
+}
+
+
 </style>
 </head>
 
@@ -424,9 +467,10 @@
                 Love Pawsona </div>
         </h1>
         <img src="IMG/front1.gif" class="top-image" alt="Top Image" onclick="triggerIconShower(event)">
-        <p>"It's Valentine's Day, you're deep in your thoughts when suddenly a holographic screen flickers in front of you. A Start button pulses at the center, waiting for your touch..."</p>
         <div class="button-group">
-            <button id="start-button" class="start-button">Start</button>
+            <button id="start1-button" class="start-button">Start</button>
+            <!--button class="start-button" onclick="window.open('about.html', '_blank');">?</button-->
+            <button class="restart-button2" onclick="window.open('new.html', '_blank');">??</button>
         </div>
 
         <br><br>
@@ -435,8 +479,23 @@
         </p2>
         <p2>This quiz is created for entertainment purposes only.<br>Feedback is always welcome!</p2>
     </div>
+
+
+    <div class="phone-screen" id="interm" style="display: none; background-color: rgb(22, 22, 22);">
+        <div class="header" id="header1" style="color: var(--8-color); background-color: rgb(22, 22, 22);"
+        onclick="window.open('new.html', '_blank');">02/14</div>
+        <br><br><br>
+        <p style="color: var(--8-color); text-align: center; margin-left: 25px; margin-right: 25px;">"It’s Valentine’s Day. As you drift in thought, your phone suddenly flickers to life. An app pulses softly on the screen, waiting for your touch..."</p>
+        <br><br><br>
+        <button id="start-button" class="icon-button">
+            <img src="IMG/Heh/C0.PNG" alt="App" class="app-icon">
+            <span class="icon-caption">CupidChat</span>
+        </button>
+    </div>
+
+
     <div class="phone-screen" id="phone-screen" style="display: none;">
-        <div class="header" id="header" style="color:fff; background-color: rgb(22, 22, 22);"
+        <div class="header" id="header" style="color: var(--8-color); background-color: rgb(22, 22, 22);"
             onclick="window.open('new.html', '_blank');">02/14</div>
         <div id="chatbox" class="chatbox"></div>
         <div id="choices" class="choices"></div>
@@ -462,7 +521,6 @@
                 </a-->
         </div>
         <p3>
-            <br>
             <!--br>
             if (result === 'very accurate!') { <br>
             &nbsp;&nbsp; Yayyy! It describes you!; <br>
@@ -471,18 +529,19 @@
             } else {<br>
             &nbsp;&nbsp; check <a href='about.html'>this</a> out, pick and choose! or commission me for a custom personality card hehe<br>
             }<br-->
-            <br><br>With love, Izon Falzo
+        </p3>
+        <p3 style="color: #fcedcd">
+            <br><br>
             <br>P.S. again, there are easter eggs! Cupid has the 
             <div class="tooltip">hint
                 <span class="tooltiptext">when you text someone, you must have their contact, right?</span>
-            </div>, same rules, first to find it and bring it to me get a free art!
-        </p3>
+            </div> have fun!</p3>
     </div>
 
 
     <!--debug-->
     <div id="debug-box"
-        style="display: none; position: absolute; top: 10px; right: 10px; background-color: rgba(0, 0, 0, 0.7); color: white; padding: 10px; border-radius: 5px; font-size: 12px; z-index: 999;">
+        style=" position: absolute; top: 10px; right: 10px; background-color: rgba(0, 0, 0, 0.7); color: white; padding: 10px; border-radius: 5px; font-size: 12px; z-index: 999;">
         <strong>Scores:</strong>
         <pre id="debug-scores"></pre>
     </div>
