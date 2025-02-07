@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function checkAndTriggerGif() {
         if (resultPage.style.display !== "none") { 
-            let randomInterval = Math.floor(Math.random() * 10000) + 10000;
+            let randomInterval = Math.floor(Math.random() * 50000) + 10000;
             setTimeout(showFloatingGif, randomInterval); 
         }
     }
