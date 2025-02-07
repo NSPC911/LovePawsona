@@ -1,6 +1,62 @@
 
 /*https://github.com/IseeJ
 Please don't use my code without permission!*/
+document.addEventListener("DOMContentLoaded", function () {
+    let resultPage = document.getElementById("result-page");
+
+    function checkAndTriggerGif() {
+        if (resultPage.style.display !== "none") { 
+            let randomInterval = Math.floor(Math.random() * 10000) + 10000;
+            setTimeout(showFloatingGif, randomInterval); 
+        }
+    }
+
+    function showFloatingGif() {
+        if (resultPage.style.display === "none") return;
+
+        let gif = document.createElement("img");
+        gif.src = "IMG/Heh/C9.gif";  
+        gif.style.position = "absolute";
+        gif.style.top = Math.random() * (window.innerHeight - 150) + "px"; 
+        gif.style.right = "-200px";
+        gif.style.width = "150px";
+        gif.style.cursor = "pointer";
+        gif.style.animation = "floatUpDown 3s ease-in-out infinite"; 
+        
+        gif.onclick = function () {
+            window.open("new.html", "_blank"); 
+        };
+        document.body.appendChild(gif);
+
+        setTimeout(() => {
+            gif.style.transition = "right 7s linear";
+            gif.style.right = window.innerWidth + "px"; 
+        }, 100);
+
+        setTimeout(() => {
+            gif.remove();
+        }, 6000);
+
+        // Recheck and trigger the GIF again after a random interval
+        checkAndTriggerGif();
+    }
+
+    let observer = new MutationObserver(checkAndTriggerGif);
+    observer.observe(resultPage, { attributes: true, attributeFilter: ["style"] });
+
+    // Floating animation
+    let style = document.createElement("style");
+    style.innerHTML = `
+        @keyframes floatUpDown {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); } /* Moves up */
+            100% { transform: translateY(0px); } /* Moves back down */
+        }
+    `;
+    document.head.appendChild(style);
+});
+
+
 
 
 
