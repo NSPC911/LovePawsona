@@ -282,7 +282,7 @@ const dialogue = [
     // 18 (Q6)
     {
         speaker: "bot",
-        text: ["Cuuuute", "6) Which love langauges match yours the most?","These will come in handy for your date!"],
+        text: ["Cuuuute", "6) Which love language matches yours the most?","These will come in handy for your date!"],
         choices: [
             { id: 1, text: "Quality time", type: 'G', weight: 2, next: 19, followUpText: [] },
             { id: 2, text: "Physical touch", type: 'P', weight: 2, next: 20, followUpText: [] },
