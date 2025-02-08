@@ -201,7 +201,7 @@ const dialogue = [
             { id: 2, text: "hard to say, it's often love at first sight", type: 'B', weight: 2, next: 12, followUpText: [] },
             { id: 3, text: "Someone I've been close to for a while, like a best friend", type: 'S', weight: 2, next: 12, followUpText: [] },
             { id: 4, text: "I've never really have a crush on anyone...", type: 'W', weight: 2, next: 12, followUpText: ["unless celebrity crushes count!"] },
-            { id: 5, text: "I don't have a type. I just know swhen it feels right", type: 'B', type2: 'S', weight: 1, next: 12, followUpText: [] },
+            { id: 5, text: "I don't have a type. I just know when it feels right", type: 'B', type2: 'S', weight: 1, next: 12, followUpText: [] },
         ]
     },
 
@@ -212,7 +212,7 @@ const dialogue = [
         text: ["3) What if you have a crush right now, what's next?"],
         choices: [
             { id: 1, text: "Tell them!", type: 'B', weight: 2, next: 14, followUpText: ["I'll just message/call them and talk it out","What's the worst that could happen?"] },
-            { id: 2, text: "Let things develop naturally", type: 'S', weight: 2, next: 14, followUpText: ["Consistency is the key!"] },
+            { id: 2, text: "Keep talking to them!", type: 'S', weight: 2, next: 14, followUpText: ["Consistency is the key!"] },
             { id: 3, text: "Do absolutely NOTHING", type: 'W', weight: 1, next: 13, followUpText: ["I will never ever let them know..."] },
             { id: 4, text: "Avoid them", type: 'W', weight: 2, next: 13, followUpText: ["I will run if I have to"] },
             { id: 5, text: "Make subtle moves", type: 'B', type2: 'S', weight: 1, next: 14, followUpText: ["Drops small hints, just don't make it too obvious!"] },
@@ -493,7 +493,7 @@ const dialogue = [
             { id: 2, text: "gonna go out and have funn!", type: 'A',weight: 1, next: 35, followUpText: [] },
             { id: 3, text: "I need to work/study T^T", type: 'R',weight: 1, next: 35, followUpText: [] },
             { id: 4, text: "Duh, I have a date!", type: 'A',weight: 1, next: 35, followUpText: [] },
-            { id: 5, text: "No plans, just chilling", type: 'R',weight: 1, next: 35, followUpText: [] },
+            { id: 5, text: "No plans, just chilling at home", type: 'R',weight: 1, next: 35, followUpText: [] },
         ]
     },
     
