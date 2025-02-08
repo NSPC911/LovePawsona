@@ -296,7 +296,7 @@ const dialogue = [
         choices: [
             { id: 1, text: "Go on a trip!", type: "B", weight: 2, next: 25, followUpText: [] },
             { id: 2, text: "Just the usual, doing something we both enjoy", type: "S", weight: 2, next: 25, followUpText: [] },
-            { id: 3, text: "Cozy evening at home, sharing deep conversations", type: "W", weight: 2, next: 25, followUpText: [] },
+            { id: 3, text: "Cozy evening, sharing deep conversations", type: "W", weight: 2, next: 25, followUpText: [] },
         ]
     },
     // 20 (Q7)
@@ -366,8 +366,10 @@ const dialogue = [
         text: ["Is that so? I'm learning a lot about you already!", "8) What's the vibes of your go-to outfit for a date?"],
         choices: [
             { id: 1, text: "Classy and timeless", type: "D", weight: 2, next: 26, followUpText: [] },
-            { id: 2, text: "Stylish and cool", type: "P", weight: 2, next: 26, followUpText: [] },
+            { id: 2, text: "Stylish and cool", type: "P", weight: 1, next: 26, followUpText: [] },
             { id: 3, text: "Simple and comfortable", type: "G", weight: 2, next: 26, followUpText: [] },
+            { id: 4, text: "Anything and my crocs", type: "P", weight: 2, next: 26, followUpText: [] },
+            { id: 4, text: "Something I rock with confidence", type: "G", type2: "D", weight: 1, next: 26, followUpText: [] },
             
         ]
     },
@@ -375,14 +377,14 @@ const dialogue = [
     // 26 (Q9)
     {
         speaker: "bot",
-        text: ["9) What's one item you absolutely can't go without on a date?"],
+        text: ["9) What's one item you would definitely bring on a date?"],
         choices: [
             { id: 1, text: "a flower bouquet", type: "B", weight: 2, next: 27, followUpText: [] },
-            { id: 2, text: "my wallet", type: "S", weight: 2, next: 27, followUpText: [] },
-            { id: 3, text: "everything I normally have in my bag", type: "S", weight: 2, next: 27, followUpText: ["wet wipes, gum, band-aid...","just in case they need it too!"] },
+            { id: 2, text: "my wallet", type: "S", weight: 2, next: 27, followUpText: ["$$$"] },
+            { id: 3, text: "my backpack", type: "W", weight: 2, next: 27, followUpText: ["wet wipes, gum, band-aid...","just in case they need it too!"] },
             { id: 4, text: "an umbrella", type: "W", weight: 2, next: 27, followUpText: ["big enough to fit both of us in case it rains"] },
-            { id: 5, text: "a small gift", type: "B", weight: 2, next: 27, followUpText: ["like a plushie or matching key chain"] },
-            { id: 6, text: "breath mints", type: "W", weight: 2, next: 27, followUpText: [] },
+            { id: 5, text: "a camera", type: "B", weight: 2, next: 27, followUpText: ["to campture our memories"] },
+            { id: 6, text: "a small gift", type: "S", weight: 2, next: 27, followUpText:  ["like a plushie or matching key chain"] },
         ]
     },
 
