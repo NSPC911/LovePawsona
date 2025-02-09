@@ -109,9 +109,9 @@ const dialogue = [
         speaker: 'bot',
         text: ['Wrong number?! Pfftt that\'s not possible', "You summoned me afterall...","You're the one playing this quiz on Valentine's Day!"],
         choices: [
-            { id: 1, text: 'Summoned you?', type: 'G', weight: 2, next: 6, followUpText: [] },
-            { id: 2, text: 'lol idk what ur talking abt', type: 'P', weight: 2, next: 6, followUpText: [] },
-            { id: 3, text: 'Who are you?!', type: 'D', weight: 2, next: 6, followUpText: [] }
+            { id: 1, text: 'Summoned you?', type: 'G', weight: 1, next: 6, followUpText: [] },
+            { id: 2, text: 'lol idk what ur talking abt', type: 'P', weight: 1, next: 6, followUpText: [] },
+            { id: 3, text: 'Who are you?!', type: 'D', weight: 1, next: 6, followUpText: [] }
         ]
     },
     // 4 (3_2)
@@ -119,9 +119,9 @@ const dialogue = [
         speaker: 'bot',
         text: ['Me? You know me!', 'You summoned me just now.', "Wasn't it you who want to play this quiz on Valentine's Day?"],
         choices: [
-            { id: 1, text: 'Summoned you?', type: 'G', weight: 2, next: 6, followUpText: [] },
-            { id: 2, text: 'lol idk what ur talking abt', type: 'P', weight: 2, next: 6, followUpText: [] },
-            { id: 3, text: 'No srly! Who are you?!', type: 'D', weight: 2, next: 6, followUpText: [] }
+            { id: 1, text: 'Summoned you?', type: 'G', weight: 1, next: 6, followUpText: [] },
+            { id: 2, text: 'lol idk what ur talking abt', type: 'P', weight: 1, next: 6, followUpText: [] },
+            { id: 3, text: 'No srly! Who are you?!', type: 'D', weight: 1, next: 6, followUpText: [] }
         ]
     },
     // 5 (3_3)
@@ -129,9 +129,9 @@ const dialogue = [
         speaker: 'bot',
         text: ["Oh don't ignore me", "You're the one who summoned me!", "Didn't you want to play this quiz on Valentine's Day?"],
         choices: [
-            { id: 1, text: 'Summoned you?', type: 'G', weight: 2, next: 6, followUpText: [] },
-            { id: 2, text: 'lol idk what ur talking abt', type: 'P', weight: 2, next: 6, followUpText: [] },
-            { id: 3, text: 'Who are you?!', type: 'D', weight: 2, next: 6, followUpText: [] }
+            { id: 1, text: 'Summoned you?', type: 'G', weight: 1, next: 6, followUpText: [] },
+            { id: 2, text: 'lol idk what ur talking abt', type: 'P', weight: 1, next: 6, followUpText: [] },
+            { id: 3, text: 'Who are you?!', type: 'D', weight: 1, next: 6, followUpText: [] }
         ]
     },
 
@@ -140,9 +140,9 @@ const dialogue = [
         speaker: 'bot',
         text: ["Ok ok, I'll explain everything", "I'm your personal Cupid!", "Your love life is my job!!"],
         choices: [
-            { id: 1, text: "Oh really? Clearly you need to work harder", type: 'P', weight: 1, next: 7, followUpText: [] },
-            { id: 2, text: "Ok Cupid, what do you want?", type: 'G', weight: 1, next: 8, followUpText: [] },
-            { id: 3, text: "I thought this was just a personality quiz...", type: 'D', weight: 1, next: 8, followUpText: [] },
+            { id: 1, text: "Oh really? Clearly you need to work harder", type: 'P', weight: 2, next: 7, followUpText: [] },
+            { id: 2, text: "Ok Cupid, what do you want?", type: 'G', weight: 2, next: 8, followUpText: [] },
+            { id: 3, text: "I thought this was just a personality quiz...", type: 'D', weight: 2, next: 8, followUpText: [] },
 
         ]
     },
@@ -476,7 +476,7 @@ const dialogue = [
         speaker: 'bot',
         text: ["Noted, that shall be served","oh, Just curious, what's your plan today?","Apart from playing this silly quiz, of course"],
         choices: [
-            { id: 1, text: "Eat a lot of chocolate!!!", type: 'R',weight: 1, next: 35, followUpText: [] },
+            { id: 1, text: "Eat a lot of chocolate!!!", type: 'R',weight: 2, next: 35, followUpText: [] },
             { id: 2, text: "gonna go out and have funn!", type: 'A',weight: 1, next: 35, followUpText: [] },
             { id: 3, text: "I need to work/study T^T", type: 'R',weight: 1, next: 35, followUpText: [] },
             { id: 4, text: "Duh, I have a date!", type: 'A',weight: 1, next: 35, followUpText: [] },
