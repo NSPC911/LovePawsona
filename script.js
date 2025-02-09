@@ -383,7 +383,7 @@ const dialogue = [
             { id: 2, text: "my wallet", type: "S", weight: 2, next: 27, followUpText: [] },
             { id: 3, text: "my *whole* backpack", type: "W", weight: 2, next: 27, followUpText: ["I got wet wipes, gum, band-aid...","just in case they need it too!"] },
             { id: 4, text: "an umbrella", type: "W", weight: 2, next: 27, followUpText: ["big enough to fit both of us in case it rains"] },
-            { id: 5, text: "a camera", type: "B", weight: 2, next: 27, followUpText: ["to campture our memories"] },
+            { id: 5, text: "a camera", type: "B", weight: 2, next: 27, followUpText: ["to capture our memories"] },
             { id: 6, text: "a small gift", type: "S", weight: 2, next: 27, followUpText:  ["like a plushie or matching key chains"] },
         ]
     },
