@@ -19,11 +19,10 @@ Thank you for your understanding!
 
 
 
+<img src="https://github.com/IseeJ/LovePawsona/blob/308991fbb02d7805c0909d145a139db1edc29837/IMG/Heh/Untitled_Artwork1654.gif" width="100"><img src="https://github.com/IseeJ/LovePawsona/blob/308991fbb02d7805c0909d145a139db1edc29837/IMG/Heh/Untitled_Artwork1654.gif" width="100"><img src="https://github.com/IseeJ/LovePawsona/blob/308991fbb02d7805c0909d145a139db1edc29837/IMG/Heh/Untitled_Artwork1654.gif" width="100">
+<img src="https://github.com/IseeJ/LovePawsona/blob/308991fbb02d7805c0909d145a139db1edc29837/IMG/Heh/Untitled_Artwork1654.gif" width="100"><img src="https://github.com/IseeJ/LovePawsona/blob/308991fbb02d7805c0909d145a139db1edc29837/IMG/Heh/Untitled_Artwork1654.gif" width="100"><img src="https://github.com/IseeJ/LovePawsona/blob/308991fbb02d7805c0909d145a139db1edc29837/IMG/Heh/Untitled_Artwork1654.gif" width="100">
 ## My corner
 
-![yay](https://github.com/IseeJ/LovePawsona/blob/308991fbb02d7805c0909d145a139db1edc29837/IMG/Heh/Untitled_Artwork1654.gif)
-
-<img src="https://github.com/IseeJ/LovePawsona/blob/308991fbb02d7805c0909d145a139db1edc29837/IMG/Heh/Untitled_Artwork1654.gif" width="100">
 
 Start: 12/15/24
 
