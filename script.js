@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function checkAndTriggerGif() {
         if (resultPage.style.display !== "none") { 
-            let randomInterval = Math.floor(Math.random() * 50000) + 10000;
+            let randomInterval = Math.floor(Math.random() * 70000) + 10000;
             setTimeout(showFloatingGif, randomInterval); 
         }
     }
@@ -82,7 +82,7 @@ const dialogue = [
         choices: [
             { id: 1, text: '*Open*', type: 'A', weight: 2, next: 2, followUpText: [] },
             { id: 2, text: '*Ignore it*', type: 'R', weight: 2, next: 1, followUpText: [] },
-            //{ id: 2, text: 'DEBUG', type: 'O', weight: 0, next: 100, followUpText: [] },
+            { id: 2, text: 'DEBUG', type: 'O', weight: 0, next: 100, followUpText: [] },
         ]
     },
     // 1
@@ -127,7 +127,7 @@ const dialogue = [
     // 5 (3_3)
     {
         speaker: 'bot',
-        text: ["Oh don't ignore me", "You the one who summoned me!", "Didn't you want to play this quiz on Valentine's Day?"],
+        text: ["Oh don't ignore me", "You're the one who summoned me!", "Didn't you want to play this quiz on Valentine's Day?"],
         choices: [
             { id: 1, text: 'Summoned you?', type: 'G', weight: 2, next: 6, followUpText: [] },
             { id: 2, text: 'lol idk what ur talking abt', type: 'P', weight: 2, next: 6, followUpText: [] },
