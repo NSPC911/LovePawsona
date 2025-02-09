@@ -233,7 +233,7 @@ const dialogue = [
         speaker: 'bot',
         text: ["Aww, I love the spirit!!", "Being bold might just secure you a date!", "4) What kind of dates excite you the most?"],
         choices: [
-            { id: 1, text: "Chill and relaxed, where we can sepnd time together", type: 'G', weight: 2, next: 15, followUpText: [] },
+            { id: 1, text: "Chill and relaxed, where we can spend time together", type: 'G', weight: 2, next: 15, followUpText: [] },
             { id: 2, text: "Fun and spontaneous, a lot of cute moments together!", type: 'P', weight: 2, next: 16, followUpText: [] },
             { id: 3, text: "Sweet and intimate, cherishing each other’s company", type: 'D', weight: 2, next: 17, followUpText: [] },
         ]
