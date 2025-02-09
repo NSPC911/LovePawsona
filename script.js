@@ -82,7 +82,7 @@ const dialogue = [
         choices: [
             { id: 1, text: '*Open*', type: 'A', weight: 2, next: 2, followUpText: [] },
             { id: 2, text: '*Ignore it*', type: 'R', weight: 2, next: 1, followUpText: [] },
-            { id: 2, text: 'DEBUG', type: 'O', weight: 0, next: 100, followUpText: [] },
+            //{ id: 2, text: 'DEBUG', type: 'O', weight: 0, next: 100, followUpText: [] },
         ]
     },
     // 1
@@ -107,7 +107,7 @@ const dialogue = [
     // 3 (3_1)
     {
         speaker: 'bot',
-        text: ['Wrong number?! Pfftt that\'s not possible', "You summoned me afterall...","You're the one playing this silly quiz on Valentine's Day!"],
+        text: ['Wrong number?! Pfftt that\'s not possible', "You summoned me afterall...","You're the one playing this quiz on Valentine's Day!"],
         choices: [
             { id: 1, text: 'Summoned you?', type: 'G', weight: 2, next: 6, followUpText: [] },
             { id: 2, text: 'lol idk what ur talking abt', type: 'P', weight: 2, next: 6, followUpText: [] },
@@ -117,7 +117,7 @@ const dialogue = [
     // 4 (3_2)
     {
         speaker: 'bot',
-        text: ['Me? You know me!', 'You summoned me just now.', "Wasn't it you who want to play this silly quiz on Valentine's Day?"],
+        text: ['Me? You know me!', 'You summoned me just now.', "Wasn't it you who want to play this quiz on Valentine's Day?"],
         choices: [
             { id: 1, text: 'Summoned you?', type: 'G', weight: 2, next: 6, followUpText: [] },
             { id: 2, text: 'lol idk what ur talking abt', type: 'P', weight: 2, next: 6, followUpText: [] },
@@ -127,7 +127,7 @@ const dialogue = [
     // 5 (3_3)
     {
         speaker: 'bot',
-        text: ["Oh don't ignore me", "You the one who summoned me!", "Didn't you want to play this silly quiz on Valentine's Day?"],
+        text: ["Oh don't ignore me", "You the one who summoned me!", "Didn't you want to play this quiz on Valentine's Day?"],
         choices: [
             { id: 1, text: 'Summoned you?', type: 'G', weight: 2, next: 6, followUpText: [] },
             { id: 2, text: 'lol idk what ur talking abt', type: 'P', weight: 2, next: 6, followUpText: [] },
@@ -380,11 +380,11 @@ const dialogue = [
         text: ["9) What's one item you would definitely bring on a date?"],
         choices: [
             { id: 1, text: "a flower bouquet", type: "B", weight: 2, next: 27, followUpText: [] },
-            { id: 2, text: "my wallet", type: "S", weight: 2, next: 27, followUpText: ["$$$"] },
-            { id: 3, text: "my backpack", type: "W", weight: 2, next: 27, followUpText: ["wet wipes, gum, band-aid...","just in case they need it too!"] },
+            { id: 2, text: "my wallet", type: "S", weight: 2, next: 27, followUpText: [] },
+            { id: 3, text: "my *whole* backpack", type: "W", weight: 2, next: 27, followUpText: ["I got wet wipes, gum, band-aid...","just in case they need it too!"] },
             { id: 4, text: "an umbrella", type: "W", weight: 2, next: 27, followUpText: ["big enough to fit both of us in case it rains"] },
             { id: 5, text: "a camera", type: "B", weight: 2, next: 27, followUpText: ["to campture our memories"] },
-            { id: 6, text: "a small gift", type: "S", weight: 2, next: 27, followUpText:  ["like a plushie or matching key chain"] },
+            { id: 6, text: "a small gift", type: "S", weight: 2, next: 27, followUpText:  ["like a plushie or matching key chains"] },
         ]
     },
 
