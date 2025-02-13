@@ -285,7 +285,7 @@ const dialogue = [
             { id: 2, text: "Physical touch", type: 'P', weight: 2, next: 20, followUpText: [] },
             { id: 3, text: "Words of affirmation", type: 'G', weight: 2, next: 21, followUpText: [] },
             { id: 4, text: "Acts of service", type: 'D', weight: 2, next: 22, followUpText: [] },
-            { id: 5, text: "Giving/Recieving gifts", type: 'D', weight: 2, next: 23, followUpText: [] },
+            { id: 5, text: "Giving/Receiving gifts", type: 'D', weight: 2, next: 23, followUpText: [] },
             { id: 6, text: "Teasing/Playful banter", type: 'P', weight: 2, next: 24, followUpText: ["What? There are only 5 love languages?!"] },
         ]
     },
