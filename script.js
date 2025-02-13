@@ -410,7 +410,7 @@ const dialogue = [
         choices: [
             { id: 1, text: "Never settle for less. You know what's best for yourself", type: 'B', weight: 2, next: 33, followUpText: [] },
             { id: 2, text: "Put in the effort, strive to make your loved one happy", type: 'W', weight: 2, next: 33, followUpText: [] },
-            { id: 3, text: "Make every day feel special, cherish every moments in life", type: 'S', weight: 2, next: 33, followUpText: [] },
+            { id: 3, text: "Make every day feel special, cherish every moment in life", type: 'S', weight: 2, next: 33, followUpText: [] },
         ]
     },
 
@@ -421,7 +421,7 @@ const dialogue = [
         choices: [
             { id: 1, text: "Never settle for less. You know what's best for yourself", type: 'B', weight: 2, next: 33, followUpText: [] },
             { id: 2, text: "Put in the effort, strive to make your loved one happy", type: 'W', weight: 2, next: 33, followUpText: [] },
-            { id: 3, text: "Make every day feel special, cherish every moments in life", type: 'S', weight: 2, next: 33, followUpText: [] },
+            { id: 3, text: "Make every day feel special, cherish every moment in life", type: 'S', weight: 2, next: 33, followUpText: [] },
         ]
     },
 
@@ -432,7 +432,7 @@ const dialogue = [
         choices: [
             { id: 1, text: "Never settle for less. You know what's best for yourself", type: 'B', weight: 2, next: 33, followUpText: [] },
             { id: 2, text: "Put in the effort, strive to make your loved one happy", type: 'W', weight: 2, next: 33, followUpText: [] },
-            { id: 3, text: "Make every day feel special, cherish every moments in life", type: 'S', weight: 2, next: 33, followUpText: [] },
+            { id: 3, text: "Make every day feel special, cherish every moment in life", type: 'S', weight: 2, next: 33, followUpText: [] },
         ]
     },
 
@@ -443,7 +443,7 @@ const dialogue = [
         choices: [
             { id: 1, text: "Never settle for less. You know what's best for yourself", type: 'B', weight: 2, next: 33, followUpText: [] },
             { id: 2, text: "Put in the effort, strive to make your loved one happy", type: 'W', weight: 2, next: 33, followUpText: [] },
-            { id: 3, text: "Make every day feel special, cherish every moments in life", type: 'S', weight: 2, next: 33, followUpText: [] },
+            { id: 3, text: "Make every day feel special, cherish every moment in life", type: 'S', weight: 2, next: 33, followUpText: [] },
         ]
     },
 
@@ -454,7 +454,7 @@ const dialogue = [
         choices: [
             { id: 1, text: "Never settle for less. You know what's best for yourself", type: 'B', weight: 2, next: 33, followUpText: [] },
             { id: 2, text: "Put in the effort, strive to make your loved one happy", type: 'W', weight: 2, next: 33, followUpText: [] },
-            { id: 3, text: "Make every day feel special, cherish every moments in life", type: 'S', weight: 2, next: 33, followUpText: [] },
+            { id: 3, text: "Make every day feel special, cherish every moment in life", type: 'S', weight: 2, next: 33, followUpText: [] },
         ]
     },
 
